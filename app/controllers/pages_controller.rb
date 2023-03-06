@@ -10,5 +10,4 @@ class PagesController < ApplicationController
     # Attendance requests I received :
     @pending_requests = Attendance.joins(:run).where(runs: { user_id: current_user }).pending
   end
-
 end
