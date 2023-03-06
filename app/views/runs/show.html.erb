@@ -1,0 +1,13 @@
+<div class="container my-4">
+  <h1> <%= @run.name %></h1>
+  <p><%= @run.description %></p>
+  <p><%= @run.category %></p>
+  <p><%= @run.level %></p>
+  <p><%= @run.distance %></p>
+  <p><%= @run.date %></p>
+  <p><%= @run.max_person %></p>
+  <p><%= @run.meeting_point %></p>
+
+  <%= link_to "Edit your run", edit_run_path, class: "btn btn-outline-primary" %>
+  <%= link_to "Delete your run", run_path(@run), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</div>
