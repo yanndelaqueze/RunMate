@@ -1,5 +1,6 @@
 users:
   - username: john.doe
+    email: john.doe@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: John
@@ -14,6 +15,7 @@ users:
         meeting_point: Central Park
         circuit: "Loop around the lake"
   - username: jane.doe
+    email: jane.doe@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Jane
@@ -28,6 +30,7 @@ users:
         meeting_point: Riverside Park
         circuit: "Out and back"
   - username: jason.smith
+    email: jason.smith@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Jason
@@ -42,6 +45,7 @@ users:
         meeting_point: Mountain Base
         circuit: "Mountain summit trail"
   - username: sarah.johnson
+    email: sarah.johnson@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Sarah
@@ -56,6 +60,7 @@ users:
         meeting_point: Beach Entrance
         circuit: "Along the beach boardwalk"
   - username: robert.jackson
+    email: robert.jackson@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Robert
@@ -70,26 +75,31 @@ users:
         meeting_point: Forest Entrance
         circuit: "Forest trail loop"
   - username: mary.white
+    email: mary.white@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Mary
     last_name: White
   - username: david.lee
+    email: david.lee@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: David
     last_name: Lee
   - username: lisa.kim
+    email: lisa.kim@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Lisa
     last_name: Kim
   - username: andrew.nguyen
+    email: andrew.ng@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Andrew
     last_name: Nguyen
   - username: emily.jones
+    email: emily.jones@gmail.com
     password: topsecret
     password_confirmation: topsecret
     first_name: Emily
