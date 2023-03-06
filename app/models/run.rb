@@ -1,8 +1,11 @@
 class Run < ApplicationRecord
+  CATEGORIES = ["Casual", "Coaching", "City Tour"]
   belongs_to :user
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
   has_many :reviews
   has_many :messages
+
+  validates :category, inclusion: { in: CATEGORIES }
 
   after_create :create_first_attendee
 
