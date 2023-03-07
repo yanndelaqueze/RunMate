@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
   def new
     @run = Run.find(params[:run_id])
     @attendance = Attendance.new
-    # authorize @attendance
+    authorize @attendance
   end
 
   def create
@@ -15,33 +15,34 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new(attendance_params)
     @attendance.user = @user
     @attendance.run = @run
-    # authorize @attendance
+    authorize @attendance
     if @attendance.save
       redirect_to run_path(@run)
     else
-      redirect_to run_url(@run), status: :unprocessable_entity
+      redirect_to run_path(@run), status: :unprocessable_entity
     end
   end
 
   def destroy
     @attendance = Attendance.find(params[:id])
-    # authorize @attendance
+    authorize @attendance
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to attendances_path
   end
 
   def confirm
     @attendance = Attendance.find(params[:id])
-    # authorize @attendance
     @attendance.confirmed
+    # authorize @attendance
     @attendance.save
     redirect_to dashboard_path
   end
 
   def decline
     @attendance = Attendance.find(params[:id])
-    # authorize @attendance
     @attendance.declined
+    # authorize @attendance
+    @attendance.save
     redirect_to dashboard_path
   end
 

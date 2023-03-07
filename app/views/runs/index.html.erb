@@ -8,7 +8,6 @@
     <%# TO DO %>
     <%# **** %>
 
-
   <ul class="nav nav-tabs col-12" id="myTab">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">List</button>
@@ -19,16 +18,16 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="list">
-
-    <%# ****** %>
-      <% @runs.each do |run| %>
-        <%= render "card_run", run: run %>
-      <% end %>
-    <%# ****** %>
-
+        <% @runs.each do |run| %>
+         <%= render "card_run", run: run %>
+        <% end %>
     </div>
     <div class="tab-pane fade" id="map">
+      <div style="width: 100%; height: 800px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
     </div>
   </div>
-
 </div>
