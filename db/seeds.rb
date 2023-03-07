@@ -3,6 +3,12 @@ require 'yaml'
 CONTENTS = ["Looking forward to attending!", "Can't wait to be there!", "Excited to join the event!",
             "I would be happy to participate!", "Count me in, I'm ready to go!"]
 
+
+Attendance.delete_all
+Run.delete_all
+User.delete_all
+
+
 # Load the YAML file
 data = YAML.load_file("#{Rails.root}/db/seeds/data.yaml")
 
