@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get '/dashboard', to: 'pages#dashboard'
+  devise_scope :user do
+    get '/users/profile', to: 'users/sessions#show', as: 'user_profile'
+  end
 
   resources :runs do
     resources :attendances, only: %i[index new create update destroy] do

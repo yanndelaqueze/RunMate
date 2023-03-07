@@ -1,0 +1,26 @@
+
+<div class="profile mt-5">
+  <div class="container mt">
+      <div class="card">
+        <div class="card-header bg-light p-0 border-0">
+          <div class="d-flex align-items-center">
+            <img src="https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg" class="rounded-circle mr-3" width="64" height="64" alt="Profile picture">
+            <h1 class="h4 m-0"> <%= @user.username %> </h1>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-sm-6">
+              <p><strong> Email: </strong> <%= @user.email %> </p>
+              <p><strong> First Name: </strong> <%= @user.first_name %> </p>
+              <p><strong> Last Name: </strong> <%= @user.last_name %> </p>
+            </div>
+            <div class="col-sm-6">
+              <p><strong> Number of runs joined: </strong> <%= @user.attendances.count %> </p>
+              <p><strong> Number of runs created: </strong> <%= @user.runs.count %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
