@@ -1,4 +1,5 @@
 class RunsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show new]
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
@@ -14,7 +15,8 @@ class RunsController < ApplicationController
 
   def create
     @run = Run.new(run_params)
-    if run.save
+    @run.user = current_user
+    if @run.save
       redirect_to run_path(@run)
     else
       render :new, status: :unprocessable_entity
@@ -34,7 +36,7 @@ class RunsController < ApplicationController
 
   def destroy
     @run.destroy
-    redirect_to runs_path
+    redirect_to runs_path, status: :see_other
   end
 
   private
@@ -44,6 +46,6 @@ class RunsController < ApplicationController
   end
 
   def run_params
-    params.required(:run).permit(:description, :category, :level, :distance, :max_person, :meeting_point, :date, :circuit)
+    params.required(:run).permit(:name, :description, :category, :level, :distance, :max_person, :meeting_point, :date, :circuit)
   end
 end
