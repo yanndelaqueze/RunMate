@@ -1,19 +1,15 @@
 
 <div class="container p-3 mb-5">
-
-  <h1>NEXT RUNS</h1>
-  <%= link_to "Create a new run", new_run_path  %>
-
     <%# Search bar Partial %>
     <%# TO DO %>
     <%# **** %>
 
-  <ul class="nav nav-tabs col-12" id="myTab">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">List</button>
+  <ul class="nav nav-pills justify-content-around mb-2" id="myTab">
+    <li class="nav-item">
+      <button class="nav-link active fs-3" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button"><i class="fa-solid fa-list"></i></button>
     </li>
     <li class="nav-item">
-      <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button">Map</button>
+      <button class="nav-link fs-3" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button"><i class="fa-solid fa-map-location-dot"></i></button>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
