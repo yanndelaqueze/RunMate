@@ -7,13 +7,13 @@ users:
     last_name: Doe
     runs:
       - name: John's Run
-        description: A scenic run through the park
+        description: A scenic run on Quais de Seine
         category: Jogging
         level: 3
-        distance: 5
+        distance: 10
         max_person: 10
-        meeting_point: Central Park
-        circuit: "Loop around the lake"
+        meeting_point: "Parvis de Notre-Dame"
+        circuit: "Loop around Quais de Seine"
   - username: jane.doe
     email: jane.doe@gmail.com
     password: topsecret
@@ -22,13 +22,13 @@ users:
     last_name: Doe
     runs:
       - name: Jane's Run
-        description: A peaceful run along the river
+        description: A peaceful run in Bois de Vincennes
         category: Running
         level: 2
         distance: 8
         max_person: 8
-        meeting_point: Riverside Park
-        circuit: "Out and back"
+        meeting_point: "Esplanade du Château de Vincennes, Paris"
+        circuit: "In the woods"
   - username: jason.smith
     email: jason.smith@gmail.com
     password: topsecret
@@ -37,13 +37,13 @@ users:
     last_name: Smith
     runs:
       - name: Jason's Run
-        description: A challenging run up the mountain
-        category: Hiking
+        description: A challenging run up Montmartre
+        category: Trail Running
         level: 5
         distance: 10
         max_person: 5
-        meeting_point: Mountain Base
-        circuit: "Mountain summit trail"
+        meeting_point: "Basilique du Sacré-Coeur, Paris"
+        circuit: "Ups and Downs in Montmartre"
   - username: sarah.johnson
     email: sarah.johnson@gmail.com
     password: topsecret
@@ -52,13 +52,13 @@ users:
     last_name: Johnson
     runs:
       - name: Sarah's Run
-        description: A refreshing run by the beach
+        description: A refreshing run in Buttes Chaumont
         category: Running
         level: 1
-        distance: 4
+        distance: 12
         max_person: 12
-        meeting_point: Beach Entrance
-        circuit: "Along the beach boardwalk"
+        meeting_point: Place Armand Carrel
+        circuit: "Loops in the Park"
   - username: robert.jackson
     email: robert.jackson@gmail.com
     password: topsecret
@@ -67,13 +67,13 @@ users:
     last_name: Jackson
     runs:
       - name: Robert's Run
-        description: A scenic run through the forest
-        category: Trail Running
+        description: A city-tour run in Paris Center
+        category: City Tour
         level: 3
         distance: 7
         max_person: 8
-        meeting_point: Forest Entrance
-        circuit: "Forest trail loop"
+        meeting_point: "Place de l'Hôtel de Ville, Paris"
+        circuit: "In the streets of Paris"
   - username: mary.white
     email: mary.white@gmail.com
     password: topsecret
