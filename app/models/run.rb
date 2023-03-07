@@ -4,6 +4,8 @@ class Run < ApplicationRecord
   has_many :attendances, dependent: :destroy
   has_many :reviews
   has_many :messages
+  geocoded_by :meeting_point
+  after_validation :geocode, if: :will_save_change_to_meeting_point?
 
   validates :category, inclusion: { in: CATEGORIES }
 

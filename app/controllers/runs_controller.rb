@@ -4,6 +4,13 @@ class RunsController < ApplicationController
 
   def index
     @runs = Run.all
+    @markers = @runs.geocoded.map do |run|
+      {
+        lat: run.latitude,
+        lng: run.longitude,
+        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
+      }
+    end
   end
 
   def show
