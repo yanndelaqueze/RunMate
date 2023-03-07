@@ -1,0 +1,24 @@
+<div class="card-run">
+  <%# <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
+  <img class="card-run__image" src="https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80" alt="sport">
+
+  <div class="card-run__content d-flex justify-content-center align-items-center">
+
+    <div class="card-run__content-left">
+      <h4> <%=run.name%></h4>
+      <p><i class="fa-solid fa-location-dot"></i><%=run.meeting_point%></p>
+      <p class="category"> <%=run.category%></h5>
+    </div>
+
+    <div class="card-run__content-right">
+      <span class=><i class="fa-regular fa-calendar"></i><%=run.date%></span>
+      <div class="d-flex justify-content-between">
+        <span><i class="fa-solid fa-gauge-high"></i> <%= run.level %></span>
+        <span><i class="fa-solid fa-user"></i><%= run.max_person %> Max.</span>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,33 +1,34 @@
 
-
-<h1>NEXT RUNS</h1>
-<%= link_to "Create a new run", new_run_path  %>
 <div class="container p-3 mb-5">
 
-  <%# Search bar Partial %>
-  <%# TO DO %>
-  <%# **** %>
+  <h1>NEXT RUNS</h1>
+  <%= link_to "Create a new run", new_run_path  %>
+
+    <%# Search bar Partial %>
+    <%# TO DO %>
+    <%# **** %>
 
 
-<ul class="nav nav-tabs col-12" id="myTab">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">List</button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button">Map</button>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="list">
-    <ul>
+  <ul class="nav nav-tabs col-12" id="myTab">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button">List</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="map-tab" data-bs-toggle="tab" data-bs-target="#map" type="button">Map</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="list">
+
+    <%# ****** %>
       <% @runs.each do |run| %>
-      <li><%= run.name %></li>
+        <%= render "card_run", run: run %>
       <% end %>
-    </ul>
-  </div>
-  <div class="tab-pane fade" id="map">
-  </div>
-</div>
+    <%# ****** %>
 
+    </div>
+    <div class="tab-pane fade" id="map">
+    </div>
+  </div>
 
 </div>
