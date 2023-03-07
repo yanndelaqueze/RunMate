@@ -10,10 +10,7 @@
 
   <div class="run-cards">
     <% @runs.each do |run| %>
-    <% if run.user != current_user %>
-      <%# render "card", run: run %>  <%# TO DO %>
       <%= run.name %>
-      <% end %>
     <% end %>
   </div>
  </div>
