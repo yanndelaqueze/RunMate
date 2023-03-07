@@ -27,7 +27,7 @@
 
 
 
-ul {
+#navbar-list {
   list-style: none;
   overflow: hidden;
   background-color: $anti-flash-white;
@@ -44,13 +44,13 @@ ul {
  }
 
 
- li {
+#navbar-list-item {
   display: inline;
   float: none;
   margin: 0 35px;
  }
 
- li a {
+ #navbar-list-item a {
   text-align: center;
   padding: 15px 17px;
   text-decoration: none;
