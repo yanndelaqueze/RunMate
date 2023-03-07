@@ -20,5 +20,6 @@
     <%= render "shared/flashes" %>
 
     <%= yield %>
+    <%= render "shared/navbar" unless @disable_nav %>
   </body>
 </html>
