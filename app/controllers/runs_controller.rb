@@ -3,7 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
-    @run = Run.all
+    @runs = Run.all
   end
 
   def show
