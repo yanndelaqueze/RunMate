@@ -1,0 +1,10 @@
+<div class="container my-4">
+  <h1>YOUR RUNS</h1>
+   <div class="">
+    <% @runs.each do |run| %>
+      <% if run.user == current_user %>
+        <p><%= run.name %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

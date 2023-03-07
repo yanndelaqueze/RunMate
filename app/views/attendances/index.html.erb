@@ -1,0 +1,11 @@
+<div class="container my-4">
+  <h1>YOUR REQUESTS</h1>
+  <div class="">
+    <% @attendances.each do |attendance| %>
+      <% if attendance.user == current_user %>
+        <p><%= attendance.status %></p>
+        <p><%= attendance.content %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

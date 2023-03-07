@@ -21,7 +21,7 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="list">
       <% @runs.each do |run| %>
-        <%= run.name %>
+      <%= link_to run.name, run_path(run) %>
       <% end %>
   </div>
   <div class="tab-pane fade" id="map">
