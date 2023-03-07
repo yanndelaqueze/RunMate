@@ -1,4 +1,19 @@
-<div class="container my-4">
-  <h1>NEXT RUNS</h1>
-  <%= link_to "Create a new run", new_run_path  %>
-</div>
+
+
+<h1>NEXT RUNS</h1>
+<%= link_to "Create a new run", new_run_path  %>
+<div class="container p-3 mb-5">
+
+  <%# Search bar Partial %>
+  <%# TO DO %>
+  <%# **** %>
+
+  <div class="run-cards">
+    <% @runs.each do |run| %>
+    <% if run.user != current_user %>
+      <%# render "card", run: run %>  <%# TO DO %>
+      <%= run.name %>
+      <% end %>
+    <% end %>
+  </div>
+ </div>
