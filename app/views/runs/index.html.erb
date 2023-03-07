@@ -20,11 +20,9 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="list">
-    <ul>
       <% @runs.each do |run| %>
-      <li><%= run.name %></li>
+        <%= render "card_run", run: run %>
       <% end %>
-    </ul>
   </div>
   <div class="tab-pane fade" id="map">
   </div>
