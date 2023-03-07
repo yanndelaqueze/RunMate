@@ -10,5 +10,6 @@
 
   <%= link_to "Edit your run", edit_run_path, class: "btn btn-outline-primary" %>
   <%= link_to "Delete your run", run_path(@run), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <%= link_to "Join the run", new_run_attendance_path(@run) %>
 </div>
 <%= render "shared/navbar" %>

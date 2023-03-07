@@ -19,7 +19,7 @@ class AttendancesController < ApplicationController
     if @attendance.save
       redirect_to run_path(@run)
     else
-      redirect_to run_url(@run), status: :unprocessable_entity
+      redirect_to run_path(@run), status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.find(params[:id])
     # authorize @attendance
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to attendances_path
   end
 
   def confirm

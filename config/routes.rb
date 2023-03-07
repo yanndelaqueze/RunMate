@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   end
 
   resources :runs do
-    resources :attendances, only: %i[index new create update destroy] do
-      member do
-        patch 'confirm', to: "attendances#confirm"
-        patch 'decline', to: "attendances#decline"
-      end
+    resources :attendances, only: %i[new create]
+  end
+
+  resources :attendances, only: %i[index show update destroy] do
+    member do
+      patch 'confirm', to: "attendances#confirm"
+      patch 'decline', to: "attendances#decline"
     end
   end
 end
