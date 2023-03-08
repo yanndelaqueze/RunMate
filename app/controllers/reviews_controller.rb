@@ -13,10 +13,12 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.attendance = @attendance
     @review.user = @user
+    authorize @review
     if @review.save
-      redirect_to
+      redirect_to attendances_path, notice: 'Thank you for your review!' # adapter la redirection en fonction de ce qu'on voudra faire
     else
-      redirect_to (@review), status: :unprocessable_entity
+      flash[:alert] = "Something went wrong"
+      render :new
     end
   end
 
