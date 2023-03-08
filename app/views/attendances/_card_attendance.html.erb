@@ -9,7 +9,7 @@
   </div>
   <p class="category">Date of the run: <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
   <div class="mb-2">
-    <p>Status of your request: <strong><%= attendance.status %></strong></p>
+    <p>Status of your request: <strong><%= attendance.status.capitalize %></strong></p>
   <% if attendance.run.user == current_user %>
     <div class="d-flex ps-4">
       <%= link_to decline_attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :patch } do %>
