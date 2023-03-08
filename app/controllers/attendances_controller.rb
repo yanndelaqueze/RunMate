@@ -26,7 +26,7 @@ class AttendancesController < ApplicationController
   def destroy
     @attendance = Attendance.find(params[:id])
     authorize @attendance
-    @booking.destroy
+    @attendance.destroy
     redirect_to attendances_path
   end
 
