@@ -1,8 +1,12 @@
 class RunsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show map]
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
+    @runs = Run.all
+  end
+
+  def map
     @runs = Run.all
     @markers = @runs.geocoded.map do |run|
       {
@@ -11,10 +15,7 @@ class RunsController < ApplicationController
         run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
       }
     end
-  end
-
-  def map
-    @runs = Run.all
+    authorize @runs
   end
 
   def show
