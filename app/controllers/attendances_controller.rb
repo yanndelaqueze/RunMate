@@ -32,16 +32,16 @@ class AttendancesController < ApplicationController
 
   def confirm
     @attendance = Attendance.find(params[:id])
-    @attendance.confirmed
-    # authorize @attendance
+    @attendance.status = "confirmed"
+    authorize @attendance
     @attendance.save
     redirect_to dashboard_path
   end
 
   def decline
     @attendance = Attendance.find(params[:id])
-    @attendance.declined
-    # authorize @attendance
+    @attendance.status = "declined"
+    authorize @attendance
     @attendance.save
     redirect_to dashboard_path
   end

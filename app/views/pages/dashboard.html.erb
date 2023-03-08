@@ -14,6 +14,13 @@
       <% end %>
     </div>
 
+    <%# Cards with requests made from others %>
+    <% @pending_attendances.each do |attendance| %>
+      <% if attendance.status == "pending" %>
+        <%= render "attendances/card_attendance", attendance: attendance %>
+      <% end %>
+    <% end %>
+
     <%# Cards with stats %>
     <div class="runs-stats">
       <div class="stats-card">

@@ -5,11 +5,11 @@
       <% end %>
     <h1 class="title-dashboard my-4 text-center">YOUR REQUESTS</h1>
     <div class="">
-      <% @attendances.each do |attendance| %>
-        <% if attendance.user == current_user %>
-          <%= render "card_attendance", attendance: attendance %>
+        <% @attendances.each do |attendance| %>
+          <% if attendance.user == current_user %>
+            <%= render "card_attendance", attendance: attendance %>
+          <% end %>
         <% end %>
-      <% end %>
     </div>
   </div>
 </div>
