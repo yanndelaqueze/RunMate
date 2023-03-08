@@ -3,7 +3,11 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
-    @runs = Run.all
+    if params[:query].present?
+      search
+    else
+      @runs = Run.all
+    end
   end
 
   def map
@@ -58,13 +62,16 @@ class RunsController < ApplicationController
   end
 
   def search
-  @query = params[:query]
-  @address = Geocoder.search(@query).first
-  if @address.present?
-    @runs = Run.near(@address.coordinates, 10).search_by_address(@query)
-  else
-    @runs = []
+    @query = params[:query]
+    @address = Geocoder.search(@query).first
+    if @address.present?
+      @runs = Run.near(@query, 1000, units: :km, order: :distance)
+                 .limit(2)
+    else
+      @runs = []
+    end
   end
+
 
   private
 
