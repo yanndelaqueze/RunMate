@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_140458) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_134032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,10 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_140458) do
     t.integer "status"
     t.text "content"
     t.bigint "user_id", null: false
-    t.bigint "run_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["run_id"], name: "index_attendances_on_run_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 
@@ -39,11 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_140458) do
     t.text "comment"
     t.integer "rating"
     t.bigint "attendance_id", null: false
-    t.bigint "run_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["attendance_id"], name: "index_reviews_on_attendance_id"
-    t.index ["run_id"], name: "index_reviews_on_run_id"
   end
 
   create_table "runs", force: :cascade do |t|
@@ -79,11 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_140458) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "attendances", "runs"
   add_foreign_key "attendances", "users"
   add_foreign_key "messages", "attendances"
   add_foreign_key "messages", "runs"
   add_foreign_key "reviews", "attendances"
-  add_foreign_key "reviews", "runs"
   add_foreign_key "runs", "users"
 end
