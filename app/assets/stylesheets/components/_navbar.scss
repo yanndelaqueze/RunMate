@@ -1,5 +1,3 @@
-
-
 #offcanvasRight {
   background-color: $anti-flash-white;
 }
@@ -11,7 +9,6 @@
 #offcanvasMenu {
   a {
     margin-bottom: 5px;
-    font-family: 'Outfit';
     font-size: 20px;
     text-decoration: none;
     color: $hard-blue;
@@ -23,8 +20,6 @@
     font-size: 28px;
   }
 }
-
-
 
 
 #navbar-list {
@@ -55,29 +50,3 @@
   padding: 15px 17px;
   text-decoration: none;
  }
-
-
-// .navbar-lewagon {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   background-color: $anti-flash-white;
-//   // height: 50px;
-//   width: 100%;
-//   height: 20%;
-//   position: relative;
-//   z-index: 2;
-
-//   i {
-//     color: $royal-blue;
-//     display: block;
-//   }
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
