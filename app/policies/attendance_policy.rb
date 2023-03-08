@@ -13,6 +13,14 @@ class AttendancePolicy < ApplicationPolicy
     true
   end
 
+  def confirm?
+    true
+  end
+
+  def decline?
+    true
+  end
+
   def destroy?
     record.user == user
   end

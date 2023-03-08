@@ -1,27 +1,20 @@
-<%= link_to(run_path(run)) do %>
-<%# permet de mettre un lien sur toute la card-run, i.e., lien plus image %>
+<div class="card-run">
+  <%= link_to "", run_path(run), class:"card-run-link" %>
+  <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", class:"card-run-image") %>
 
-  <div class="card-run">
-    <%# <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-run-content d-flex flex-column p-3">
+    <div class="card-run-content-top d-flex justify-content-between">
+      <h4 class="card-run-title"><%= link_to run.name, run_path(run) %></h4>
+      <p class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></p>
+    </div>
+      <p><i class="fa-solid fa-location-dot"></i><em><%=run.meeting_point%></em></p>
 
-    <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", class: "card-run__image") %>
-
-    <div class="card-run__content d-flex justify-content-center align-items-center">
-
-      <div class="card-run__content-left">
-        <h4><%= link_to run.name, run_path(run) %></h4>
-        <p><i class="fa-solid fa-location-dot"></i><%=run.meeting_point%></p>
-        <span class="category"> <%=run.category%></span>
-      </div>
-
-      <div class="card-run__content-right">
-        <div class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></div>
-        <div class="d-flex justify-content-between">
-          <span><i class="fa-solid fa-gauge-high"></i> <%= run.level %></span>
-          <span><i class="fa-solid fa-user"></i><%= run.max_person %> Max.</span>
-        </div>
+    <div class="card-run-content-bottom d-flex justify-content-between align-items-center">
+      <span class="category"> <%=run.category%></span>
+      <div class="d-flex justify-content-between">
+        <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %></p>
+        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i> <%= run.max_person %> Max.</p>
       </div>
     </div>
   </div>
-
-<% end %>
+</div>

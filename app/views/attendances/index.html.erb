@@ -1,11 +1,15 @@
-<div class="container my-4">
-  <h1>YOUR REQUESTS</h1>
-  <div class="">
-    <% @attendances.each do |attendance| %>
-      <% if attendance.user == current_user %>
-        <p><%= attendance.status %></p>
-        <p><%= attendance.content %></p>
+<div class="body-attendances">
+  <div class="container mt-5 mb-4">
+    <%= link_to :back, class:"text-decoration-none" do %>
+        <span><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-white me-1"></i>BACK</span>
       <% end %>
-    <% end %>
+    <h1 class="title-dashboard my-4 text-center">YOUR REQUESTS</h1>
+    <div class="d-flex flex-column">
+        <% @attendances.each do |attendance| %>
+          <% if attendance.user == current_user && attendance.run.user != current_user %>
+            <%= render "card_attendance", attendance: attendance %>
+          <% end %>
+        <% end %>
+    </div>
   </div>
 </div>
