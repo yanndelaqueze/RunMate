@@ -8,7 +8,7 @@
   overflow: hidden;  // check
 
   .card-run-image {
-    width: auto;
+    width: 100%;
     height: 58vw;
     object-fit: cover;
     // background-position: right 10% bottom 36%;
@@ -26,11 +26,15 @@
     right: 0;
   }
 
-  h4 {
+  .card-run-title {
     font-family: 'Source Sans Pro';
     font-weight: 600;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     font-size: 20px;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   p {

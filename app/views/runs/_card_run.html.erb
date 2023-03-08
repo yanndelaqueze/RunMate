@@ -3,8 +3,8 @@
   <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", class:"card-run-image") %>
 
   <div class="card-run-content d-flex flex-column p-3">
-    <div class="card-run-content-top d-flex justify-content-between align-items-baseline">
-      <h4><%= link_to run.name, run_path(run) %></h4>
+    <div class="card-run-content-top d-flex justify-content-between">
+      <h4 class="card-run-title"><%= link_to run.name, run_path(run) %></h4>
       <p class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></p>
     </div>
       <p><i class="fa-solid fa-location-dot"></i><em><%=run.meeting_point%></em></p>
@@ -13,7 +13,7 @@
       <span class="category"> <%=run.category%></span>
       <div class="d-flex justify-content-between">
         <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %></p>
-        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i><%= run.max_person %> Max.</p>
+        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i> <%= run.max_person %> Max.</p>
       </div>
     </div>
   </div>
