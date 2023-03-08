@@ -6,6 +6,10 @@ class RunPolicy < ApplicationPolicy
     # end
   end
 
+  def map?
+    true
+  end
+
   def show?
     true
   end

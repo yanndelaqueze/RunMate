@@ -1,0 +1,26 @@
+
+<div class="profile m-2">
+
+  <div class="container">
+
+    <h1>Edit Profile</h1>
+
+    <%= simple_form_for(@user, url: edit_user_path(@user), method: :patch, html: { multipart: true }) do |f| %>
+      <%= f.input :first_name %>
+
+      <%= f.input :last_name %>
+
+      <%= f.input :username %>
+
+      <%= f.input :email %>
+
+      <%= f.input :password %>
+
+      <%= f.input :password_confirmation %>
+
+      <%= f.button :submit, "Update", class:"btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+</div>
