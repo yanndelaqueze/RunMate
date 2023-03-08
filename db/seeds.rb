@@ -44,7 +44,7 @@ data['users'].each do |user_data|
     run = Run.all.select { |r| r.attendances.count < 2 }.sample
     if run
       # Create an attendance instance for the user and the run
-      Attendance.create!(user: user, run: run, status: rand(0..2), content: CONTENTS.sample)
+      Attendance.create!(user: user, run: run, status: ["pending", "confirmed", "declined"].sample, content: CONTENTS.sample)
     end
   end
 end
