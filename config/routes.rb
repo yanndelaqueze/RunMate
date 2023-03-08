@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     patch '/users/:id/edit', to: 'users/sessions#update', as: 'update_user'
   end
 
+  get 'runs/map', to: "runs#map", as: :map
+
   resources :runs do
     resources :attendances, only: %i[new create]
   end
