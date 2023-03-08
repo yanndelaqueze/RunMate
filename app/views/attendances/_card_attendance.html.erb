@@ -1,0 +1,25 @@
+<div class="card-attendance-request p-3">
+  <div class="card-attendance-content-top d-flex justify-content-between align-items-center mb-2">
+    <h4 class="card-attendance-title"><%= attendance.run.name %> </h4>
+    <% if attendance.user == current_user %>
+      <%= link_to attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <i class="fa-regular fa-trash-can"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <p class="category">Date of the run: <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
+  <p>Message: <em><%= attendance.content %></em></p>
+  <p>Status of your request: <strong><%= attendance.status.capitalize %></strong></p>
+  <% if attendance.run.user == current_user %>
+    <div class="d-flex ps-4">
+      <%= link_to decline_attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :patch } do %>
+        <i class="fa-solid fa-thumbs-down"></i>
+      <% end %>
+      <% if attendance.status != "confirmed" %>
+        <%= link_to confirm_attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :patch } do %>
+          <i class="fa-solid fa-thumbs-up"></i>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

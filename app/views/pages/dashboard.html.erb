@@ -1,10 +1,59 @@
-<div class="container my-4">
-  <h1>YOUR RUNS</h1>
-   <div class="">
-    <% @runs.each do |run| %>
-      <% if run.user == current_user %>
-        <p><%= run.name %></p>
+<div class="dashboard-body">
+  <div class="container mt-5 mb-4">
+      <%= link_to :back, class:"text-decoration-none" do %>
+        <span><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-white me-1"></i>BACK</span>
       <% end %>
-    <% end %>
+      <h1 class="title-dashboard mt-3 mb-5 text-center">RUNS YOU CREATED</h1>
+
+    <%# <div id="tabContainer" class="container"> %>
+      <ul class="nav nav-pills" id="dashboardTab">
+        <li class="nav-item">
+          <button class="nav-link active" id="runs-tab" data-bs-toggle="tab" data-bs-target="#runs" type="button">My Runs</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests" type="button">My Pending Requests</button>
+        </li>
+      </ul>
+    <%# </div> %>
+
+    <div class="tab-content" id="dashboardTabContent">
+      <div class="tab-pane fade show active" id="runs">
+        <%# Button create new run %>
+          <%= link_to new_run_path, class: "new-run-dashboard" do %>
+            <i class="fa-solid fa-circle-plus me-2"></i>
+            <p class="btn-more">NEW RUN</p>
+          <% end %>
+
+        <%# Cards of runs created %>
+          <div class="runs-created">
+            <% @runs.each do |run| %>
+              <% if run.user == current_user %>
+                <%= render "runs/card_run", run: run %>
+              <% end %>
+            <% end %>
+          </div>
+
+      </div>
+
+      <div class="tab-pane fade" id="requests">
+        <%# Cards with requests made from others %>
+        <% @pending_attendances.each do |attendance| %>
+          <% if attendance.status == "pending" && attendance.run.user != current_user %>
+            <%= render "attendances/card_attendance", attendance: attendance %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+    <%# Cards with stats %>
+    <div class="runs-stats">
+      <div class="stats-card">
+      </div>
+    </div>
+
+
   </div>
 </div>

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     # Runs I created :
     @runs = Run.where(user: current_user)
     # Attendance requests I received :
-    @pending_requests = Attendance.joins(:run).where(runs: { user_id: current_user }).pending
+    @pending_attendances = Attendance.joins(:run).where(runs: { user_id: current_user })
+    # @bookings = Booking.joins(:meal).where(meal: { user_id: current_user })
   end
 end

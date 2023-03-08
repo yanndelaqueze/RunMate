@@ -1,0 +1,7 @@
+<div class="container p3">
+  <%= simple_form_for [@attendance, @review] do |f| %>
+    <%= f.input :comment, placeholder: "Leave your comment for the run", label: "How was the Run ?" %>
+    <%= f.input :rating, placeholder: "Rate the run", label: false %>
+    <%= f.submit class: "btn btn-outline-primary" %>
+  <% end %>
+</div>

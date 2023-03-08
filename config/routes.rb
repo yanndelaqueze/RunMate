@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :attendances, only: %i[index show update destroy] do
+    resources :reviews, only: %i[new create] # routes Reviews
     member do
       patch 'confirm', to: "attendances#confirm"
       patch 'decline', to: "attendances#decline"

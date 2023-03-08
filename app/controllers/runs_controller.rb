@@ -65,13 +65,13 @@ class RunsController < ApplicationController
     @query = params[:query]
     @address = Geocoder.search(@query).first
     if @address.present?
-      @runs = Run.near(@query, 1000, units: :km, order: :distance)
+      @runs = Run.near(@query, 10, units: :km, order: :distance)
+                 .reverse_order
                  .limit(5)
     else
       @runs = []
     end
   end
-
 
   private
 
