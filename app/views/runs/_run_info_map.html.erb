@@ -1,10 +1,10 @@
-<div class="card-run-map">
-  <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", height: 50, width: 100, crop: :fill) %>
-  <div class="card-run-map-infos">
-    <div>
-      <%= link_to run.name, run_path(run), class: "title-link-map" %>
-      <p> <%= run.category %> </p>
-      <p> <%= run.date %></p>
-    </div>
+<div class="map-card-run">
+  <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", height: 40, width: 80, crop: :fill) %>
+  <%= link_to run_path(run) do  %>
+    <div class="map-card-run-content">
+      <div class="name"><%= run.name %></div>
+      <div class="category"><%= run.category%></div>
+      <div class="date"><%= run.date.strftime("%b %e, %l:%M %p")%></div>
+  <% end %>
   </div>
 </div>

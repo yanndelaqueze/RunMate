@@ -13,6 +13,10 @@ class RunsController < ApplicationController
     end
   end
 
+  def map
+    @runs = Run.all
+  end
+
   def show
     authorize @run
   end

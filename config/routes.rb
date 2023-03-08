@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get '/users/profile', to: 'users/sessions#show', as: 'user_profile'
   end
 
+  get 'runs/map', to: "run#map", as: :map
+
   resources :runs do
     resources :attendances, only: %i[new create]
   end
