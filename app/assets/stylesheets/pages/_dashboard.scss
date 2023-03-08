@@ -1,6 +1,6 @@
 .dashboard-body {
   background-color: $pastel-blue;
-  padding: 10px 0 270px 0;
+  padding: 10px 0 400px 0;
 }
 .title-dashboard {
   color: white;
@@ -10,4 +10,34 @@
 .subtitle-dashboard {
   font-size: 18px;
   color: white;
+}
+
+.btn-more {
+  color: white;
+  font-family: "Montserrat";
+  margin: 0;
+}
+
+.new-run-dashboard {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+#runs {
+  margin-top: 10px;
+}
+
+#requests {
+  margin-top: 10px;
+}
+
+.nav-link.active {
+  border-radius: 30px 7px;
+}
+
+.nav-link {
+  font-family: "Montserrat";
 }
