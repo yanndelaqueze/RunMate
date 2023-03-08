@@ -1,0 +1,5 @@
+<%= simple_form_for [@run, @attendance, @review] do |f| %>
+  <%= f.input :comment, placeholder: "How was the run?", label: false %>
+  <%= f.input :rating, as: :select, placeholder: "Give a note to the run", label: false %>
+  <%= f.submit class: "btn btn-outline-primary" %>
+<% end %>
