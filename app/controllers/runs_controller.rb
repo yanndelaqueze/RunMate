@@ -57,6 +57,15 @@ class RunsController < ApplicationController
     redirect_to runs_path, status: :see_other
   end
 
+  def search
+  @query = params[:query]
+  @address = Geocoder.search(@query).first
+  if @address.present?
+    @runs = Run.near(@address.coordinates, 10).search_by_address(@query)
+  else
+    @runs = []
+  end
+
   private
 
   def set_run
