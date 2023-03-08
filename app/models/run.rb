@@ -11,6 +11,9 @@ class Run < ApplicationRecord
 
   after_create :create_first_attendee
 
+  include PgSearch::Model
+  pg_search_scope :search_by_address, against: [:meeting_point], using: { trigram: { threshold: 0.2 } }
+
   private
 
   def create_first_attendee
