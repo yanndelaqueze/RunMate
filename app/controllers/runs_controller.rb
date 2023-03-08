@@ -1,8 +1,16 @@
 class RunsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show map]
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
+    if params[:query].present?
+      search
+    else
+      @runs = Run.all
+    end
+  end
+
+  def map
     @runs = Run.all
     @markers = @runs.geocoded.map do |run|
       {
@@ -11,6 +19,7 @@ class RunsController < ApplicationController
         run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
       }
     end
+    authorize @runs
   end
 
   def show
@@ -50,6 +59,18 @@ class RunsController < ApplicationController
     authorize @run
     @run.destroy
     redirect_to runs_path, status: :see_other
+  end
+
+  def search
+    @query = params[:query]
+    @address = Geocoder.search(@query).first
+    if @address.present?
+      @runs = Run.near(@query, 10, units: :km, order: :distance)
+                 .reverse_order
+                 .limit(5)
+    else
+      @runs = []
+    end
   end
 
   private
