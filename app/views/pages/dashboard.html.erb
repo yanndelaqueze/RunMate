@@ -1,9 +1,18 @@
 <div class="dashboard-body">
-  <div class="container mt-5 mb-4">
-      <%= link_to :back, class:"text-decoration-none" do %>
-        <span><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-white me-1"></i>BACK</span>
-      <% end %>
-      <h1 class="title-dashboard mt-3 mb-5 text-center">RUNS YOU CREATED</h1>
+  <div class="container mt-2 mb-4">
+      <div class="d-flex justify-content-between">
+        <%= link_to :back, class:"text-decoration-none" do %>
+          <span class="btn-back"><i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue me-1"></i>BACK</span>
+        <% end %>
+        <%# Button create new run %>
+          <%= link_to new_run_path, class: "new-run-dashboard" do %>
+            <i class="fa-solid fa-circle-plus me-2 fs-5"></i>
+            <p class="btn-more">NEW RUN</p>
+          <% end %>
+      </div>
+      <h1 class="title-dashboard mt-3 mb-4 text-center">RUNS YOU CREATED</h1>
+
+
 
     <%# <div id="tabContainer" class="container"> %>
       <ul class="nav nav-pills" id="dashboardTab">
@@ -18,11 +27,6 @@
 
     <div class="tab-content" id="dashboardTabContent">
       <div class="tab-pane fade show active" id="runs">
-        <%# Button create new run %>
-          <%= link_to new_run_path, class: "new-run-dashboard" do %>
-            <i class="fa-solid fa-circle-plus me-2"></i>
-            <p class="btn-more">NEW RUN</p>
-          <% end %>
 
         <%# Cards of runs created %>
           <div class="runs-created">

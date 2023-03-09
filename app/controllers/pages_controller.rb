@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @disable_nav = true
+    @disable_banner = true
   end
 
   def dashboard

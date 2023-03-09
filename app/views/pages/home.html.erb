@@ -1,15 +1,14 @@
+<div class="wrapper"> <%# correspond au wrapper %>
+  <h1 class="logo-name">RunMate</h1>
+  <div class="d-flex justify-content-center">
+    <%= image_tag "logo_blue.png", alt:"Runmate", class: "logo-home"%>
+  </div>
+  <div class="text-box d-flex flex-column align-items-center">
+    <h2 class="home-title">Find your new mates</h2>
+    <p class="home-text">Those who will help you run better,<br>smarter, faster.</p>
+  </div>
 
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-
-<div class="wrapper bg-primary"> <%# correspond au wrapper %>
-  <div class="container p-5 min-vh-100 d-flex flex-column justify-content-around">
-
-    <h2>Don't Run alone anymore.</h2>
-
-    <h2>Find your next RunMate !</h2>
-
+  <div class="d-flex justify-content-center">
     <%= link_to "JOIN THE NEXT RUN", runs_path, class:"btn-home"%>
-
   </div>
 </div>
