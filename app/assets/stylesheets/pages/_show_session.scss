@@ -1,9 +1,9 @@
 .profile {
 
-  background-color: $light-blue;
+  background-color:$pastel-blue;
   color: $smoke-white;
 
-  h1, h2, button, i, p{
+  h1, h2, button, i, p, a {
     color: $smoke-white;
     text-align: center;
   }
@@ -12,7 +12,7 @@
     height: 100vh;
   }
 
-  .img {
+  .img, a {
     display: block;
     margin: 0px auto 30px auto;
     width: 100px;
@@ -22,7 +22,5 @@
     font-size: 15px;
   }
 
-  a {
-    
-  }
+
 }

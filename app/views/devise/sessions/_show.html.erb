@@ -3,19 +3,19 @@
     <div class="img">
       <img src="https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg" class=" rounded-circle img-fluid" />
       <% if can_edit %>
-        <%= link_to "Edit profile", edit_user_path(user), class:"btn btn-primary" %>
+        <%= link_to "Edit profile", edit_user_path(user), class:"btn btn-link" %>
       <% end %>
     </div>
     <h1 class="mb-2"><%= user.first_name %> <%= user.last_name %></h1>
     <h2 class="mb-2">Runner since 2023</h2>
     <div class="mb-5 text-center">
-      <button type="button" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline">
         <i class="fab fa-facebook-f fa-lg"></i>
       </button>
-      <button type="button" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline">
         <i class="fab fa-twitter fa-lg"></i>
       </button>
-      <button type="button" class="btn btn-outline-primary">
+      <button type="button" class="btn btn-outline">
         <i class="fab fa-skype fa-lg"></i>
       </button>
     </div>
