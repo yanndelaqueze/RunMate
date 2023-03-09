@@ -46,9 +46,7 @@
       <p><i class="fa-solid fa-road"></i>   <%= @run.distance %> km</p>
       <p><i class="fa-solid fa-gauge-high">   </i><%= @run.level %>  </p>
     </div>
-    <% if @run.user != current_user && user_signed_in? %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
-    <% end %>
     <div class="attendants">
     <h3>They already joined the run</h3>
       <% @run.attendances.each do |attendance| %>
