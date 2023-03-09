@@ -125,27 +125,33 @@
 #run_category_running + label {
   width: 70px;
 }
-// #snippet_category_ruby:checked + label {
-//   background-color: #FD1015;
-//   border-color: #FD1015;
-// }
 
+// Devise forms
+.form-box {
+  background: white;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.1);
 
-// #snippet_category_javascript + label {
-//   color: #FFC65A;
-// }
+  .devise-title {
+    font-weight: 600;
+    color: #476BC7;
+    text-align: center;
+    font-size: 20px;
+  }
 
-// #snippet_category_javascript:checked + label {
-//   background-color: #FFC65A;
-//   border-color: #FFC65A;
-// }
+  .btn-devise {
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px 17px;
+    background-color: #476BC7;
+    color: white;
+    margin-bottom: 1em;
 
+    .btn-devise:hover {
+      background-color: white;
+      color: #476BC7;
+    }
+  }
 
-// #snippet_category_css + label {
-//   color: #62DDF5;
-// }
-
-// #snippet_category_css:checked + label {
-//   background-color: #62DDF5;
-//   border-color: #62DDF5;
-// }
+}
