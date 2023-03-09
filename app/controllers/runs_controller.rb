@@ -1,6 +1,6 @@
 class RunsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show map]
-  before_action :set_run, only: %i[show edit update destroy]
+  before_action :set_run, only: %i[show edit update destroy chatroom]
 
   def index
 
@@ -79,6 +79,11 @@ class RunsController < ApplicationController
     else
       @runs = []
     end
+  end
+
+  def chatroom
+    @message = Message.new
+    authorize @run
   end
 
   private
