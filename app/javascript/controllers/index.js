@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FormRangeController from "./form_range_controller"
+application.register("form-range", FormRangeController)
+
 import FormSubmitController from "./form_submit_controller"
 application.register("form-submit", FormSubmitController)
 
