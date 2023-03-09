@@ -50,7 +50,7 @@ CONTENTS = ["Looking forward to attending!", "Can't wait to be there!", "Excited
 #   end
 # end
 
-
+Message.delete_all
 Attendance.delete_all
 Run.delete_all
 User.delete_all
