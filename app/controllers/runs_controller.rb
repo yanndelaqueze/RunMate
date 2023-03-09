@@ -68,13 +68,22 @@ class RunsController < ApplicationController
   end
 
   def search
-    raise
+
     Time.zone = "Europe/Paris"
     t = Time.zone.parse(params[:hour])
     d1 = Time.zone.parse(params[:start_date]).to_date
-    d2 = Time.zone.parse(params[:end_date]).to_date
 
+    if params[:end_date].present?
+      d2 = Time.zone.parse(params[:end_date]).to_date
+    else
+      d2 = Time.zone.parse(params[:start_date]).to_date + 5
+    end
 
+    d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
+
+    d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
+
+    raise
 
     @query = params[:query]
     @address = Geocoder.search(@query).first
@@ -82,6 +91,8 @@ class RunsController < ApplicationController
       @runs = Run.near(@query, 10, units: :km, order: :distance)
                  .reverse_order
                  .limit(3)
+      if params[:date_start].present?
+        runs.select { |run| (d1..d2).cover?(run.date) }
     else
       @runs = []
     end
