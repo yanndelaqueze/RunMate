@@ -1,7 +1,7 @@
 class Attendance < ApplicationRecord
   belongs_to :user
   belongs_to :run
-
+  has_many :messages, dependent: :destroy
   has_many :reviews
 end
 
