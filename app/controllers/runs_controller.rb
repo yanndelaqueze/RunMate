@@ -27,7 +27,8 @@ class RunsController < ApplicationController
     @marker =
       [{
         lat: @run.geocode[0],
-        lng: @run.geocode[1]
+        lng: @run.geocode[1],
+        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run })
       }]
     authorize @run
   end

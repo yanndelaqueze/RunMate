@@ -1,7 +1,12 @@
 
 <div class="show">
   <div class="container p-3">
-    <h1 class="text-center"><%= @run.name %></h1>
+    <div class="head">
+      <%= link_to :back do %>
+        <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
+      <% end %>
+      <h1 class="text-center"><%= @run.name %></h1>
+    </div>
     <div class="run-leader">
       <%= cl_image_tag @run.user.photo.key %>
       <div class="run-leader-info">

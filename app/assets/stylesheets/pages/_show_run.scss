@@ -1,9 +1,14 @@
 .show {
   .container {
-    height: 150vh;
+    height: 140vh;
     text-align: center;
   }
   // "bricolage container"
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .run-leader {
     display: flex;
