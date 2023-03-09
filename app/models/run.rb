@@ -15,9 +15,14 @@ class Run < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_address, against: [:meeting_point], using: { trigram: { threshold: 0.2 } }
 
+  def city
+    Geocoder.search([latitude, longitude]).first.city
+  end
+
   private
 
   def create_first_attendee
     Attendance.create(user_id: self.user_id, run_id: self.id, status: 'confirmed')
   end
+
 end
