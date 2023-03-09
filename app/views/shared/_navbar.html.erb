@@ -1,21 +1,21 @@
 <%# <div class="navbar-lewagon"> %>
-<ul id="navbar-list">
-  <li id="navbar-list-item">
-    <%= link_to runs_path do %>
-          <i class="fa-solid fa-house"></i>
+  <ul id="navbar-list">
+    <li id="navbar-list-item">
+      <%= link_to runs_path do %>
+            <i class="fa-solid fa-house"></i>
+        <% end %>
+    </li>
+    <li id="navbar-list-item">
+      <%= link_to new_run_path do %>
+          <i class="fa-solid fa-circle-plus"></i>
       <% end %>
-  </li>
-  <li id="navbar-list-item">
-    <%= link_to new_run_path do %>
-        <i class="fa-solid fa-circle-plus"></i>
-    <% end %>
-  </li>
-  <li id="navbar-list-item">
-    <button class="bg-transparent border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-      <i class="fa-solid fa-ellipsis"></i>
-    </button>
-  </li>
-</ul>
+    </li>
+    <li id="navbar-list-item">
+      <button class="bg-transparent border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <i class="fa-solid fa-ellipsis"></i>
+      </button>
+    </li>
+  </ul>
 
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -40,5 +40,3 @@
     <% end %>
   </div>
 </div>
-
-<%# </div> %>

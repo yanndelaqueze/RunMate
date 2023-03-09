@@ -29,24 +29,26 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 46px;
-  padding: 10px 0;
+  height: 10vh;
+  padding: 0px 0px;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   i {
     color: $light-blue;
+    margin-right: 50px;
   }
- }
+}
 
 
 #navbar-list-item {
-  display: inline;
   float: none;
-  margin: 0 35px;
- }
+}
 
  #navbar-list-item a {
   text-align: center;
-  padding: 15px 17px;
+  // padding: 15px 17px;
   text-decoration: none;
  }
