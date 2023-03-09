@@ -69,6 +69,13 @@ class RunsController < ApplicationController
 
   def search
     raise
+    Time.zone = "Europe/Paris"
+    t = Time.zone.parse(params[:hour])
+    d1 = Time.zone.parse(params[:start_date]).to_date
+    d2 = Time.zone.parse(params[:end_date]).to_date
+
+
+
     @query = params[:query]
     @address = Geocoder.search(@query).first
     if @address.present?
