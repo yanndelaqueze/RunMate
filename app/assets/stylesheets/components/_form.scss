@@ -1,0 +1,157 @@
+// Tags selector
+
+.form-container {
+  overflow: hidden;
+  height: 95vh;
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 50rem;
+  padding: 0.2rem 1rem;
+  background-color: #476BC7;
+  color: white;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #9EBBE7;
+  color: #0036AB;
+}
+
+// Ranges selector
+
+.range-input-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .range-wrapper {
+    margin: 0;
+  }
+
+  .range-input {
+    flex-grow: 1;
+  }
+
+  .value {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: #476BC7;
+    padding: 5px 10px;
+    margin-left: 8px;
+  }
+}
+
+// Categories Radio Buttons
+
+.category-wrapper {
+  display: flex;
+  // justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  flex: 0 0 20%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 90px;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 5px;
+  margin: 0em 1em 1em 0;
+  // border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: #476BC7;
+  color: white;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+  background-color: #9EBBE7;
+}
+
+
+#run_category_trail_running + label {
+  width: 90px;
+}
+
+#run_category_casual + label {
+  width: 60px;
+}
+
+#run_category_coaching + label {
+  width: 70px;
+}
+
+#run_category_city_tour + label {
+  width: 70px;
+}
+
+#run_category_hiking + label {
+  width: 60px;
+}
+
+#run_category_jogging + label {
+  width: 70px;
+}
+
+#run_category_running + label {
+  width: 70px;
+}
+
+// Devise forms
+.form-box {
+  background: white;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.1);
+
+  .devise-title {
+    font-weight: 600;
+    color: #476BC7;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .btn-devise {
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px 17px;
+    background-color: #476BC7;
+    color: white;
+    margin-bottom: 1em;
+
+    .btn-devise:hover {
+      background-color: white;
+      color: #476BC7;
+    }
+  }
+
+}
