@@ -5,10 +5,17 @@
 
   h1, h2, button, i, p{
     color: $smoke-white;
+    text-align: center;
   }
 
   .container {
     height: 100vh;
+  }
+
+  .img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
   }
 
   // .card,
