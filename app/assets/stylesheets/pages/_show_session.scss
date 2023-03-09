@@ -1,10 +1,20 @@
 .profile {
 
-  .container,
-  .card,
-  .card * {
-    background-color: #476BC7;
-    color: white;
+  background-color: $light-blue;
+  color: $smoke-white;
+
+  h1, h2, button, i, p{
+    color: $smoke-white;
   }
-  
+
+  .container {
+    height: 100vh;
+  }
+
+  // .card,
+  // .card * {
+  //   background-color: #476BC7;
+  //   color: white;
+  // }
+
 }
