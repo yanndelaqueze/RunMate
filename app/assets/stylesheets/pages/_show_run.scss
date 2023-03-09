@@ -1,14 +1,8 @@
 .show {
   .container {
     height: 140vh;
-    text-align: center;
   }
   // "bricolage container"
-
-  .head {
-    display: flex;
-    justify-content: space-between;
-  }
 
   .run-leader {
     display: flex;
@@ -23,43 +17,66 @@
   }
 
   .run-leader-info {
-    margin-left: 20px;
+    margin-left: 5px;
   }
 
-  .run-leader-info p {
+  .run-leader-info h2 {
     font-size: 20px;
+    color: $light-blue;
+    margin-bottom: 5px;
   }
 
   .stars {
     font-size: 8px;
-    color: $yellow
+    color: $yellow;
+    margin: 0px;
   }
 
   .run-image {
-    border-radius: 10px;
+    border-radius: 20px;
     height: 20vh;
     background-size: cover;
   }
 
   .run-image-info {
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     padding-right: 20px;
     padding-left: 20px;
-    display: flex;
-    align-items: flex-end;
   }
 
   .run-image-info p {
-    color:black;
-    background-color: white;
+    border: $smoke-white solid;
+    background-color: $light-blue;
+    color: $smoke-white;
+    font-size: 14px;
     border-radius: 10px;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+
+  .run-infos {
+    background-color: $light-blue;
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .run-infos p, .run-infos a, .run-infos i {
+    color: $smoke-white;
+  }
+
+  .run-infos i {
+    padding-right: 10px;
+    font-size: 20px;
   }
 
   .run-description p {
     font-style: italic;
+    font-weight: 100;
     margin-top: 15px;
-    text-align: center;
+    text-align: justify;
   }
 
   .run-date {
@@ -67,11 +84,27 @@
   justify-content: space-between;
   }
 
+  .run-date p {
+    margin-bottom: 0px;
+  }
+
   .run-specs {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 30px;
+    font-size: 20px;
+    color: $smoke-white;
+    text-align: center;
+  }
+
+  .violet-square {
+    background-color: $light-blue;
+    border-radius: 20px;
+    width: 32%;
+    padding: 15px;
+  }
+
+  .run-specs p {
+    color: $smoke-white;
   }
 
   .join-button {
