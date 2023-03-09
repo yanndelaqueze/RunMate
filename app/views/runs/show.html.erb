@@ -1,56 +1,71 @@
 
-
-<div class="container p-3 mb-5">
-  <h1><%= @run.name %></h1>
-  <div class="run-leader">
-    <%= cl_image_tag @run.user.photo.key %>
-    <div class="run-leader-info">
-      <p><%= @run.user.username %></p>
-      <div class="stars">
-        <p>*****</p>
+<div class="show">
+  <div class="container p-3">
+    <div class="head">
+      <%= link_to :back do %>
+        <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
+      <% end %>
+      <h1 class="text-center"><%= @run.name %></h1>
+    </div>
+    <div class="run-leader">
+      <%= cl_image_tag @run.user.photo.key %>
+      <div class="run-leader-info">
+        <p><%= @run.user.username %></p>
+        <ul class="stars list-inline">
+          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="run-image" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
-    <div class="run-image-info">
-      <p><%= @run.category %></p>
-      <p><%= @run.city %></p>
+    <div class="run-image" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
+      <div class="run-image-info">
+        <p><%= @run.category %></p>
+        <p><%= @run.city %></p>
+      </div>
     </div>
-  </div>
-  <div class="run-description">
-    <p><%= @run.description %></p>
-  </div>
-  <div class="run-infos">
-    <p><%= @run.date.strftime("%b %e, %l:%M %p") %></p>
-    <p><%= @run.meeting_point %></p>
-    <div style="width: 100%; height: 20vh;"
-    data-controller="smallmap"
-    data-smallmap-markers-value="<%= @marker.to_json %>"
-    data-smallmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="run-description">
+      <p><%= @run.description %></p>
     </div>
-  </div>
-  <div class="run-specs">
-    <p><%= @run.attendances.count %></p>
-    <p><%= @run.distance %></p>
-    <p><%= @run.level %></p>
-  </div>
-  <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
-  <h3>They already joined the run</h3>
-  <div class="attendants">
-    <% @run.attendances.each do |attendance| %>
-    <div class="attendant">
-      <%= cl_image_tag attendance.user.photo.key %>
-      <%= attendance.user.username %>
-      <p>See Profile</p>
+    <div class="run-infos">
+    <div class="run-date">
+      <p><i class="fa-solid fa-calendar-days">    </i><%= @run.date.strftime("%A, %b %d") %></p>
+      <p><i class="fa-solid fa-clock">   </i> <%= @run.date.strftime("%I:%M %p") %></p>
     </div>
+      <p class=""><%= @run.meeting_point %></p>
+      <div style="width: 100%; height: 20vh;"
+      data-controller="smallmap"
+      data-smallmap-markers-value="<%= @marker.to_json %>"
+      data-smallmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    <div class="run-specs">
+      <p><i class="fa-solid fa-user"></i>   <%= @run.attendances.count %></p>
+      <p><i class="fa-solid fa-road"></i>   <%= @run.distance %> km</p>
+      <p><i class="fa-solid fa-gauge-high">   </i><%= @run.level %>  </p>
+    </div>
+    <% if @run.user != current_user && user_signed_in? %>
+      <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
+    <% end %>
+    <div class="attendants">
+    <h3>They already joined the run</h3>
+      <% @run.attendances.each do |attendance| %>
+      <div class="attendant">
+        <%= cl_image_tag attendance.user.photo.key %>
+        <div class="attendant-info">
+          <%= attendance.user.username %>
+          <p>RunMate since : <%= attendance.user.created_at.strftime("%B %Y")  %></p>
+        </div>
+      </div>
+        <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <% if @run.user == current_user %>
+        <%= link_to ('<i class="fa-regular fa-pen-to-square"></i>').html_safe, edit_run_path, class: 'text-secondary fs-4 p-2' %>
+        <%= link_to ('<i class="fa-regular fa-trash-can"></i>').html_safe, run_path(@run), class: 'text-danger fs-4 p-2', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       <% end %>
+    <% end %>
   </div>
 </div>
-
-
-
-
-
-  <%= link_to "Edit your run", edit_run_path, class: "btn btn-outline-primary" %>
-  <%= link_to "Delete your run", run_path(@run), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  <%= link_to "Join the run", new_run_attendance_path(@run) %>

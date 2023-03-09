@@ -2,8 +2,9 @@ class Run < ApplicationRecord
   CATEGORIES = ["Casual", "Coaching", "City Tour", "Hiking", "Jogging", "Running", "Trail Running"]
   belongs_to :user
   has_many :attendances, dependent: :destroy
+  has_many :users, through: :attendances
   has_many :reviews
-  has_many :messages
+  has_many :messages, dependent: :destroy
   geocoded_by :meeting_point
   after_validation :geocode, if: :will_save_change_to_meeting_point?
   has_one_attached :photo

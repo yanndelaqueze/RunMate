@@ -1,10 +1,11 @@
 class RunsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show map]
-  before_action :set_run, only: %i[show edit update destroy]
+  before_action :set_run, only: %i[show edit update destroy chatroom]
 
   def index
 
-    if params[:query].present?
+    if params[:query].present? || params[:date_start].present? || params[:hour].present?
+      raise
       search
     else
       @runs = Run.all
@@ -27,7 +28,8 @@ class RunsController < ApplicationController
     @marker =
       [{
         lat: @run.geocode[0],
-        lng: @run.geocode[1]
+        lng: @run.geocode[1],
+        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run })
       }]
     authorize @run
   end
@@ -77,6 +79,11 @@ class RunsController < ApplicationController
     else
       @runs = []
     end
+  end
+
+  def chatroom
+    @message = Message.new
+    authorize @run
   end
 
   private

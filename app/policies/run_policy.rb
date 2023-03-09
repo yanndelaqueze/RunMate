@@ -34,4 +34,7 @@ class RunPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def chatroom?
+    record.users.include?(user)
+  end
 end
