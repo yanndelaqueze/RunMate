@@ -6,6 +6,7 @@ class Run < ApplicationRecord
   has_many :messages
   geocoded_by :meeting_point
   after_validation :geocode, if: :will_save_change_to_meeting_point?
+  has_one_attached :photo
 
   validates :category, inclusion: { in: CATEGORIES }
 
