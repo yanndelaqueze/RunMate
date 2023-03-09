@@ -6,6 +6,14 @@
       %>
     </div>
 
+    <div data-controller="flatpickr">
+
+    <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'} } %>
+
+    <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none"} %>
+
+    </div>
+
     <%= submit_tag "Find a run", class:"btn-search" %>
   <% end %>
 </div>
