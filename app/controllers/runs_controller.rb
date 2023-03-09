@@ -3,9 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy chatroom]
 
   def index
-
     if params[:query].present? || params[:date_start].present? || params[:hour].present?
-      raise
       search
     else
       @runs = Run.all
@@ -70,6 +68,14 @@ class RunsController < ApplicationController
   end
 
   def search
+    raise
+    Time.zone = "Europe/Paris"
+    t = Time.zone.parse(params[:hour])
+    d1 = Time.zone.parse(params[:start_date]).to_date
+    d2 = Time.zone.parse(params[:end_date]).to_date
+
+
+
     @query = params[:query]
     @address = Geocoder.search(@query).first
     if @address.present?
