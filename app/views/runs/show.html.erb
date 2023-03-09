@@ -5,8 +5,10 @@
   <div class="run-leader">
     <%= cl_image_tag @run.user.photo.key %>
     <div class="run-leader-info">
-      <%= @run.user.username %>
-      <p>rating placeholder</p>
+      <p><%= @run.user.username %></p>
+      <div class="stars">
+        <p>*****</p>
+      </div>
     </div>
   </div>
   <div class="run-image" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
@@ -22,9 +24,9 @@
     <p><%= @run.date.strftime("%b %e, %l:%M %p") %></p>
     <p><%= @run.meeting_point %></p>
     <div style="width: 100%; height: 20vh;"
-    data-controller="map"
-    data-map-markers-value="<%= @marker.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    data-controller="smallmap"
+    data-smallmap-markers-value="<%= @marker.to_json %>"
+    data-smallmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
   <div class="run-specs">
@@ -33,6 +35,7 @@
     <p><%= @run.level %></p>
   </div>
   <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
+  <h3>They already joined the run</h3>
   <div class="attendants">
     <% @run.attendances.each do |attendance| %>
     <div class="attendant">
