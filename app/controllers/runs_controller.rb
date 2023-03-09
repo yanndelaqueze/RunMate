@@ -3,9 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
-
     if params[:query].present? || params[:date_start].present? || params[:hour].present?
-      raise
       search
     else
       @runs = Run.all
@@ -70,6 +68,7 @@ class RunsController < ApplicationController
   end
 
   def search
+    raise
     @query = params[:query]
     @address = Geocoder.search(@query).first
     if @address.present?

@@ -8,8 +8,6 @@ export default class extends Controller {
   static targets = ["address"]
 
   connect() {
-
-
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,postcode,locality,neighborhood,address",
@@ -19,7 +17,8 @@ export default class extends Controller {
     this.geocoder.on("result", event => this.#setInputValue(event))
     this.geocoder.on("clear", () => this.#clearInputValue())
 
-
+    const search = document.getElementsByClassName('mapboxgl-ctrl-geocoder--input')
+    search[0].placeholder = 'Search address'
 
     this.#setInputName();
   }
