@@ -3,6 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy]
 
   def index
+
     if params[:query].present?
       search
     else
@@ -67,7 +68,7 @@ class RunsController < ApplicationController
     if @address.present?
       @runs = Run.near(@query, 10, units: :km, order: :distance)
                  .reverse_order
-                 .limit(5)
+                 .limit(3)
     else
       @runs = []
     end
