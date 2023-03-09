@@ -1,13 +1,22 @@
-<div class="d-flex justify-content-center">
-  <%= form_with url: runs_path, method: :get , class: "d-flex py-5 col-8" do |f| %>
+<div class="d-flex justify-content-between">
+  <%= form_with url: runs_path, method: :get , class: "d-flex justify-content-between py-5 col-8" do |f| %>
     <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"]%>">
 
       <%= f.text_field :address, { data: { address_autocomplete_target: "address" }, class:"d-none"}
       %>
     </div>
 
+    <div data-controller="flatpickr">
 
+    <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'},class:"searchinput", placeholder: "Choose a date range" } %>
 
-    <%= submit_tag "Find a run", class:"btn-search" %>
+    <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none"} %>
+
+    </div>
+    <div>
+      <%= f.time_field :hour , class: "searchinput"%>
+    </div>
+
+    <%= submit_tag "Find a run", class:"btn-search-index" %>
   <% end %>
 </div>

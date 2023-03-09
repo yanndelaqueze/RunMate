@@ -4,7 +4,8 @@ class RunsController < ApplicationController
 
   def index
 
-    if params[:query].present?
+    if params[:query].present? || params[:date_start].present? || params[:hour].present?
+      raise
       search
     else
       @runs = Run.all
