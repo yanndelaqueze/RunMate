@@ -6,7 +6,11 @@ class MessagesController < ApplicationController
     @message.attendance = @run.attendances.find_by(user_id: current_user.id)
     authorize @message
     if @message.save
-      redirect_to chatroom_run_path(@run)
+      RunChannel.broadcast_to(
+        @run,
+        render_to_string(partial: "messages/message", locals: { message: @message })
+      )
+      head :ok
     else
       render "runs/chatroom", status: :unprocessable_entity
     end
