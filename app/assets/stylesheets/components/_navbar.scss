@@ -23,30 +23,27 @@
 
 
 #navbar-list {
-  list-style: none;
   overflow: hidden;
   background-color: $anti-flash-white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 46px;
-  padding: 10px 0;
-  margin-bottom: 0;
+  height: 10vh;
 
   i {
     color: $light-blue;
+    opacity: 0.9;
+    font-size: 26px;
   }
- }
 
+  .row {
+    height: 100%;
+  }
 
-#navbar-list-item {
-  display: inline;
-  float: none;
-  margin: 0 35px;
- }
-
- #navbar-list-item a {
-  text-align: center;
-  padding: 15px 17px;
-  text-decoration: none;
- }
+  .col {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
