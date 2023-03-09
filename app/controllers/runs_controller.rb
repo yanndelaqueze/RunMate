@@ -23,6 +23,11 @@ class RunsController < ApplicationController
   end
 
   def show
+    @marker =
+      [{
+        lat: @run.geocode[0],
+        lng: @run.geocode[1]
+      }]
     authorize @run
   end
 
