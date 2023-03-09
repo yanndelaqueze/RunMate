@@ -4,14 +4,14 @@
 
 import { application } from "./application"
 
-import FormRangeController from "./form_range_controller"
-application.register("form-range", FormRangeController)
-
 import AddressAutocompleteController from "./address_autocomplete_controller"
 application.register("address-autocomplete", AddressAutocompleteController)
 
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
+
+import FormRangeController from "./form_range_controller"
+application.register("form-range", FormRangeController)
 
 import FormSubmitController from "./form_submit_controller"
 application.register("form-submit", FormSubmitController)
@@ -21,6 +21,9 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import RunSubscriptionController from "./run_subscription_controller"
+application.register("run-subscription", RunSubscriptionController)
 
 import SmallmapController from "./smallmap_controller"
 application.register("smallmap", SmallmapController)

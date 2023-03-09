@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <%= render "shared/banner" %>
+    <%= render "shared/banner" unless @disable_banner %>
     <%= render "shared/flashes" %>
 
     <%= yield %>
-    <%= render "shared/navbar" unless @disable_nav %>
+
   </body>
 </html>

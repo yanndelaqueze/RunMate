@@ -1,14 +1,17 @@
 .btn-home {
   font-size: 22px;
   font-weight: 600;
-  background-color: #A6B1EC;
+  background-color: #476BC7;
   border: none;
-  border-radius: 40px;
+  border-radius: 10px;
   color: #FFFFFF;
-  padding: 16px;
+  width: 75%;
+  padding: 10px;
   text-decoration: none;
   transition: background 0.3s ease;
   text-align: center;
+  position: fixed;
+  bottom: 30px;
 }
 
 .btn-back-blue {
