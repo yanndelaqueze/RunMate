@@ -298,6 +298,22 @@ run3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run3.save!
 puts "created 1 run"
 
+run3bis = Run.new(
+  name: "Luxembourg",
+  description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me !",
+  category: "Running",
+  level: 3,
+  distance: 10,
+  max_person: 4,
+  meeting_point: "4 Rue Auguste Comte, 75006 Paris",
+  date: DateTime.new(2023,3,11,10),
+  user: user3
+)
+file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447562/places/luxembourg_n9ylw5.jpg")
+run3bis.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run3bis.save!
+puts "created 1 run"
+
 run4 = Run.new(
   name: "Montmartre",
   description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough !",
@@ -555,6 +571,20 @@ user20.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 user20.save!
 puts "created 1 user"
 
+user21 = User.new(
+  email: "yann.delaqueze@gmail.com",
+  username: "yanndqz",
+  first_name: "Yann",
+  last_name: 'Delaqueze',
+  password: "topsecret",
+  password_confirmation: "topsecret"
+)
+file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447147/YD_aixjcl.png")
+user21.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+user21.save!
+puts "created 1 user"
+
+
 attendance1 = Attendance.new(
   content: "Looking forward to attending!",
   user: user16,
@@ -593,4 +623,12 @@ attendance5 = Attendance.new(
   run: run4
 )
 attendance5.save!
+puts "created 1 attendance"
+
+attendance6 = Attendance.new(
+  content: "Excited to join !",
+  user: user21,
+  run: run3bis
+)
+attendance6.save!
 puts "created 1 attendance"
