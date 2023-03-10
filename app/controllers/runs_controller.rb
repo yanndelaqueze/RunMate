@@ -73,8 +73,9 @@ class RunsController < ApplicationController
     t = Time.zone.parse(params[:hour])
     d1 = Time.zone.parse(params[:start_date]).to_date
 
+<<<<<<< HEAD
     if params[:end_date].present?
-      d2 = Time.zone.parse(params[:end_date]).to_date
+    d2 = Time.zone.parse(params[:end_date]).to_date
     else
       d2 = Time.zone.parse(params[:start_date]).to_date + 5
     end
@@ -83,6 +84,8 @@ class RunsController < ApplicationController
 
     d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
 
+=======
+>>>>>>> master
     raise
 
     @query = params[:query]
