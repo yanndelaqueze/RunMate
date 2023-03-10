@@ -15,11 +15,7 @@
       <h1><%= @run.name %></h1>
     </div>
     <div class="run-leader d-flex align-items-end mb-4">
-      <% if @run.photo.attached? %>
         <%= cl_image_tag @run.user.photo.key %>
-      <% else %>
-        <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", class:"card-run-image") %>
-      <% end %>
       <div class="run-leader-info">
         <h2><%= @run.user.username.capitalize %></h2>
         <ul class="stars list-inline">
@@ -31,7 +27,11 @@
         </ul>
       </div>
     </div>
+      <% if @run.photo.attached? %>
     <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
+     <% else %>
+         <div class="run-image mb-4" style="background-image: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80')">
+      <% end %>
       <div class="run-image-info mb-4">
         <p><%= @run.category %></p>
         <p><%= @run.city %></p>
