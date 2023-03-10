@@ -2,7 +2,7 @@
 <div class="show">
   <div class="container p-3">
     <div class="chatroom-link">
-    <% if @run.users.include?(current_user) %>
+    <% if @confirmed_users.include?(current_user) %>
       <%= link_to ('<i class="fa-solid fa-message"></i>').html_safe, chatroom_run_path(@run)  %>
     <% end %>
     </div>
@@ -42,7 +42,7 @@
     <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
-        <i class="fa-solid fa-user"></i><%= @run.attendances.count %>/<%= @run.max_person %>
+        <i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %>
       </div>
       <div class="violet-square">
         <p>Distance</p>
@@ -69,18 +69,18 @@
       data-smallmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+    <% unless @confirmed_users.include?(current_user) %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
+    <% end %>
     <div class="attendants">
     <h3>They already joined the run</h3>
-      <% @run.attendances.each do |attendance| %>
-        <% if attendance.status == "confirmed" %>
-          <%= link_to profile_path(attendance.user), class:"text-decoration-none" do %>
-            <div class="attendant d-flex align-items-end">
-              <%= cl_image_tag attendance.user.photo.key %>
-              <div class="attendant-info">
-                <h4><%= attendance.user.username.capitalize %></h4>
-                <p>RunMate since <%= attendance.user.created_at.strftime("%B %Y") %></p>
-              </div>
+      <% @confirmed_users.each do |user| %>
+        <%= link_to profile_path(user), class:"text-decoration-none" do %>
+          <div class="attendant d-flex align-items-end">
+            <%= cl_image_tag user.photo.key %>
+            <div class="attendant-info">
+              <h4><%= user.username.capitalize %></h4>
+              <p>RunMate since <%= user.created_at.strftime("%B %Y") %></p>
             </div>
           <% end %>
         <% end %>

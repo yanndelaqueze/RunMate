@@ -30,6 +30,7 @@ class RunsController < ApplicationController
         run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run })
       }]
     authorize @run
+    @confirmed_users = @run.users.where(attendances: { status: "confirmed" })
   end
 
   def new
