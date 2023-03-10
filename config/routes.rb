@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   resources :runs do
     resources :attendances, only: %i[new create]
+    resources :messages, only: :create
+    member do
+      get 'chatroom', to: "runs#chatroom"
+    end
   end
 
   resources :attendances, only: %i[index show update destroy] do

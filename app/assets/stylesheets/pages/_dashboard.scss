@@ -1,9 +1,9 @@
 .dashboard-body {
-  background-color: $pastel-blue;
+  background-color: #F2F3F7;
   padding: 10px 0 400px 0;
 }
 .title-dashboard {
-  color: white;
+  color: #476BC7;
   margin-bottom: 0;
 }
 
@@ -13,14 +13,19 @@
 }
 
 .btn-more {
-  color: white;
+  color: #476BC7;
   font-family: "Montserrat";
   margin: 0;
 }
 
+.btn-back {
+  font-size: 19px;
+  color: #9EBBE7;
+}
+
 .new-run-dashboard {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
   margin-bottom: 20px;
