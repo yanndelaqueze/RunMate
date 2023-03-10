@@ -12,7 +12,7 @@
     <% when "Hiking" %>
     <%= image_tag "picto/hiking.png", class:"card-run-picto" %>
     <% when "Coaching" %>
-    <%= image_tag "picto/coachin.png", class:"card-run-picto" %>
+    <%= image_tag "picto/coaching.png", class:"card-run-picto" %>
   <% end %>
   <% if run.photo.attached? %>
     <%= cl_image_tag run.photo.key, class: "card-run-image"%>
