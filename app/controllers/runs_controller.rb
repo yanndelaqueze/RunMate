@@ -3,7 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy chatroom]
 
   def index
-    if params[:query].present? || params[:date_start].present? || params[:hour].present?
+    if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
     else
       @runs = Run.all
@@ -68,22 +68,34 @@ class RunsController < ApplicationController
   end
 
   def search
-    raise
     Time.zone = "Europe/Paris"
-    t = Time.zone.parse(params[:hour])
-    d1 = Time.zone.parse(params[:start_date]).to_date
-    d2 = Time.zone.parse(params[:end_date]).to_date
 
+    t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
 
+    params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
 
-    @query = params[:query]
-    @address = Geocoder.search(@query).first
-    if @address.present?
-      @runs = Run.near(@query, 10, units: :km, order: :distance)
+    params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
+
+    d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
+
+    d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
+
+    time_added = Time.parse("02:00:00").seconds_since_midnight.seconds
+
+    d2 += time_added
+
+    if params[:query].present?
+      @runs = Run.near(params[:query], 10, units: :km, order: :distance)
                  .reverse_order
-                 .limit(3)
+
+      @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
+
     else
-      @runs = []
+      if params[:start_date].present? || params[:hour].present?
+        @runs = Run.all.select { |run| (d1..d2).cover?(run.date) }
+      else
+        @runs = []
+      end
     end
   end
 
