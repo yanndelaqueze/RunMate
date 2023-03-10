@@ -3,7 +3,7 @@ class RunsController < ApplicationController
   before_action :set_run, only: %i[show edit update destroy chatroom]
 
   def index
-    if params[:query].present? || params[:date_start].present? || params[:hour].present?
+    if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
     else
       @runs = Run.all
@@ -84,18 +84,14 @@ class RunsController < ApplicationController
 
     d2 += time_added
 
-    @query = params[:query]
-
-    @address = Geocoder.search(@query).first
-
-    if @address.present?
-      @runs = Run.near(@query, 10, units: :km, order: :distance)
+    if params[:query].present?
+      @runs = Run.near(params[:query], 10, units: :km, order: :distance)
                  .reverse_order
 
       @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
 
     else
-      if params[:start_date].present?
+      if params[:start_date].present? || params[:hour].present?
         @runs = Run.all.select { |run| (d1..d2).cover?(run.date) }
       else
         @runs = []
