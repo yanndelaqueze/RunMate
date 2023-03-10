@@ -61,7 +61,8 @@ user1 = User.new(
   first_name: "Jean",
   last_name: 'Dupont',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "As a dedicated runner with a passion for achieving new fitness milestones, I am excited to connect with fellow professionals in the fitness industry. My name is Jean Dupont, and I am a motivated athlete who believes in the power of consistent training and hard work. With my experience and dedication, I am confident in my ability to succeed in any running challenge."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308872/avatars/male20161083782612976_njyoun.jpg")
 user1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
