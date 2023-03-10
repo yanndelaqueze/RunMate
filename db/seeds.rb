@@ -630,5 +630,5 @@ attendance6 = Attendance.new(
   user: user21,
   run: run3bis
 )
-attendance5.save!
+attendance6.save!
 puts "created 1 attendance"
