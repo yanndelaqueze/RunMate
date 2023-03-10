@@ -215,7 +215,8 @@ user12 = User.new(
   first_name: "Mathieu",
   last_name: 'Bernard',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309189/avatars/male1085919192108_twj0sv.jpg")
 user12.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -228,7 +229,8 @@ user13 = User.new(
   first_name: "Renaud",
   last_name: 'Desrosiers',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309189/avatars/male1085317670196_oeyigj.jpg")
 user13.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -241,7 +243,8 @@ user14 = User.new(
   first_name: "Faiza",
   last_name: 'Douadi',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309232/avatars/female20141023759961822_n9whzv.jpg")
 user14.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -254,7 +257,8 @@ user15 = User.new(
   first_name: "Moussa",
   last_name: 'Diallo',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male20161086497879852_pcl4gg.jpg")
 user15.photo.attach(io: file, filename: "image.png", content_type: "image/png")
