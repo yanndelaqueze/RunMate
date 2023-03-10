@@ -74,7 +74,7 @@ class RunsController < ApplicationController
     d1 = Time.zone.parse(params[:start_date]).to_date
     d2 = Time.zone.parse(params[:end_date]).to_date
 
-
+    raise
 
     @query = params[:query]
     @address = Geocoder.search(@query).first
