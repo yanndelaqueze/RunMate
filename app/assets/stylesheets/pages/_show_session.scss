@@ -1,7 +1,9 @@
 .profile {
 
-  background-color:$pastel-blue;
+  background-color:$light-blue;
   color: $smoke-white;
+
+
 
   h1, h2, button, i, p, a {
     color: $smoke-white;
@@ -12,7 +14,7 @@
     height: 100vh;
   }
 
-  .img, a {
+  .img, .btn-link {
     display: block;
     margin: 0px auto 30px auto;
     width: 100px;
