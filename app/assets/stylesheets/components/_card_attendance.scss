@@ -4,11 +4,20 @@
 }
 
 .card-attendance-request {
+  position: relative;
   margin-bottom: 40px;
   background-color: #FFFFFF;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   overflow: hidden;
+
+  .card-run-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .card-attendance-title {

@@ -1,4 +1,5 @@
 <div class="card-attendance-request p-3">
+  <%= link_to "", run_path(attendance.run), class:"card-run-link" %>
   <div class="card-attendance-content-top d-flex justify-content-between align-items-center mb-2">
     <h4 class="card-attendance-title"><%= attendance.run.name %> </h4>
     <% if attendance.user == current_user %>
