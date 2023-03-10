@@ -42,12 +42,14 @@
       <div class="tab-pane fade" id="requests">
         <%# Cards with requests made from others %>
         <% @pending_attendances.each do |attendance| %>
-          <% if attendance.status == "pending" && attendance.run.user != current_user %>
+          <% if attendance.status == "pending"%>
             <%= render "attendances/card_attendance", attendance: attendance %>
           <% end %>
         <% end %>
       </div>
     </div>
+
+     <%# attendance.run.user != current_user  %>
 
 
 
