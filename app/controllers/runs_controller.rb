@@ -69,18 +69,13 @@ class RunsController < ApplicationController
 
   def search
     Time.zone = "Europe/Paris"
-    t = Time.zone.parse(params[:hour])
-    d1 = Time.zone.parse(params[:start_date]).to_date
 
-    if params[:end_date].present?
+    t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
 
-      d2 = Time.zone.parse(params[:end_date]).to_date
 
-    else
+    params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
 
-      d2 = Time.zone.parse(params[:start_date]).to_date + 5
-
-    end
+    params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
 
     d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
 
