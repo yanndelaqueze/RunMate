@@ -26,14 +26,14 @@
         <i class="fab fa-skype fa-lg"></i>
       </button>
     </div>
-    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum accusantium laborum, officia repellat culpa exercitationem nisi, sit laudantium alias blanditiis minus eius esse hic atque in veritatis, quam quasi animi. Porro, labore nobis quisquam harum libero suscipit cupiditate doloribus quo.</p>
+    <p class="mb-5"><%= user.description %></p>
     <div class="row">
       <div class="col">
-        <p class="mb-2 h5">15</p>
+        <p class="mb-2 h5"><%= user.attendances.count %></p>
         <p class="mb-0">Runs joined</p>
       </div>
       <div class="col">
-        <p class="mb-2 h5">10</p>
+        <p class="mb-2 h5"><%= user.runs.count %></p>
         <p class="mb-0">Runs created</p>
       </div>
       <div class="col">

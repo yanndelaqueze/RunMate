@@ -29,10 +29,10 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     <div class="d-flex flex-end align-items-center">
       <% if user_signed_in? %>
-        <%= link_to user_profile_path do %>
-        <%= image_tag "https://doodleipsum.com//avatar?i=adac0b4d0948032d41c9ea8e306e180f&?shape=circle", class: "avatar me-3" %>
-        <% end %>
+        <%= link_to user_profile_path, class:"text-decoration-none" do %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar me-3" %>
         <h5 class="m-0 pe-3" id="offcanvasRightLabel"><%= current_user.first_name %></h5>
+        <% end %>
       <% end %>
     </div>
   </div>
