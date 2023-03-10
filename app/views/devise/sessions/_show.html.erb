@@ -1,9 +1,16 @@
 <div class="profile">
   <div class="container px-4 py-4">
+
+    <%= link_to :back, class:"text-decoration-none" do %>
+      <span class="btn-back"><i class="fa-solid fa-circle-arrow-left"></i>BACK</span>
+    <% end %>
+
     <div class="img">
       <img src="https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg" class=" rounded-circle img-fluid" />
       <% if can_edit %>
-        <%= link_to "Edit profile", edit_user_path(user), class:"btn btn-link" %>
+        <%= link_to edit_user_path(user), class: "btn btn-link" do %>
+          <i class="fa-regular fa-pen-to-square"></i> Edit
+        <% end %>
       <% end %>
     </div>
     <h1 class="mb-2"><%= user.first_name %> <%= user.last_name %></h1>

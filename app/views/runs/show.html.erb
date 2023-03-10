@@ -2,12 +2,14 @@
 <div class="show">
   <div class="container p-3">
     <div class="d-flex my-4">
-      <%= link_to :back, class:"d-flex me-4 mt-2" do%>
-        <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
-      <% end %>
+      <div class="btn-back">
+        <%= link_to :back, class:"d-flex me-4 mt-2" do%>
+          <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
+        <% end %>
+      </div>
       <h1><%= @run.name %></h1>
     </div>
-    <div class="run-leader d-flex align-items-end mb-3">
+    <div class="run-leader d-flex align-items-end mb-4">
       <%= cl_image_tag @run.user.photo.key %>
       <div class="run-leader-info">
         <h2><%= @run.user.username.capitalize %></h2>
@@ -20,15 +22,15 @@
         </ul>
       </div>
     </div>
-    <div class="run-image mb-3" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
-      <div class="run-image-info mb-3">
+    <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
+      <div class="run-image-info mb-4">
         <p><%= @run.category %></p>
         <p><%= @run.city %></p>
       </div>
     </div>
 
 
-    <div class="run-specs mb-3">
+    <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
         <i class="fa-solid fa-user"></i><%= @run.attendances.count %>
@@ -70,7 +72,7 @@
         </div>
       </div>
         <% end %>
-      
+
     </div>
     <% if user_signed_in? %>
       <% if @run.user == current_user %>
