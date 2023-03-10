@@ -45,9 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_210852) do
   create_table "attendances", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
+    t.bigint "run_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "run_id", null: false
     t.string "status", default: "pending"
     t.index ["run_id"], name: "index_attendances_on_run_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
