@@ -75,7 +75,8 @@ user2 = User.new(
   first_name: "Carine",
   last_name: 'Martin',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy staying active and exploring new hobbies. As a runner, I am always looking for new challenges and opportunities to push myself to new heights. I believe that a healthy mind and body are crucial for success, and I make it a priority to prioritize wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2017102608090332_zirt49.jpg")
 user2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -88,7 +89,8 @@ user3 = User.new(
   first_name: "Julien",
   last_name: 'Nguyen',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "I enjoy staying active and pursuing hobbies outside of work. As a runner, I am constantly striving to improve my performance and push my limits. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308872/avatars/male108516398969_cfwahr.jpg")
 user3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -101,7 +103,8 @@ user4 = User.new(
   first_name: "Hakim",
   last_name: 'Benaissa',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a runner, I am constantly challenging myself to improve my performance and achieve new goals. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male20151086170387787_gqtdis.jpg")
 user4.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -114,7 +117,8 @@ user5 = User.new(
   first_name: "John",
   last_name: 'Mitchell',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male1085851718597_wwaeyy.jpg")
 user5.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -127,7 +131,8 @@ user6 = User.new(
   first_name: "Rolande",
   last_name: 'Cousineau',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female20141023711279694_ehuphc.jpg")
 user6.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -140,7 +145,8 @@ user7 = User.new(
   first_name: "Viviane",
   last_name: 'Mercier',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female102244160852_llqpfb.jpg")
 user7.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -153,7 +159,8 @@ user8 = User.new(
   first_name: "Olympe",
   last_name: 'Gagnon',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2008102329451484_uu44mq.jpg")
 user8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -166,7 +173,8 @@ user9 = User.new(
   first_name: "Pietro",
   last_name: 'Colina',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309114/avatars/male20161086598156006_f9q8sc.jpg")
 user9.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -179,7 +187,8 @@ user10 = User.new(
   first_name: "Manuel",
   last_name: 'Costa',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309114/avatars/male1084850574768_diql3z.jpg")
 user10.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -192,7 +201,8 @@ user11 = User.new(
   first_name: "Manon",
   last_name: 'Paget',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female20161025297385742_w5dr4o.jpg")
 user11.photo.attach(io: file, filename: "image.png", content_type: "image/png")
