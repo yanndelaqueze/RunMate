@@ -1,4 +1,4 @@
-<div id = "searchBar">
+<div id="searchBar" class="my-4">
   <%= form_with url: runs_path, method: :get do |f| %>
     <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"]%>">
 
@@ -6,7 +6,7 @@
       %>
     </div>
 
-    <div class="secondline d-flex py-2 m-1 justify-content-between">
+    <div class="secondline d-flex py-2 m-1 mb-4 justify-content-between">
 
       <div data-controller="flatpickr">
 
