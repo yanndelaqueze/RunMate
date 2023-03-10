@@ -62,7 +62,7 @@ user1 = User.new(
   last_name: 'Dupont',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "As a dedicated runner with a passion for achieving new fitness milestones, I am excited to connect with fellow professionals in the fitness industry. My name is Jean Dupont, and I am a motivated athlete who believes in the power of consistent training and hard work. With my experience and dedication, I am confident in my ability to succeed in any running challenge."
+  description: "Hi, I'm Jean, a regular runner. Running has become my daily routine and I run an average of 5 miles every day. It helps me stay fit and healthy while clearing my mind. I love setting new goals and challenging myself to improve my running performance."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308872/avatars/male20161083782612976_njyoun.jpg")
 user1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -76,7 +76,7 @@ user2 = User.new(
   last_name: 'Martin',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy staying active and exploring new hobbies. As a runner, I am always looking for new challenges and opportunities to push myself to new heights. I believe that a healthy mind and body are crucial for success, and I make it a priority to prioritize wellness in my daily routine."
+  description: "Hi this is Carine ! Running is my passion and I hit the pavement every day. I push myself to the limit and participate in local races. I am disciplined with my training and enjoy the mental and physical benefits that come with it."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2017102608090332_zirt49.jpg")
 user2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -90,7 +90,7 @@ user3 = User.new(
   last_name: 'Nguyen',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "I enjoy staying active and pursuing hobbies outside of work. As a runner, I am constantly striving to improve my performance and push my limits. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I'm Julien, 29 y/o. I run occasionally to stay fit and clear my head. I usually go for a jog a couple of times a week, nothing too intense. Running helps me relax and feel energized. It's a great way to switch off from my busy day-to-day life."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308872/avatars/male108516398969_cfwahr.jpg")
 user3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -104,7 +104,7 @@ user4 = User.new(
   last_name: 'Benaissa',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a runner, I am constantly challenging myself to improve my performance and achieve new goals. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "Hi, I'm Hakim, a beginner runner. I recently started running to improve my fitness and health. It's been a challenge, but I'm determined to stick with it. I'm starting slow and gradually building up my endurance. It feels great to see progress and I'm excited to see where this journey takes me."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male20151086170387787_gqtdis.jpg")
 user4.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -118,7 +118,7 @@ user5 = User.new(
   last_name: 'Mitchell',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I'm new to running and just starting out with short jogs. It's challenging, but I enjoy the sense of achievement and the benefits it brings to my health. I'm taking it slow, but I'm excited to see where this journey takes me."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male1085851718597_wwaeyy.jpg")
 user5.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -132,7 +132,7 @@ user6 = User.new(
   last_name: 'Cousineau',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I just started a couch-to-5k program and I'm excited to see where it takes me. It's challenging, but I love the progress I'm making. I hope to run my first 5k soon and feel proud of my accomplishment."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female20141023711279694_ehuphc.jpg")
 user6.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -146,7 +146,7 @@ user7 = User.new(
   last_name: 'Mercier',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I just started running to improve my fitness and overall health. It's been challenging, but I am determined to stick with it. I run for short periods and take breaks as needed. I'm excited to see progress and hope to eventually run a 5k!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female102244160852_llqpfb.jpg")
 user7.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -160,7 +160,7 @@ user8 = User.new(
   last_name: 'Gagnon',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I love the challenge and beauty of running on mountain trails. I go out early to enjoy the peace and quiet of nature. It's tough, but the views are worth it. I stay hydrated and enjoy healthy snacks on my breaks. Trail running is my passion!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2008102329451484_uu44mq.jpg")
 user8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -174,7 +174,7 @@ user9 = User.new(
   last_name: 'Colina',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I thrive on the challenge of training and pushing myself to the limit. I follow a strict schedule and focus on nutrition, rest, and recovery. The feeling of crossing the finish line after 26.2 miles is indescribable. I'm always aiming for a new personal best!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309114/avatars/male20161086598156006_f9q8sc.jpg")
 user9.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -188,7 +188,7 @@ user10 = User.new(
   last_name: 'Costa',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I've been running for over 30 years and it has kept me feeling young and healthy. I may not be as fast as I used to be, but I still lace up my shoes and hit the pavement every day. Running has become a part of who I am and I couldn't imagine my life without it."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309114/avatars/male1084850574768_diql3z.jpg")
 user10.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -202,7 +202,7 @@ user11 = User.new(
   last_name: 'Paget',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I've been running for decades and it's become a part of who I am. These days, I take it slower, but still enjoy the freedom and sense of accomplishment that running provides. It keeps me healthy and happy, and I hope to continue for as long as I can."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female20161025297385742_w5dr4o.jpg")
 user11.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -216,7 +216,7 @@ user12 = User.new(
   last_name: 'Bernard',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I train hard for months to prepare for a 26.2 mile race. I am disciplined with my diet and rest to ensure peak performance. The race is mentally and physically challenging, but the feeling of crossing the finish line is indescribable. Running marathons is my passion."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309189/avatars/male1085919192108_twj0sv.jpg")
 user12.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -230,7 +230,7 @@ user13 = User.new(
   last_name: 'Desrosiers',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I love the challenge of running on uneven terrain and being surrounded by nature. I run several times a week and switch up my routes for variety. I enjoy the sense of accomplishment after a tough trail run and the peace it brings to my mind."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678309189/avatars/male1085317670196_oeyigj.jpg")
 user13.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -258,7 +258,7 @@ user15 = User.new(
   last_name: 'Diallo',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "In my free time, I enjoy pursuing my passion for running and fitness. As a dedicated athlete, I am constantly challenging myself to improve my performance and reach new heights. I believe that a healthy mind and body are essential for success, and I prioritize fitness and wellness in my daily routine."
+  description: "I love exploring nature while pushing my physical limits. Trail running keeps me engaged and motivated. I am well-equipped with proper gear and always carry water and snacks. I respect the environment and leave no trace. Running on the trails brings me peace and joy."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/male20161086497879852_pcl4gg.jpg")
 user15.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -266,7 +266,7 @@ user15.save!
 puts "created 1 user"
 
 run1 = Run.new(
-  name: "Buttes Chaumont",
+  name: "Running Loops in Buttes Chaumont",
   description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required !",
   category: "Trail Running",
   level: 5,
@@ -282,7 +282,7 @@ run1.save!
 puts "created 1 run"
 
 run2 = Run.new(
-  name: "Le Marais",
+  name: "Running Guided Tour in Le Marais",
   description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
   category: "City Tour",
   level: 3,
@@ -298,7 +298,7 @@ run2.save!
 puts "created 1 run"
 
 run3 = Run.new(
-  name: "Bois de Vincennes",
+  name: "Soft Jogging in Bois de Vincennes",
   description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
   category: "Casual",
   level: 2,
@@ -314,7 +314,7 @@ run3.save!
 puts "created 1 run"
 
 run3bis = Run.new(
-  name: "Luxembourg",
+  name: "Fast & Slow running loops in Jardin du Luxembourg",
   description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me !",
   category: "Running",
   level: 3,
@@ -330,7 +330,7 @@ run3bis.save!
 puts "created 1 run"
 
 run4 = Run.new(
-  name: "Montmartre",
+  name: "Uphill & Downhill Run in Montmartre",
   description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough !",
   category: "Coaching",
   level: 5,
@@ -346,7 +346,7 @@ run4.save!
 puts "created 1 run"
 
 run5 = Run.new(
-  name: "Parc Monceau",
+  name: "Easy Running loops in Parc Monceau",
   description: "Simple run in Parc Monceau. Nothing really hard, all levels welcome. Let's go !!!",
   category: "Casual",
   level: 2,
@@ -362,7 +362,7 @@ run5.save!
 puts "created 1 run"
 
 run6 = Run.new(
-  name: "Canal Saint-Martin",
+  name: "Super slow jogging along Canal Saint-Martin",
   description: "Super casual run along Canal Saint-Martin. We will go slow and chat.",
   category: "Casual",
   level: 1,
@@ -378,7 +378,7 @@ run6.save!
 puts "created 1 run"
 
 run7 = Run.new(
-  name: "Quais de Seine",
+  name: "Run & enjoy the view of Quais de Seine !",
   description: "We will run along the Quais de Seine, go past Musée d'Orsay, Tour Eiffel, la Concorde, les Tuileries. Let's run slow and enjoy the view !",
   category: "City Tour",
   level: 3,
@@ -394,7 +394,7 @@ run7.save!
 puts "created 1 run"
 
 run8 = Run.new(
-  name: "Fourvières",
+  name: "Up & Down the stairs of Fourvières",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
   category: "Trail Running",
   level: 5,
@@ -410,7 +410,7 @@ run8.save!
 puts "created 1 run"
 
 run9 = Run.new(
-  name: "Parc de la Tête d'Or",
+  name: "Speedy running loops in Parc de la Tête d'Or",
   description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
   category: "Running",
   level: 4,
@@ -426,7 +426,7 @@ run9.save!
 puts "created 1 run"
 
 run10 = Run.new(
-  name: "Quais du Rhône",
+  name: "Casual & friendly run along Quais du Rhône",
   description: "Slow and cool run along Quais du Rhône up to Confluence. I run slow, don't worry. ",
   category: "Casual",
   level: 1,
@@ -442,7 +442,7 @@ run10.save!
 puts "created 1 run"
 
 run11 = Run.new(
-  name: "Lyon Centre",
+  name: "Guided Running Tour in Lyon Centre",
   description: "Fast paced run around Place Bellecour and Vieux Lyon. Be prepared to sweat a little. ",
   category: "City Tour",
   level: 4,
@@ -458,7 +458,7 @@ run11.save!
 puts "created 1 run"
 
 run12 = Run.new(
-  name: "Les Calanques",
+  name: "Sporty hiking in Les Calanques",
   description: "Sporty hike in the Calanques of Marseille. Amazing scenery, breathtaking landscapes.",
   category: "Hiking",
   level: 5,
@@ -474,7 +474,7 @@ run12.save!
 puts "created 1 run"
 
 run13 = Run.new(
-  name: "Le Vieux Port",
+  name: "Cool run around Le Vieux Port - Marseille",
   description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards ! ",
   category: "City Tour",
   level: 3,
@@ -490,7 +490,7 @@ run13.save!
 puts "created 1 run"
 
 run14 = Run.new(
-  name: "La Corniche",
+  name: "Easy run along La Corniche",
   description: "Chat and run on La Corniche in Marseille. Come join me for some beautiful views and a good time running",
   category: "Casual",
   level: 2,
@@ -506,7 +506,7 @@ run14.save!
 puts "created 1 run"
 
 run15 = Run.new(
-  name: "Parc Borely",
+  name: "Challenging loops in Parc Borely",
   description: "Fast paced run in Parc Borely. Some interval training if you're motivated, and a beer after that !",
   category: "Running",
   level: 4,
@@ -527,7 +527,8 @@ user16 = User.new(
   first_name: "Paul",
   last_name: 'Robert',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "I recently started running to improve my health and fitness. It's challenging, but I love the sense of achievement after each run. I take it slow and steady, building up my endurance. I hope to run my first 5k soon and continue improving!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678313036/male20161086421672211_ua0oed.jpg")
 user16.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -540,7 +541,8 @@ user17 = User.new(
   first_name: "Stéphane",
   last_name: 'Dubois',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "I want to discover running. I'm looking for a way to improve my fitness and clear my mind. I'm starting with short runs and will gradually increase my distance. I'm excited to see what running can do for me, and hope to make it a part of my daily routine."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678313036/male20161086572948303_uum979.jpg")
 user17.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -553,7 +555,8 @@ user18 = User.new(
   first_name: "Alice",
   last_name: 'Pommard',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "Hey there, I'm Alice and I want to discover running. It's something I've always wanted to try, but never found the motivation for. I'm excited to start this journey and improve my health and fitness. I'm open to advice and tips from experienced runners, and can't wait to see where this takes me!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678313036/female20171026239950775_b0zify.jpg")
 user18.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -566,7 +569,8 @@ user19 = User.new(
   first_name: "Marie",
   last_name: 'Tran',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "Hi, I'm Marie and I want to start jogging. It's been a while since I've been active and I want to make a positive change. I plan to start slow and work my way up, building endurance and strength. I'm determined to make this a sustainable habit and improve my overall wellbeing."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678313036/female2009102336737964_yf9pzz.jpg")
 user19.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -579,7 +583,8 @@ user20 = User.new(
   first_name: "Lucie",
   last_name: 'Blanc',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "Hey, I'm Lucie and I want to start jogging. I'm looking for a way to stay active and improve my health without the need for a gym. I plan to start with short distances and gradually build up my endurance. I'm excited to start this new journey and challenge myself!"
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678313036/female20151024206432526_jndds8.jpg")
 user20.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -592,7 +597,8 @@ user21 = User.new(
   first_name: "Yann",
   last_name: 'Delaqueze',
   password: "topsecret",
-  password_confirmation: "topsecret"
+  password_confirmation: "topsecret",
+  description: "Hi, I'm Yann and I love running long distance. There's something about pushing myself to go further and further that I can't get enough of. I've completed several marathons and even a couple of ultra marathons. It's not just about physical fitness, but also mental toughness. Running is a big part of who I am."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447147/YD_aixjcl.png")
 user21.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -603,7 +609,8 @@ puts "created 1 user"
 attendance1 = Attendance.new(
   content: "Looking forward to attending!",
   user: user16,
-  run: run1
+  run: run1,
+  status: "confirmed"
 )
 attendance1.save!
 puts "created 1 attendance"
@@ -611,7 +618,8 @@ puts "created 1 attendance"
 attendance2 = Attendance.new(
   content: "Can't wait to be there!",
   user: user17,
-  run: run1
+  run: run1,
+  status: "confirmed"
 )
 attendance2.save!
 puts "created 1 attendance"
@@ -619,7 +627,8 @@ puts "created 1 attendance"
 attendance3 = Attendance.new(
   content: "Excited to join !",
   user: user18,
-  run: run12
+  run: run12,
+  status: "confirmed"
 )
 attendance3.save!
 puts "created 1 attendance"
@@ -627,7 +636,8 @@ puts "created 1 attendance"
 attendance4 = Attendance.new(
   content: "Excited to join !",
   user: user19,
-  run: run4
+  run: run4,
+  status: "confirmed"
 )
 attendance4.save!
 puts "created 1 attendance"
@@ -635,7 +645,8 @@ puts "created 1 attendance"
 attendance5 = Attendance.new(
   content: "Excited to join !",
   user: user20,
-  run: run4
+  run: run4,
+  status: "confirmed"
 )
 attendance5.save!
 puts "created 1 attendance"
@@ -643,7 +654,8 @@ puts "created 1 attendance"
 attendance6 = Attendance.new(
   content: "Excited to join !",
   user: user21,
-  run: run3bis
+  run: run3bis,
+  status: "confirmed"
 )
 attendance6.save!
 puts "created 1 attendance"
