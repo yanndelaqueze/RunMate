@@ -1,8 +1,8 @@
 <div class="chatroom-card">
   <%= cl_image_tag attendance.run.photo.key, class: "card-run-image"%>
   <div class="chatroom-card-info">
-    <h2>Messages sent to Run : <%= attendance.run.name %></h2>
+    <h5>Your <%= attendance.run.name %> Mates</h5>
     <p><%= attendance.run.messages.count %> Messages</p>
-    <%= link_to "See all Messages", chatroom_run_path(attendance.run)  %>
+    <%= link_to "See all Messages", chatroom_run_path(attendance.run), class:"chatroom-card-link" %>
   </div>
 </div>

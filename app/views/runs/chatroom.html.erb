@@ -1,6 +1,9 @@
 <div class="container-chatroom chatroom"
   data-controller="run-subscription"
   data-run-subscription-run-id-value="<%= @run.id %>">
+    <%= link_to :back, class:"text-decoration-none ps-2 pt-3" do %>
+      <span class="btn-back fs-6"><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-blue me-1"></i>BACK</span>
+    <% end %>
     <h1 class="title-chatroom">#<%= @run.name %></h1>
     <div class="messages" data-run-subscription-target="messages">
       <% @run.messages.each do |message| %>
