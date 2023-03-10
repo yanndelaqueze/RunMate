@@ -1,6 +1,10 @@
 <h2>Messages</h2>
 <div class="container p-3 mb-5">
-  <% @attendances.each do |attendance| %>
-    <%= render "chatroom_card", attendance: attendance %>
-  <% end %>
+  <% if @attendances.present? %>
+    <% @attendances.each do |attendance| %>
+        <%= render "chatroom_card", attendance: attendance %>
+      <% end %>
+    <% else %>
+      <p>You haven't joined any run !</p>
+    <% end %>
 </div>
