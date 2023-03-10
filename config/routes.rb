@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'pages#dashboard'
 
+  get '/chatrooms', to: 'pages#chatrooms'
+
   devise_scope :user do
     get '/users/profile', to: 'users/sessions#show', as: 'user_profile'
     get '/users/:id/edit', to: 'users/sessions#edit', as: 'edit_user'
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
 
   resources :runs do
     resources :attendances, only: %i[new create]
+    resources :messages, only: :create
+    member do
+      get 'chatroom', to: "runs#chatroom"
+    end
   end
 
   resources :attendances, only: %i[index show update destroy] do
