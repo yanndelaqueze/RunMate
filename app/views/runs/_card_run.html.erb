@@ -29,8 +29,8 @@
     <div class="card-run-content-bottom d-flex justify-content-between align-items-center">
       <span class="category"> <%=run.category%></span>
       <div class="d-flex justify-content-between">
-        <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %></p>
-        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i> <%= run.max_person %> Max.</p>
+        <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %>/5</p>
+        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i><%= run.users.count %>/<%= run.max_person %></p>
       </div>
     </div>
   </div>

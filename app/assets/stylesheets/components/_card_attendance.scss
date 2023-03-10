@@ -17,7 +17,21 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 90;
   }
+
+  .action {
+    z-index: 100;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 60px;
+    border: black;
+    object-fit: cover;
+    height: 60px;
+  }
+
 }
 
 .card-attendance-title {
