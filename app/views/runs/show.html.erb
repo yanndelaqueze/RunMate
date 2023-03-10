@@ -73,7 +73,7 @@
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
     <% end %>
     <div class="attendants">
-    <h3>They already joined the run</h3>
+      <h3>They already joined the run</h3>
       <% @confirmed_users.each do |user| %>
         <%= link_to profile_path(user), class:"text-decoration-none" do %>
           <div class="attendant d-flex align-items-end">
@@ -82,10 +82,9 @@
               <h4><%= user.username.capitalize %></h4>
               <p>RunMate since <%= user.created_at.strftime("%B %Y") %></p>
             </div>
-          <% end %>
+          </div>
         <% end %>
       <% end %>
-
     </div>
     <% if user_signed_in? %>
       <% if @run.user == current_user %>
