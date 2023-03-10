@@ -1,9 +1,9 @@
 .show {
   .container {
-    height: 150vh;
+    height: 180vh;
   }
   // "bricolage container"
-  
+
   .run-leader {
     display: flex;
     justify-content: start;
@@ -12,7 +12,6 @@
   .run-leader img {
     border-radius: 50%;
     width: 50px;
-    border: black;
     height: 100%;
   }
 
@@ -120,19 +119,18 @@
   .join-button {
     position: fixed;
     bottom: 100px;
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
     font-size: 22px;
     font-weight: 600;
     background-color: $hard-blue;
     border: none;
     border-radius: 40px;
     color: #FFFFFF;
-    padding: 16px;
+    padding: 10px 35px;
     text-decoration: none;
     transition: background 0.3s ease;
-    text-align: center;
-    padding-right: 100px;
-    padding-left: 100px;
   }
 
   .attendants h3 {
