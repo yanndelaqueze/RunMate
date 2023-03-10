@@ -2,7 +2,9 @@
 <div class="show">
   <div class="container p-3">
     <div class="chatroom-link">
+    <% if @run.users.include?(current_user) %>
       <%= link_to ('<i class="fa-solid fa-message"></i>').html_safe, chatroom_run_path(@run)  %>
+    <% end %>
     </div>
     <div class="d-flex my-4">
       <div class="btn-back">
