@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/users/profile', to: 'users/sessions#show', as: 'user_profile'
     get '/users/:id/edit', to: 'users/sessions#edit', as: 'edit_user'
     patch '/users/:id/edit', to: 'users/sessions#update', as: 'update_user'
+    get '/users/:id/profile', to: 'users/sessions#show', as: 'profile'
   end
 
   get 'runs/map', to: "runs#map", as: :map
