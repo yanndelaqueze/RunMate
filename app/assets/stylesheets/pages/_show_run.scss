@@ -92,6 +92,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    font-weight: 300;
     color: $smoke-white;
     text-align: center;
   }
@@ -100,11 +101,19 @@
     background-color: $light-blue;
     border-radius: 20px;
     width: 32%;
+    height: 100px;
     padding: 15px;
+
   }
 
   .run-specs p {
     color: $smoke-white;
+    margin-bottom: 10px;
+  }
+
+  .run-specs i {
+    margin-right: 10px;
+    font-size: 20px;
   }
 
   .join-button {
