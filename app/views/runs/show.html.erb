@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="run-image mb-3" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
-      <div class="run-image-info">
+      <div class="run-image-info mb-3">
         <p><%= @run.category %></p>
         <p><%= @run.city %></p>
       </div>
@@ -43,9 +43,7 @@
       </div>
     </div>
 
-    <%# revoir la police des BULLE VIOLETTE SHOW %>
-
-    <div class="run-infos">
+    <div class="run-infos mb-4">
       <div class="run-date mb-3">
         <p><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
         <p><i class="fa-solid fa-clock"></i> <%= @run.date.strftime("%I:%M %p") %></p>
@@ -68,11 +66,11 @@
     <div class="attendants">
     <h3>They already joined the run</h3>
       <% @run.attendances.each do |attendance| %>
-      <div class="attendant">
+      <div class="attendant d-flex align-items-end">
         <%= cl_image_tag attendance.user.photo.key %>
         <div class="attendant-info">
-          <%= attendance.user.username %>
-          <p>RunMate since : <%= attendance.user.created_at.strftime("%B %Y")  %></p>
+          <h4><%= attendance.user.username.capitalize %></h4>
+          <p>RunMate since <%= attendance.user.created_at.strftime("%B %Y") %></p>
         </div>
       </div>
         <% end %>

@@ -117,6 +117,9 @@
   }
 
   .join-button {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
     font-size: 22px;
     font-weight: 600;
     background-color: $hard-blue;
@@ -131,25 +134,41 @@
     padding-left: 100px;
   }
 
-  .attendants {
-    margin-top: 24px;
+  .attendants h3 {
+    font-size: 20px;
+    color: $light-blue;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .attendant p {
+    margin: 0px;
   }
 
   .attendant {
-    display:flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    border: solid 1px;
+    margin-bottom: 10px;
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px 10px;
     border-color: $light-blue;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+
+  .attendant-info {
+    margin-left: 5px;
+  }
+
 
   .attendant img {
     border-radius: 50%;
     width: 50px;
     border: black;
     height: 100%;
+  }
+
+  .attendant h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: $light-blue;
   }
 
   .mapboxgl-canvas {
