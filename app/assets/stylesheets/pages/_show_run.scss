@@ -1,8 +1,19 @@
 .show {
   .container {
     height: 180vh;
+    position:relative;
   }
   // "bricolage container"
+
+  .chatroom-link {
+    position:absolute;
+    top: 7%;
+    bottom: 0;
+    left: 82%;
+    right: 0;
+    color: $light-blue;
+    font-size: 40px;
+  }
 
   .run-leader {
     display: flex;
