@@ -72,7 +72,6 @@ class RunsController < ApplicationController
 
     t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
 
-
     params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
 
     params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
@@ -96,7 +95,11 @@ class RunsController < ApplicationController
       @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
 
     else
-      @runs = []
+      if params[:start_date].present?
+        @runs = Run.all.select { |run| (d1..d2).cover?(run.date) }
+      else
+        @runs = []
+      end
     end
   end
 
