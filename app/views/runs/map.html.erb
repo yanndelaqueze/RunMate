@@ -1,5 +1,8 @@
-<div class="container p-3 mb-5">
-  <div style="width: 100%; height: 90vh;"
+<div class="container p-3">
+  <%= link_to :back, class:"text-decoration-none" do %>
+    <span class="btn-back fs-6"><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-blue me-1 mb-3"></i>BACK</span>
+  <% end %>
+  <div style="width: 100%; height: 75vh;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
