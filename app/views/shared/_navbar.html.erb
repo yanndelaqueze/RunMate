@@ -27,9 +27,9 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    <div class="d-flex flex-end align-items-center">
+    <div >
       <% if user_signed_in? %>
-        <%= link_to user_profile_path, class:"text-decoration-none" do %>
+        <%= link_to user_profile_path, class:"text-decoration-none d-flex flex-end align-items-center" do %>
         <%= cl_image_tag current_user.photo.key, class: "avatar me-3" %>
         <h5 class="m-0 pe-3" id="offcanvasRightLabel"><%= current_user.first_name %></h5>
         <% end %>

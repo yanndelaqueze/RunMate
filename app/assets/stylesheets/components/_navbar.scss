@@ -1,6 +1,8 @@
 #offcanvasRight {
   background-color: $anti-flash-white;
+  width: 200px;
 }
+
 
 .offcanvas-body {
   flex-direction: column;
@@ -30,6 +32,7 @@
   bottom: 0;
   width: 100%;
   height: 10vh;
+  z-index: 100;
 
   i {
     color: $light-blue;

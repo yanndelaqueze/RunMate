@@ -1,23 +1,24 @@
 <div class="card-attendance-request p-3">
   <%= link_to "", run_path(attendance.run), class:"card-run-link" %>
-  <div class="card-attendance-content-top d-flex justify-content-between align-items-center mb-2">
+  <div class="card-attendance-content-top d-flex flex-start justify-content-between align-items-center mb-2">
+    <%= cl_image_tag attendance.run.photo.key %>
     <h4 class="card-attendance-title"><%= attendance.run.name %> </h4>
     <% if attendance.user == current_user %>
-      <%= link_to attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+      <%= link_to attendance_path(attendance), class: "btn-delete fs-5 p-2 action text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
         <i class="fa-regular fa-trash-can"></i>
       <% end %>
     <% end %>
   </div>
-  <p class="category">Date of the run: <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
-  <p>Message: <em><%= attendance.content %></em></p>
-  <p>Status of your request: <strong><%= attendance.status.capitalize %></strong></p>
+  <p class="category">Date : <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
+  <p>Message : <em><%= attendance.content %></em></p>
+  <p>Status : <strong><%= attendance.status.capitalize %></strong></p>
   <% if attendance.run.user == current_user %>
-    <div class="d-flex ps-4">
-      <%= link_to decline_attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :patch } do %>
+    <div class="d-flex flex-start align-items-center">
+      <%= link_to decline_attendance_path(attendance), class: "btn-delete fs-3 p-2 action", data: { turbo_method: :patch } do %>
         <i class="fa-solid fa-thumbs-down"></i>
       <% end %>
       <% if attendance.status != "confirmed" %>
-        <%= link_to confirm_attendance_path(attendance), class: "btn-delete fs-5 p-2", data: { turbo_method: :patch } do %>
+        <%= link_to confirm_attendance_path(attendance), class: "btn-delete fs-3 p-2 action", data: { turbo_method: :patch } do %>
           <i class="fa-solid fa-thumbs-up"></i>
         <% end %>
       <% end %>

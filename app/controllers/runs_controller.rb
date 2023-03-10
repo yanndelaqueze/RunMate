@@ -42,7 +42,7 @@ class RunsController < ApplicationController
     @run.user = current_user
     authorize @run
     if @run.save
-      redirect_to run_path(@run)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
