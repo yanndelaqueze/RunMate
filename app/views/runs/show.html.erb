@@ -42,15 +42,15 @@
     <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
-        <i class="fa-solid fa-user"></i><%= @run.attendances.count %>
+        <i class="fa-solid fa-user"></i><%= @run.attendances.count %>/<%= @run.max_person %>
       </div>
       <div class="violet-square">
         <p>Distance</p>
-        <p><%= @run.distance %> km</p>
+        <%= @run.distance %> km
       </div>
       <div class="violet-square">
         <p>Level</p>
-        <i class="fa-solid fa-gauge-high"></i><%= @run.level %>
+        <i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5
       </div>
     </div>
 
@@ -73,14 +73,16 @@
     <div class="attendants">
     <h3>They already joined the run</h3>
       <% @run.attendances.each do |attendance| %>
-        <%= link_to profile_path(attendance.user), class:"text-decoration-none" do %>
-          <div class="attendant d-flex align-items-end">
-            <%= cl_image_tag attendance.user.photo.key %>
-            <div class="attendant-info">
-              <h4><%= attendance.user.username.capitalize %></h4>
-              <p>RunMate since <%= attendance.user.created_at.strftime("%B %Y") %></p>
+        <% if attendance.status == "confirmed" %>
+          <%= link_to profile_path(attendance.user), class:"text-decoration-none" do %>
+            <div class="attendant d-flex align-items-end">
+              <%= cl_image_tag attendance.user.photo.key %>
+              <div class="attendant-info">
+                <h4><%= attendance.user.username.capitalize %></h4>
+                <p>RunMate since <%= attendance.user.created_at.strftime("%B %Y") %></p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
 
