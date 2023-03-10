@@ -1,7 +1,7 @@
 <div class="profile">
   <div class="container px-4 py-4">
     <div class="img">
-      <img src="https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg" class=" rounded-circle img-fluid" />
+      <%= cl_image_tag user.photo.key, class: "rounded-circle img-fluid" %>
       <% if can_edit %>
         <%= link_to "Edit profile", edit_user_path(user), class:"btn btn-link" %>
       <% end %>
