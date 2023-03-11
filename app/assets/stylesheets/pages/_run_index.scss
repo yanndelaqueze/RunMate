@@ -11,3 +11,8 @@
   background: white;
   text-decoration: none;
 }
+
+.offcanvas {
+z-index: 90;
+background-color: $anti-flash-white;
+}

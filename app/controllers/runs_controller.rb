@@ -5,8 +5,20 @@ class RunsController < ApplicationController
   def index
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
+      markers
     else
       @runs = Run.where('date > ?', DateTime.now)
+      markers
+    end
+  end
+
+  def markers
+    @markers = @runs.geocoded.map do |run|
+      {
+        lat: run.latitude,
+        lng: run.longitude,
+        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
+      }
     end
   end
 
