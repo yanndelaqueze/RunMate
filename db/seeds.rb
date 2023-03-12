@@ -707,7 +707,7 @@ run21 = Run.new(
   distance: 12,
   max_person: 4,
   meeting_point: "12 Bd Alexandre Delabre, 13008 Marseille",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user12
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
@@ -723,7 +723,7 @@ run22 = Run.new(
   distance: 7,
   max_person: 6,
   meeting_point: "174 Quai du Port, 13002 Marseille",
-  date: DateTime.now.next_week(:saturday).change(hour: 14),
+  date: DateTime.now.last_week(:saturday).change(hour: 14),
   user: user12
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
