@@ -40,7 +40,8 @@ class RunsController < ApplicationController
       [{
         lat: @run.geocode[0],
         lng: @run.geocode[1],
-        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run })
+        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run }),
+        run_marker_html: render_to_string(partial: "run_marker", locals: { run: @run })
       }]
     authorize @run
     @confirmed_users = @run.users.where(attendances: { status: "confirmed" })
