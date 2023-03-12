@@ -19,11 +19,19 @@
       <div class="run-leader-info pt-3">
         <h2><%= @run.user.username.capitalize %></h2>
         <ul class="stars list-inline">
+        <% if @run.user.reviews.empty? %>
+          <p> </p>
+        <% else %>
           <% @run.user.reviews.average(:rating).round.times do %>
             <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
           <% end %>
+        <% end %>
         </ul>
-        <p><%= (@run.user.reviews.average(:rating)*10).round / 10.0 %>/5</p>
+        <% if @run.user.reviews.empty? %>
+          <p> </p>
+        <% else %>
+          <p><%= (@run.user.reviews.average(:rating)*10).round / 10.0 %>/5</p>
+        <% end %>
       </div>
     </div>
       <% if @run.photo.attached? %>
