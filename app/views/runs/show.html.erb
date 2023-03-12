@@ -15,9 +15,13 @@
       <h1><%= @run.name %></h1>
     </div>
     <div class="run-leader d-flex align-items-center mb-2">
+      <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
         <%= cl_image_tag @run.user.photo.key %>
+      <% end %>
       <div class="run-leader-info pt-3">
-        <h2><%= @run.user.username.capitalize %></h2>
+        <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
+          <h2><%= @run.user.username.capitalize %></h2>
+        <% end %>
         <ul class="stars list-inline">
         <% if @run.user.reviews.empty? %>
           <p> </p>
