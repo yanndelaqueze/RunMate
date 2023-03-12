@@ -41,12 +41,16 @@
         <p class="mb-0">Reviews Received</p>
       </div>
       <div class="col">
+        <% if user.reviews.empty? %>
+        <p>-</p>
+        <% else %>
         <p class="mb-2 h5"> <%= (user.reviews.average(:rating)*10).round / 10.0 %></p>
+        <% end %>
         <p class="mb-0">Average Rating</p>
       </div>
     </div>
     <div class="reviews">
-      <h2 class="mb-2 mt-3">Reviews</h2>
+      <h2 class="mb-3 mt-3">Reviews</h2>
       <div class="review-cards">
       <% user.reviews.each do |review| %>
         <%= link_to profile_path(review.user), class:"text-decoration-none" do %>
