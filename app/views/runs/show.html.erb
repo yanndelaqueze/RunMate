@@ -14,17 +14,16 @@
       </div>
       <h1><%= @run.name %></h1>
     </div>
-    <div class="run-leader d-flex align-items-end mb-4">
+    <div class="run-leader d-flex align-items-center mb-2">
         <%= cl_image_tag @run.user.photo.key %>
-      <div class="run-leader-info">
+      <div class="run-leader-info pt-3">
         <h2><%= @run.user.username.capitalize %></h2>
         <ul class="stars list-inline">
-          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
-          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
-          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
-          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
-          <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <% @run.user.reviews.average(:rating).round.times do %>
+            <li class="list-inline-item"><i class="fa-solid fa-star"></i></li>
+          <% end %>
         </ul>
+        <p><%= (@run.user.reviews.average(:rating)*10).round / 10.0 %>/5</p>
       </div>
     </div>
       <% if @run.photo.attached? %>
