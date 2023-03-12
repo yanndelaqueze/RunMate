@@ -17,7 +17,8 @@ class RunsController < ApplicationController
       {
         lat: run.latitude,
         lng: run.longitude,
-        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
+        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run }),
+        run_marker_html: render_to_string(partial: "run_marker", locals: { run: run })
       }
     end
   end
