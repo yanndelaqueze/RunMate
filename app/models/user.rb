@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :attendances
   has_many :runs
+  has_many :attendances, through: :runs
+  has_many :reviews, through: :attendances
   has_one_attached :photo
 end

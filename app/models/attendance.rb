@@ -2,7 +2,7 @@ class Attendance < ApplicationRecord
   belongs_to :user
   belongs_to :run
   has_many :messages, dependent: :destroy
-  has_many :reviews
+  has_one :review
 end
 
 # WE CAN USE THESE:

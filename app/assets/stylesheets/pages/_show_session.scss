@@ -10,9 +10,6 @@
     text-align: center;
   }
 
-  .container {
-    height: 100vh;
-  }
 
   .img, .btn-link {
     display: block;
@@ -23,6 +20,23 @@
   h2 {
     font-size: 15px;
   }
+
+  .review {
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border-color: $light-blue;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+
+  .reviews img {
+    border-radius: 50%;
+    width: 50px;
+    border: black;
+    height: 100%;
+  }
+
 
 
 }

@@ -14,7 +14,7 @@
       <% end %>
     </div>
     <h1 class="mb-2"><%= user.first_name %> <%= user.last_name %></h1>
-    <h2 class="mb-2">Runner since 2023</h2>
+    <h2 class="mb-2">RunMate since 2023</h2>
     <div class="mb-5 text-center">
       <button type="button" class="btn btn-outline">
         <i class="fab fa-facebook-f fa-lg"></i>
@@ -29,7 +29,7 @@
     <p class="mb-5"><%= user.description %></p>
     <div class="row">
       <div class="col">
-        <p class="mb-2 h5"><%= user.attendances.count %></p>
+        <p class="mb-2 h5"><%= Attendance.where(user: user).count %></p>
         <p class="mb-0">Runs joined</p>
       </div>
       <div class="col">
@@ -37,9 +37,34 @@
         <p class="mb-0">Runs created</p>
       </div>
       <div class="col">
-        <p class="mb-2 h5">4</p>
-        <p class="mb-0">Rating</p>
+        <p class="mb-2 h5"> <%= user.reviews.count %></p>
+        <p class="mb-0">Reviews Received</p>
       </div>
+      <div class="col">
+        <p class="mb-2 h5"> <%= (user.reviews.average(:rating)*10).round / 10.0 %></p>
+        <p class="mb-0">Average Rating</p>
+      </div>
+    </div>
+    <div class="reviews">
+      <h2 class="mb-2 mt-3">Reviews</h2>
+      <div class="review-cards">
+      <% user.reviews.each do |review| %>
+        <%= link_to profile_path(review.user), class:"text-decoration-none" do %>
+          <div class="review d-flex align-items-end">
+            <%= cl_image_tag review.user.photo.key %>
+            <div class="review-info">
+              <ul class="stars list-inline">
+              <% review.rating.times do %>
+                <li class="list-inline-item" style="color:black"><i class="fa-solid fa-star"></i></li>
+              <% end %>
+              </ul>
+              <p style="color:black">Date : <%= review.created_at.strftime("%B %Y") %></p>
+              <p style="color:black">"<%= review.comment %>"</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
