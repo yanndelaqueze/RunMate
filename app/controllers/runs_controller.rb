@@ -5,8 +5,21 @@ class RunsController < ApplicationController
   def index
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
+      markers
     else
       @runs = Run.where('date > ?', DateTime.now)
+      markers
+    end
+  end
+
+  def markers
+    @markers = @runs.geocoded.map do |run|
+      {
+        lat: run.latitude,
+        lng: run.longitude,
+        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run }),
+        run_marker_html: render_to_string(partial: "run_marker", locals: { run: run })
+      }
     end
   end
 
@@ -27,7 +40,8 @@ class RunsController < ApplicationController
       [{
         lat: @run.geocode[0],
         lng: @run.geocode[1],
-        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run })
+        run_info_smallmap_html: render_to_string(partial: "run_info_smallmap", locals: { run: @run }),
+        run_marker_html: render_to_string(partial: "run_marker", locals: { run: @run })
       }]
     authorize @run
     @confirmed_users = @run.users.where(attendances: { status: "confirmed" })

@@ -11,3 +11,18 @@
   background: white;
   text-decoration: none;
 }
+
+.offcanvas {
+z-index: 90;
+background-color: $anti-flash-white;
+height: 83vh;
+margin-top: 60px;
+}
+
+.map-head {
+  margin-bottom: 50px;
+}
+
+.mapboxgl-canvas-container {
+  margin-top: 10px;
+}

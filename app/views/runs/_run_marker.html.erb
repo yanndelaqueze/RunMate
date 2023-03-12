@@ -1,0 +1,15 @@
+
+<% case run.category %>
+    <% when "Running" %>
+    <%= image_tag "picto/running.png", class:"run-marker" %>
+    <% when "Casual" %>
+    <%= image_tag "picto/casual.png", class:"run-marker" %>
+    <% when "Trail Running" %>
+    <%= image_tag "picto/trail_running.png", class:"run-marker" %>
+    <% when "City Tour" %>
+    <%= image_tag "picto/city_tour.png", class:"run-marker" %>
+    <% when "Hiking" %>
+    <%= image_tag "picto/hiking.png", class:"run-marker" %>
+    <% when "Coaching" %>
+    <%= image_tag "picto/coaching.png", class:"run-marker" %>
+  <% end %>
