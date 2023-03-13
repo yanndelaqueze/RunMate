@@ -1,0 +1,5 @@
+meta_name: "RunMate"
+meta_title: "RunMate - Let's run together !"
+meta_description: "Don't run alone anymore ! Connect with Runners around you and share your runs."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@Lewagonparis"   # required for Twitter Cards
