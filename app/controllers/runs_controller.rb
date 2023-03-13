@@ -28,7 +28,7 @@ class RunsController < ApplicationController
 
     Time.zone = "Europe/Paris"
 
-    t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
+    t = Time.zone.parse(params[:hour]) || Time.zone.parse("00:00")
 
     params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
     params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
