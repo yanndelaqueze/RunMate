@@ -59,7 +59,7 @@
             <%= cl_image_tag review.user.photo.key %>
             <div class="review-user-id">
               <%= link_to profile_path(review.user), class:"text-decoration-none" do %>
-                <p><%= review.user.username.capitalize %></p>
+                <p class="review-name"><%= review.user.username.capitalize %></p>
                 <ul>
                   <% review.rating.times do %>
                     <li class="stars list-inline-item"><i class="fa-solid fa-star"></i></li>
