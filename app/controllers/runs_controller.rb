@@ -45,14 +45,10 @@ class RunsController < ApplicationController
 
       @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
 
+    elsif params[:start_date].present? || params[:hour].present?
+      @runs = @runs.select { |run| (d1..d2).cover?(run.date) }
     else
-      if params[:start_date].present? || params[:hour].present?
-
-        @runs = @runs.select { |run| (d1..d2).cover?(run.date) }
-
-      else
-        @runs = []
-      end
+      @runs = []
     end
   end
 
