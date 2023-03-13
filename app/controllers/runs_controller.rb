@@ -36,6 +36,7 @@ class RunsController < ApplicationController
 
     params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
     params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
+    d2 = d1 + 1 if d2 == d1
 
     d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
     d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
