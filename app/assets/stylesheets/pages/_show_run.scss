@@ -1,7 +1,7 @@
 .show {
   .container {
-    height: 180vh;
-    position:relative;
+    height: 190vh;
+    // position:relative;
   }
   // "bricolage container"
 
@@ -10,14 +10,17 @@
   }
 
   .chatroom-link {
-    position:absolute;
-    top: 10%;
-    bottom: 0;
-    left: 82%;
-    right: 0;
+    // position:absolute;
+    // top: 10%;
+    // bottom: 0;
+    // left: 82%;
+    // right: 0;
     color: $light-blue;
-    font-size: 40px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
   }
+
 
   .run-leader {
     display: flex;
@@ -214,5 +217,13 @@
   .mapboxgl-map {
     margin-bottom: 20px;
   }
+
+}
+
+
+// Edits buttons
+.btn-edits {
+  text-decoration: none;
+  color: #6c6c76;
 
 }
