@@ -6,17 +6,17 @@
       %>
     </div>
 
-    <div class="secondline d-flex py-2 m-1 mb-4 justify-content-between">
+    <div class="secondline d-flex py-2 m-1 mb-4 justify-content-between" data-controller="flatpickr">
 
-      <div data-controller="flatpickr">
+      <div>
 
         <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'},class:"searchinput", placeholder: "Add dates" } %>
 
-        <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add hour"} %>
+        <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add dates"} %>
 
       </div>
       <div>
-        <%= f.time_field :hour , class: "searchinput"%>
+        <%= f.time_field :hour , class: "searchinput" %>
       </div>
 
       <%= submit_tag "Find a run", class:"btn-search-index" %>
