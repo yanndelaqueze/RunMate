@@ -5,11 +5,11 @@ class RunsController < ApplicationController
   def index
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
-      markers
+      @runs = Run.where(id: @found_runs.map(&:id))
     else
       @runs = Run.where('date > ?', DateTime.now)
-      markers
     end
+    markers
   end
 
   def markers
@@ -23,16 +23,26 @@ class RunsController < ApplicationController
     end
   end
 
-  def map
-    @runs = Run.all
-    @markers = @runs.geocoded.map do |run|
-      {
-        lat: run.latitude,
-        lng: run.longitude,
-        run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
-      }
+  def search
+    Time.zone = "Europe/Paris"
+    t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
+    params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
+    params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
+    d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
+    d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
+    time_added = Time.parse("02:00:00").seconds_since_midnight.seconds
+    d2 += time_added
+    if params[:query].present?
+      @found_runs = Run.near(params[:query], 10, units: :km, order: :distance)
+                       .reverse_order
+      @found_runs = @found_runs.select { |found_run| (d1..d2).cover?(run.date) } if params[:date_start].present?
+    else
+      if params[:start_date].present? || params[:hour].present?
+        @found_runs = Run.all.select { |found_run| (d1..d2).cover?(found_run.date) }
+      else
+        @found_runs = []
+      end
     end
-    authorize @runs
   end
 
   def show
@@ -82,32 +92,22 @@ class RunsController < ApplicationController
     redirect_to runs_path, status: :see_other
   end
 
-  def search
-    Time.zone = "Europe/Paris"
-    t = Time.zone.parse(params[:hour]) || Time.zone.parse("12:00")
-    params[:start_date].present? ? d1 = Time.zone.parse(params[:start_date]).to_date : d1 = Time.now.to_date
-    params[:end_date].present? ? d2 = Time.zone.parse(params[:end_date]).to_date : d2 = d1 + 5
-    d1 = Time.zone.parse("#{d1.strftime('%F')} #{t.strftime('%T')}")
-    d2 = Time.zone.parse("#{d2.strftime('%F')} #{t.strftime('%T')}")
-    time_added = Time.parse("02:00:00").seconds_since_midnight.seconds
-    d2 += time_added
-    if params[:query].present?
-      @runs = Run.near(params[:query], 10, units: :km, order: :distance)
-                 .reverse_order
-      @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
-    else
-      if params[:start_date].present? || params[:hour].present?
-        @runs = Run.all.select { |run| (d1..d2).cover?(run.date) }
-      else
-        @runs = []
-      end
-    end
-  end
-
   def chatroom
     @message = Message.new
     authorize @run
   end
+
+  # def map
+  #   @runs = Run.all
+  #   @markers = @runs.geocoded.map do |run|
+  #     {
+  #       lat: run.latitude,
+  #       lng: run.longitude,
+  #       run_info_map_html: render_to_string(partial: "run_info_map", locals: { run: run })
+  #     }
+  #   end
+  #   authorize @runs
+  # end
 
   private
 
