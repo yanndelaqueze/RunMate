@@ -83,6 +83,11 @@
     <% unless @confirmed_users.include?(current_user) %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
     <% end %>
+    <div class="weather">
+    <%= @weather %>
+    <%= @temp %>
+    <%= @icon %>
+    </div>
     <div class="attendants">
       <h3>They already joined the run</h3>
       <% @confirmed_users.each do |user| %>
