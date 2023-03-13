@@ -17,6 +17,7 @@
       </div>
       <div>
         <%= f.time_field :hour , class: "searchinput" %>
+        <%=f.input :time, as: :time, :minute_step => 15 %>
       </div>
 
       <%= submit_tag "Find a run", class:"btn-search-index" %>
