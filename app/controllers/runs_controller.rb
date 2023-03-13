@@ -29,7 +29,7 @@ class RunsController < ApplicationController
   def search
     @runs = Run.where('date > ?', DateTime.now)
 
-    # only one time zone is considered
+    # only one time zone is considered in this search
     Time.zone = "Europe/Paris"
 
     t = Time.zone.parse(params[:hour]) || Time.zone.parse("00:00")
