@@ -12,12 +12,6 @@
   text-decoration: none;
 }
 
-.offcanvas {
-z-index: 90;
-background-color: $anti-flash-white;
-height: 83vh;
-margin-top: 60px;
-}
 
 .map-head {
   margin-bottom: 50px;
@@ -25,4 +19,16 @@ margin-top: 60px;
 
 .mapboxgl-canvas-container {
   margin-top: 10px;
+}
+
+.offcanvas {
+  z-index: 90;
+  background-color: $anti-flash-white;
+  height: 83vh;
+  margin-top: 60px;
+}
+
+.black-title-index {
+  color: #2C2C3F;
+  font-size: 26px;
 }

@@ -8,11 +8,11 @@
     </div>
     <div class="d-flex my-4">
       <div class="btn-back">
-        <%= link_to :back, class:"d-flex me-4 mt-2" do%>
+        <%= link_to :back, class:"d-flex me-4 mt-2 text-decoration-none" do%>
           <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
         <% end %>
       </div>
-      <h1><%= @run.name %></h1>
+      <h1 class="blue-title-show"><%= @run.name %></h1>
     </div>
     <div class="run-leader d-flex align-items-center mb-2">
       <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
@@ -20,7 +20,7 @@
       <% end %>
       <div class="run-leader-info pt-3">
         <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
-          <h2><%= @run.user.username.capitalize %></h2>
+          <h4><%= @run.user.username.capitalize %></h4>
         <% end %>
         <ul class="stars list-inline">
         <% if @run.user.reviews.empty? %>
@@ -53,22 +53,22 @@
     <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
-        <i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %>
+        <p><i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %></p>
       </div>
       <div class="violet-square">
         <p>Distance</p>
-        <%= @run.distance %> km
+        <p><%= @run.distance %> km</p>
       </div>
       <div class="violet-square">
         <p>Level</p>
-        <i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5
+        <p><i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5</p>
       </div>
     </div>
 
     <div class="run-infos mb-4">
       <div class="run-date mb-4">
-        <p><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
-        <p><i class="fa-solid fa-clock"></i> <%= @run.date.strftime("%I:%M %p") %></p>
+        <p class="me-1"><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
+        <p><i class="fa-solid fa-clock"></i><%= @run.date.strftime("%I:%M %p") %></p>
       </div>
       <div class="run-description">
         <p><%= @run.description %></p>
@@ -83,14 +83,14 @@
     <% unless @confirmed_users.include?(current_user) %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
     <% end %>
-    <div class="attendants">
-      <h3>They already joined the run</h3>
+    <div class="attendants mt-5">
+      <h3>They already joined the run:</h3>
       <% @confirmed_users.each do |user| %>
         <%= link_to profile_path(user), class:"text-decoration-none" do %>
           <div class="attendant d-flex align-items-end">
             <%= cl_image_tag user.photo.key %>
             <div class="attendant-info">
-              <h4><%= user.username.capitalize %></h4>
+              <p><%= user.username.capitalize %></p>
               <p>RunMate since <%= user.created_at.strftime("%B %Y") %></p>
             </div>
           </div>
