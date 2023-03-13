@@ -5,7 +5,6 @@ class RunsController < ApplicationController
   def index
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
-      @runs = Run.where(id: @found_runs.map(&:id))
     else
       @runs = Run.where('date > ?', DateTime.now)
     end
@@ -13,6 +12,7 @@ class RunsController < ApplicationController
   end
 
   def markers
+    @runs = Run.where(id: @runs.map(&:id))
     @markers = @runs.geocoded.map do |run|
       {
         lat: run.latitude,
@@ -33,14 +33,14 @@ class RunsController < ApplicationController
     time_added = Time.parse("02:00:00").seconds_since_midnight.seconds
     d2 += time_added
     if params[:query].present?
-      @found_runs = Run.near(params[:query], 10, units: :km, order: :distance)
+      @runs = Run.near(params[:query], 10, units: :km, order: :distance)
                        .reverse_order
-      @found_runs = @found_runs.select { |found_run| (d1..d2).cover?(found_run.date) } if params[:date_start].present?
+      @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
     else
       if params[:start_date].present? || params[:hour].present?
-        @found_runs = Run.all.select { |found_run| (d1..d2).cover?(found_run.date) }
+        @runs = Run.all.select { |run| (d1..d2).cover?(run.date) }
       else
-        @found_runs = []
+        @runs = []
       end
     end
   end

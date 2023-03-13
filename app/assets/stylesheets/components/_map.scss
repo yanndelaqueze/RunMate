@@ -1,5 +1,7 @@
-.mapboxgl-popup {
-  max-width: 100px;
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 90%;
 }
 
 .mapboxgl-map {
@@ -7,50 +9,27 @@
   height: 75vh;
 }
 
+.mapboxgl-popup {
+  max-width: 240px;
+  transform: translate(-50%, -100%) translate(228px, 320px) !important;
+  border-radius: 20px !important;
+}
+
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  padding: 5px 5px 5px !important;
   width: 120px;
-}
+  border-radius: 10px;
 
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 90%;
-}
-
-.map-card-run {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.map-card-run-content {
-  padding: 4px;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.map-card-run-content .name {
-  font-size: 10px;
-  font-weight: bold;
-  margin: 0;
-  text-decoration: none;
-  color: black;
-}
-
-
-.map-card-run-content .category {
-  color: black;
-  font-size: 6px;
+  .run-info {
+    padding: 0px;
   }
 
+  img {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+  }
 
-.map-card-run-content .date {
-  font-size: 8px;
-  font-weight: bold;
-  opacity: .7;
-  margin: 0;
-  color: black;
 }
