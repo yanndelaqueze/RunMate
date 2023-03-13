@@ -53,8 +53,8 @@
       <h2 class="mb-3 mt-3">Reviews</h2>
       <% user.reviews.order('created_at DESC').each do |review| %>
         <div class="review">
-          <p><%= review.created_at.strftime("%B %Y") %></p>
-          <p><i class="fa-solid fa-quote-left"></i><%= review.comment %></p>
+          <p class="review-date"><%= review.created_at.strftime("%B %Y") %></p>
+          <p class="review-comment"><i class="fa-solid fa-quote-left me-2"></i><%= review.comment %></p>
           <div class="review-user">
             <%= cl_image_tag review.user.photo.key %>
             <div class="review-user-id">
