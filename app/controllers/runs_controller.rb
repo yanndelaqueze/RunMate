@@ -40,7 +40,7 @@ class RunsController < ApplicationController
     d2 += time_added
 
     if params[:query].present?
-      @runs = Run.near(params[:query], 10, units: :km, order: :distance)
+      @runs = @runs.near(params[:query], 10, units: :km, order: :distance)
                        .reverse_order
 
       @runs = @runs.select { |run| (d1..d2).cover?(run.date) } if params[:date_start].present?
