@@ -35,7 +35,7 @@ class RunsController < ApplicationController
     if params[:query].present?
       @found_runs = Run.near(params[:query], 10, units: :km, order: :distance)
                        .reverse_order
-      @found_runs = @found_runs.select { |found_run| (d1..d2).cover?(run.date) } if params[:date_start].present?
+      @found_runs = @found_runs.select { |found_run| (d1..d2).cover?(found_run.date) } if params[:date_start].present?
     else
       if params[:start_date].present? || params[:hour].present?
         @found_runs = Run.all.select { |found_run| (d1..d2).cover?(found_run.date) }
