@@ -109,11 +109,13 @@ class RunsController < ApplicationController
   end
 
   def weather
-    weather_serialized = URI.open("https://api.openweathermap.org/data/2.5/forecast?lat=#{@run.latitude}&#{@run.longitude}&appid=179bb42eff83fba82d4459244574042d&units=metric")
-    weather = JSON.parse(weather_serialized)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 + 1 }) }
-    @temp = weather["main"]["temp"]
-    @weather = weather["weather"][0]["main"]
-    @icon = weather["weather"][0]["icon"]
+    payload = URI.open("https://api.openweathermap.org/data/2.5/forecast?lat=#{@run.latitude}&lon=#{@run.longitude}&appid=179bb42eff83fba82d4459244574042d&units=metric").read
+
+    data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 + 1 }) }
+    raise
+    # @temp = weather["main"]["temp"]
+    # @weather = weather["weather"][0]["main"]
+    # @icon = weather["weather"][0]["icon"]
   end
 
 
