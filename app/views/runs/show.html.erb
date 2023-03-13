@@ -87,7 +87,7 @@
       <h3>Weather Forecast</h3>
       <div class="run-weather d-flex justify-content-around align-items-center">
         <% if @temp.nil? %>
-          <p class="no-data"><em>Weather Forecast is not available - come back later !</em></p>
+          <p class="no-data"><em>Weather Forecast is available 5 days before the run</em></p>
         <% else %>
           <p><%= @weather %></p>
           <p><%= @temp.round(1) %>°C</p>
