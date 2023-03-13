@@ -12,7 +12,7 @@
   <p class="category"><i class="fa-regular fa-calendar"></i>  | <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
 
   <div class="message">
-    <p><i class="fa-regular fa-envelope-open"></i>  | <%= attendance.user.username.capitalize %> sent you a message :</p>
+    <p><i class="fa-regular fa-envelope-open"></i>  | You sent this message :</p>
     <p>"<em><%= attendance.content %></em>"</p>
   </div>
   <p>Status : <strong><%= attendance.status.capitalize %></strong></p>
