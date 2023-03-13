@@ -1,6 +1,6 @@
 <div class="card-attendance-request p-3">
   <%= link_to "", run_path(attendance.run), class:"card-run-link" %>
-  <div class="card-attendance-content-top d-flex flex-start justify-content-between align-items-center mb-2">
+  <div class="card-attendance-content-top d-flex flex-start justify-content-between align-items-center mb-3">
     <%= cl_image_tag attendance.run.photo.key %>
     <h4 class="card-attendance-title"><%= attendance.run.name %> </h4>
     <% if attendance.user == current_user %>
@@ -9,8 +9,12 @@
       <% end %>
     <% end %>
   </div>
-  <p class="category">Date : <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
-  <p>Message : <em><%= attendance.content %></em></p>
+  <p class="category"><i class="fa-regular fa-calendar"></i>  | <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
+
+  <div class="message">
+    <p><i class="fa-regular fa-envelope-open"></i>  | <%= attendance.user.username.capitalize %> sent you a message :</p>
+    <p>"<em><%= attendance.content %></em>"</p>
+  </div>
   <p>Status : <strong><%= attendance.status.capitalize %></strong></p>
   <% if attendance.run.user == current_user %>
     <div class="d-flex flex-start align-items-center">
@@ -23,5 +27,8 @@
         <% end %>
       <% end %>
     </div>
+  <% end %>
+  <%= link_to new_attendance_review_path(attendance), class: "review" do %>
+   <p class="review"><i class="fa-solid fa-plus me-2"></i>Add a review</p>
   <% end %>
 </div>
