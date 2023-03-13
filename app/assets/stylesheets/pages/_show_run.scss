@@ -157,6 +157,28 @@
     color: #6c6c76;
   }
 
+  .weather {
+    background-color: $light-blue;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: $smoke-white;
+
+    .no-data {
+      font-size: 14px!important;
+    }
+
+    p {
+      color: $smoke-white;
+      font-size: 24px!important;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 16px!important;
+    }
+  }
+
   .join-button {
     position: fixed;
     bottom: 100px;
