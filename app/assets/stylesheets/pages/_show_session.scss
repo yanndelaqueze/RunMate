@@ -1,15 +1,11 @@
 .profile {
 
   background-color:$light-blue;
-  color: $smoke-white;
 
-
-
-  h1, h2, button, i, p, a {
+  h1, h2, button, .fab, p, a {
     color: $smoke-white;
     text-align: center;
   }
-
 
   .img, .btn-link {
     display: block;
@@ -21,22 +17,55 @@
     font-size: 15px;
   }
 
-  .review {
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding: 10px 10px;
-    border-color: $light-blue;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: white;
-  }
+}
 
-  .reviews img {
-    border-radius: 50%;
-    width: 50px;
-    border: black;
-    height: 100%;
-  }
+.review {
+background-color: $smoke-white;
+margin-bottom: 10px;
+border-radius: 20px;
+padding: 10px 12px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.review p,
+.review a,
+.fa-quote-left {
+  color: #515151;
+  text-align: left;
+}
+
+.review-user {
+  display: flex;
+  margin-top: 10px;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 50px;
+  border: #515151;
+  height: 100%;
+}
+
+.review-user-id {
+  margin-left: 10px;
+}
+
+.review-user-id p,
+.review-user-id a,
+.review-user-id ul,
+.review-user-id li {
+  margin: 0;
+}
+
+.review-user-id ul,
+.review-user-id li {
+  padding:0px;
+}
 
 
-
+.stars {
+  font-size: 14px;
+  color: $yellow;
+  margin: 0px;
+  text-align: left;
 }

@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @review.user = @user
     authorize @review
     if @review.save
-      redirect_to attendances_path, notice: 'Thank you for your review!' # adapter la redirection en fonction de ce qu'on voudra faire
+      redirect_to profile_path(@attendance.run.user), notice: 'Thank you for your review!' # adapter la redirection en fonction de ce qu'on voudra faire
     else
       flash[:alert] = "Something went wrong"
       render :new
@@ -25,6 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:comment, :rating)
   end
 end
