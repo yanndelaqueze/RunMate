@@ -37,7 +37,7 @@
 
   .run-leader-info h4 {
     font-size: 20px;
-    color: #2e2e2e;
+    color: #03205C;
     margin-bottom: 5px;
   }
 
@@ -160,10 +160,10 @@
     z-index: 999;
     font-size: 22px;
     font-weight: 600;
-    background-color: $white;
+    background-color: $hard-blue;
     border: none;
     border-radius: 40px;
-    color: $hard-blue;
+    color: $anti-flash-white;
     padding: 10px 35px;
     text-decoration: none;
     transition: background 0.3s ease;
@@ -171,7 +171,7 @@
 
   .attendants h3 {
     font-size: 20px;
-    color: #6c6c76;
+    color: #03205C;
     padding-left: 14px;
     text-align: left;
   }
@@ -202,7 +202,7 @@
   .attendant p {
     font-size: 15px;
     margin-bottom: 5px;
-    color: $light-blue;
+    color: #03205C;
     font-weight: bold;
   }
 
