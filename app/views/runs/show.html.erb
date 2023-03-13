@@ -72,7 +72,7 @@
       </div>
       <div class="run-description">
         <p><%= @run.description %></p>
-      <p class="address"><i class="fa-solid fa-location-dot"></i><%= @run.meeting_point %></p>
+        <p class="address"><i class="fa-solid fa-location-dot"></i><%= @run.meeting_point %></p>
       </div>
       <div style="width: 100%; height: 20vh;"
       data-controller="smallmap"
@@ -83,6 +83,18 @@
     <% unless @confirmed_users.include?(current_user) %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
     <% end %>
+    <div class="weather mb-4 py-2">
+      <h3>Weather Forecast</h3>
+      <div class="run-weather d-flex justify-content-around align-items-center">
+        <% if @temp.nil? %>
+          <p class="no-data"><em>Weather Forecast is available 5 days before the run</em></p>
+        <% else %>
+          <p><%= @weather %></p>
+          <p><%= @temp.round(1) %>°C</p>
+          <%= image_tag("https://openweathermap.org/img/w/#{@icon}.png") %>
+        <% end %>
+      </div>
+    </div>
     <div class="attendants mt-5">
       <h3>They already joined the run:</h3>
       <% @confirmed_users.each do |user| %>
