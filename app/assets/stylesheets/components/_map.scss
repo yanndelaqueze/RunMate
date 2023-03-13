@@ -11,7 +11,6 @@
 
 .mapboxgl-popup {
   max-width: 240px;
-  transform: translate(-50%, -100%) translate(228px, 320px) !important;
   border-radius: 20px !important;
 }
 
@@ -20,16 +19,32 @@
   font-family: "Open Sans", sans-serif;
   padding: 5px 5px 5px !important;
   width: 120px;
-  border-radius: 10px;
+  border-radius: 10px !important;
+  text-decoration: none;
 
   .run-info {
     padding: 0px;
+  }
+
+  .category {
+    position: absolute;
+    top: 43%;
+    left: 7%;
+    right: 0px;
+    background: white;
+    border-radius: 5px;
+    height: 25px;
+    width: 70px;
+    border: solid;
+    padding: 3px;
+
   }
 
   img {
     width: 100%;
     height: 25vw;
     object-fit: cover;
+    border-radius: 5px;
   }
 
 }

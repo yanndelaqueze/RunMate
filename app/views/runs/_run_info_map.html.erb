@@ -1,5 +1,6 @@
 <div class="run-info">
   <%= link_to run_path(run) do  %>
+    <span class="category"><%= run.category %></span>
   <% if run.photo.attached? %>
     <%= cl_image_tag run.photo.key, alt: "sport"%>
   <% else %>
@@ -7,8 +8,10 @@
   <% end %>
     <div class="map-card-run-content">
       <div class="name"><%= run.name %></div>
-      <div class="category"><%= run.category%></div>
-      <div class="date"><%= run.date.strftime("%b %e, %l:%M %p")%></div>
+      <div class="datetime d-flex justify-content-around">
+        <div class="date"><%= run.date.strftime("%b %e")%></div>
+        <div class="date"><%= run.date.strftime("%l:%M %p")%></div>
+      </div>
   <% end %>
   </div>
 </div>
