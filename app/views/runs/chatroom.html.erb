@@ -1,9 +1,11 @@
-<div class="container-chatroom chatroom"
+<div class="back-link-box">
+  <%= link_to :back, class:"back-link-chat" do %>
+    <span class="btn-back fs-6"><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-blue me-1"></i>BACK</span>
+  <% end %>
+</div>
+<div class="container-chatroom"
   data-controller="run-subscription"
   data-run-subscription-run-id-value="<%= @run.id %>">
-    <%= link_to :back, class:"text-decoration-none ps-2 pt-3" do %>
-      <span class="btn-back fs-6"><i class="fa-solid fa-circle-arrow-left fs-6 btn-back-blue me-1"></i>BACK</span>
-    <% end %>
     <h1 class="title-chatroom">#<%= @run.name %></h1>
     <div class="messages" data-run-subscription-target="messages">
       <% @run.messages.each do |message| %>
@@ -13,7 +15,7 @@
 
     <div class="message-input">
       <%= simple_form_for [@run, @message],
-      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
+      html: { data: { action: "turbo:submit-end->run-subscription#resetForm" }, class: "d-flex" } do |f| %>
         <%= f.input :content,
           label: false,
           placeholder: "Message ##{@run.name}",

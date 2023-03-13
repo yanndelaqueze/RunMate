@@ -1,11 +1,20 @@
 .chatroom-card {
   overflow: hidden;
-  height: 120px;
+  height: 80px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 10px;
+  position: relative;
+
+  .chatroom-card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .chatroom-card img {
@@ -27,6 +36,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #2C2C3F;
 }
 
 .chatroom-card-info {
@@ -34,9 +44,4 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2em 1em;
-}
-
-.chatroom-card-link {
-  padding-top: 1em;
-  font-size: 12px;
 }
