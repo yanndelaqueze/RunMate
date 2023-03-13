@@ -23,7 +23,7 @@
 background-color: $smoke-white;
 margin-bottom: 10px;
 border-radius: 20px;
-padding: 10px 12px;
+padding: 18px 24px;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -72,6 +72,11 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 .review-date,
 .review-comment {
   margin-bottom: 0px;
+}
+
+.review-date,
+.review-name {
+  font-weight: bold;
 }
 
 .review-comment {

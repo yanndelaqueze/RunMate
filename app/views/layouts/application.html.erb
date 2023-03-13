@@ -34,7 +34,9 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
 
-  <body>
+
+
+  <body id="<%= controller.controller_name  %>-<%= controller.action_name  %>">
     <%= render "shared/banner" unless @disable_banner %>
     <%= render "shared/flashes" %>
 
