@@ -12,11 +12,11 @@
 
         <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'},class:"searchinput", placeholder: "Add dates" } %>
 
-        <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add hour"} %>
+        <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add dates"} %>
 
       </div>
       <div>
-        <%= f.time_field :hour , class: "searchinput"%>
+        <%= f.time_field :hour , {data: {flatpickr_target: 'hourInput'}, class: "searchinput"} %>
       </div>
 
       <%= submit_tag "Find a run", class:"btn-search-index" %>

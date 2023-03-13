@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr"
 // The range plugin is also needed in order to use two inputs
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
+
 export default class extends Controller {
   // retrieve the targets from the DOM
   static targets = [ 'startDateInput', 'endDateInput' ]
