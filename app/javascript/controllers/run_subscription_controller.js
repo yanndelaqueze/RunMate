@@ -6,6 +6,7 @@ export default class extends Controller {
   static targets = ["messages"]
 
   connect() {
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
     this.channel = createConsumer().subscriptions.create(
       { channel: "RunChannel", id: this.runIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
@@ -17,6 +18,7 @@ export default class extends Controller {
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
+
 
   resetForm(event) {
     event.target.reset()

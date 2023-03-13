@@ -1,8 +1,15 @@
-<div id="message-<%= message.id %>" class="chat">
-  <small>
-    <%# <p class="text-left">
-      <%= message.created_at.strftime("%b %e, %l:%M %p") %>
-    <%# </p> %>
-    @<strong><%= message.user.username %></strong>: <%= message.content %>
-  </small>
-</div>
+<% if message.attendance.user == current_user %>
+  <div class="chat-box-right">
+    <small><span><%= message.created_at.strftime("%b %e, %l:%M %p") %></span></small>
+    <div id="message-<%= message.id %>" class="chat-right">
+      @<strong><%= message.user.username %></strong>: <%= message.content %>
+    </div>
+  </div>
+<% else %>
+  <div class="chat-box-left">
+    <small><span><%= message.created_at.strftime("%b %e, %l:%M %p") %></span></small>
+    <div id="message-<%= message.id %>" class="chat-left">
+      @<strong><%= message.user.username %></strong>: <%= message.content %>
+    </div>
+  </div>
+<% end %>
