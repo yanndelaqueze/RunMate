@@ -1,18 +1,13 @@
 
 <div class="show">
   <div class="container p-3">
-    <div class="chatroom-link">
-    <% if @confirmed_users.include?(current_user) %>
-      <%= link_to ('<i class="fa-solid fa-message"></i>').html_safe, chatroom_run_path(@run)  %>
-    <% end %>
-    </div>
     <div class="d-flex my-4">
       <div class="btn-back">
-        <%= link_to :back, class:"d-flex me-4 mt-2" do%>
+        <%= link_to :back, class:"d-flex me-4 mt-2 text-decoration-none" do%>
           <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
         <% end %>
       </div>
-      <h1><%= @run.name %></h1>
+      <h1 class="blue-title-show"><%= @run.name %></h1>
     </div>
     <div class="run-leader d-flex align-items-center mb-2">
       <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
@@ -20,7 +15,7 @@
       <% end %>
       <div class="run-leader-info pt-3">
         <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
-          <h2><%= @run.user.username.capitalize %></h2>
+          <h4><%= @run.user.username.capitalize %></h4>
         <% end %>
         <ul class="stars list-inline">
         <% if @run.user.reviews.empty? %>
@@ -38,9 +33,25 @@
         <% end %>
       </div>
     </div>
-      <% if @run.photo.attached? %>
+
+    <%# Buttons edit and delete %>
+    <div class="d-flex justify-content-between px-3 mb-2">
+      <% if user_signed_in? %>
+        <% if @run.user == current_user %>
+          <%= link_to edit_run_path, class: 'text-decoration-none' do %>
+            <span class="btn-edits"><i class="fa-regular fa-pen-to-square me-1"></i>Edit your run</span>
+          <% end %>
+          <%= link_to run_path(@run), class: 'text-decoration-none', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <span class="btn-edits"><i class="fa-regular fa-trash-can me-1"></i>Delete the run</span>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%# Image of the run %>
+    <% if @run.photo.attached? %>
     <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
-     <% else %>
+    <% else %>
          <div class="run-image mb-4" style="background-image: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80')">
       <% end %>
       <div class="run-image-info mb-4">
@@ -53,26 +64,26 @@
     <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
-        <i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %>
+        <p><i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %></p>
       </div>
       <div class="violet-square">
         <p>Distance</p>
-        <%= @run.distance %> km
+        <p><%= @run.distance %> km</p>
       </div>
       <div class="violet-square">
         <p>Level</p>
-        <i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5
+        <p><i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5</p>
       </div>
     </div>
 
     <div class="run-infos mb-4">
       <div class="run-date mb-4">
-        <p><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
-        <p><i class="fa-solid fa-clock"></i> <%= @run.date.strftime("%I:%M %p") %></p>
+        <p class="me-1"><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
+        <p><i class="fa-solid fa-clock"></i><%= @run.date.strftime("%I:%M %p") %></p>
       </div>
       <div class="run-description">
         <p><%= @run.description %></p>
-      <p class="address"><i class="fa-solid fa-location-dot"></i><%= @run.meeting_point %></p>
+        <p class="address"><i class="fa-solid fa-location-dot"></i><%= @run.meeting_point %></p>
       </div>
       <div style="width: 100%; height: 20vh;"
       data-controller="smallmap"
@@ -83,25 +94,36 @@
     <% unless @confirmed_users.include?(current_user) %>
       <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
     <% end %>
-    <div class="attendants">
-      <h3>They already joined the run</h3>
+    <div class="weather mb-4 py-2">
+      <h3>Weather Forecast</h3>
+      <div class="run-weather d-flex justify-content-around align-items-center">
+        <% if @temp.nil? %>
+          <p class="no-data"><em>Weather Forecast is available 5 days before the run</em></p>
+        <% else %>
+          <p><%= @weather %></p>
+          <p><%= @temp.round(1) %>°C</p>
+          <%= image_tag("https://openweathermap.org/img/w/#{@icon}.png") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="attendants mt-5">
+      <h3>They already joined the run:</h3>
       <% @confirmed_users.each do |user| %>
         <%= link_to profile_path(user), class:"text-decoration-none" do %>
           <div class="attendant d-flex align-items-end">
             <%= cl_image_tag user.photo.key %>
             <div class="attendant-info">
-              <h4><%= user.username.capitalize %></h4>
+              <p><%= user.username.capitalize %></p>
               <p>RunMate since <%= user.created_at.strftime("%B %Y") %></p>
             </div>
           </div>
         <% end %>
       <% end %>
+      <div class="chatroom-link">
+        <% if @confirmed_users.include?(current_user) %>
+          <%= link_to "Chat with your Mates", chatroom_run_path(@run), class:"btn btn-outline-primary mt-1" %>
+        <% end %>
     </div>
-    <% if user_signed_in? %>
-      <% if @run.user == current_user %>
-        <%= link_to ('<i class="fa-regular fa-pen-to-square"></i>').html_safe, edit_run_path, class: 'text-secondary fs-4 p-2' %>
-        <%= link_to ('<i class="fa-regular fa-trash-can"></i>').html_safe, run_path(@run), class: 'text-danger fs-4 p-2', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

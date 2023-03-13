@@ -1,6 +1,9 @@
+require 'open-uri'
+require 'json'
+
 class RunsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show map]
-  before_action :set_run, only: %i[show edit update destroy chatroom]
+  before_action :set_run, only: %i[show edit update destroy chatroom weather]
 
   def index
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
@@ -62,6 +65,7 @@ class RunsController < ApplicationController
       }]
     authorize @run
     @confirmed_users = @run.users.where(attendances: { status: "confirmed" })
+    weather
   end
 
   def new
@@ -102,6 +106,19 @@ class RunsController < ApplicationController
   def chatroom
     @message = Message.new
     authorize @run
+  end
+
+  def weather
+    payload = URI.open("https://api.openweathermap.org/data/2.5/forecast?lat=#{@run.latitude}&lon=#{@run.longitude}&appid=#{ENV['OPENWEATHER_KEY']}&units=metric").read
+    data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 }).to_i }
+    # data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 + 1 }) }
+    if data.nil?
+      "no data available"
+    else
+      @temp = data["main"]["temp"]
+      @weather = data["weather"][0]["main"]
+      @icon = data["weather"][0]["icon"]
+    end
   end
 
   # def map

@@ -26,7 +26,6 @@ export default class extends Controller {
       customMarker.innerHTML = marker.run_marker_html
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
         .addTo(this.map)
     });
   }

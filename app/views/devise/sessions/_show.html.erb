@@ -27,7 +27,7 @@
       </button>
     </div>
     <p class="mb-5"><%= user.description %></p>
-    <div class="row">
+    <div class="row mb-5">
       <div class="col">
         <p class="mb-2 h5"><%= Attendance.where(user: user).count %></p>
         <p class="mb-0">Runs joined</p>
@@ -51,24 +51,25 @@
     </div>
     <div class="reviews">
       <h2 class="mb-3 mt-3">Reviews</h2>
-      <div class="review-cards">
-      <% user.reviews.each do |review| %>
-        <%= link_to profile_path(review.user), class:"text-decoration-none" do %>
-          <div class="review d-flex align-items-end">
+      <% user.reviews.order('created_at DESC').each do |review| %>
+        <div class="review">
+          <p class="review-date"><%= review.created_at.strftime("%B %Y") %></p>
+          <p class="review-comment"><i class="fa-solid fa-quote-left me-2"></i><%= review.comment %></p>
+          <div class="review-user">
             <%= cl_image_tag review.user.photo.key %>
-            <div class="review-info">
-              <ul class="stars list-inline">
-              <% review.rating.times do %>
-                <li class="list-inline-item" style="color:black"><i class="fa-solid fa-star"></i></li>
+            <div class="review-user-id">
+              <%= link_to profile_path(review.user), class:"text-decoration-none" do %>
+                <p class="review-name"><%= review.user.username.capitalize %></p>
+                <ul>
+                  <% review.rating.times do %>
+                    <li class="stars list-inline-item"><i class="fa-solid fa-star"></i></li>
+                  <% end %>
+                </ul>
               <% end %>
-              </ul>
-              <p style="color:black">Date : <%= review.created_at.strftime("%B %Y") %></p>
-              <p style="color:black">"<%= review.comment %>"</p>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
     </div>
   </div>
 </div>

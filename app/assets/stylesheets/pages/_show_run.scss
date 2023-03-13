@@ -1,19 +1,26 @@
 .show {
   .container {
-    height: 180vh;
-    position:relative;
+    height: 190vh;
+    // position:relative;
   }
   // "bricolage container"
 
-  .chatroom-link {
-    position:absolute;
-    top: 10%;
-    bottom: 0;
-    left: 82%;
-    right: 0;
-    color: $light-blue;
-    font-size: 40px;
+  .blue-title-show {
+    font-size: 22px;
   }
+
+  .chatroom-link {
+    // position:absolute;
+    // top: 10%;
+    // bottom: 0;
+    // left: 82%;
+    // right: 0;
+    color: $light-blue;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
 
   .run-leader {
     display: flex;
@@ -31,9 +38,9 @@
     margin-left: 12px;
   }
 
-  .run-leader-info h2 {
+  .run-leader-info h4 {
     font-size: 20px;
-    color: $light-blue;
+    color: #03205C;
     margin-bottom: 5px;
   }
 
@@ -69,18 +76,24 @@
   }
 
   .run-infos {
-    background-color: $light-blue;
+    background-color: white;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 0 0 8px #003cc124;
   }
 
-  .run-infos p, .run-infos a, .run-infos i {
-    color: $smoke-white;
+  .run-infos {
+
+    .address {
+      color: $light-blue;
+    }
   }
+
+
 
   .run-infos i {
-    padding-right: 10px;
-    font-size: 20px;
+    padding-right: 5px;
+    font-size: 19px;
   }
 
   .run-infos h6 {
@@ -89,20 +102,24 @@
   }
 
   .run-description p {
-    font-style: italic;
-    font-weight: 100;
+    // font-style: italic;
+    font-weight: 400;
     margin-top: 15px;
-    text-align: justify;
+    text-align: left;
+    font-size: 19px;
+    color: $light-blue;
   }
 
   .run-date {
-  display:flex;
-  justify-content: space-between;
+    display:flex;
+    justify-content: space-between;
+    font-weight: bold;
   }
 
   .run-date p {
     margin-bottom: 0px;
-    font-size: 18px;
+    font-size: 20px;
+    color: $light-blue;
   }
 
   .run-specs {
@@ -115,28 +132,54 @@
   }
 
   .violet-square {
-    background-color: $light-blue;
+    background-color: $smoke-white;
     border-radius: 20px;
     width: 32%;
     height: 100px;
     padding: 15px;
+    border: none;
+    box-shadow: 0 0 8px #0840bf33;
+    // rgba(8 64 191 / 0.2);
 
   }
 
   .violet-square p {
     font-weight: bold;
-
+    color: $light-blue;
   }
 
 
   .run-specs p {
-    color: $smoke-white;
+    color: #6c6c76;
     margin-bottom: 10px;
   }
 
   .run-specs i {
     margin-right: 10px;
     font-size: 20px;
+    color: #6c6c76;
+  }
+
+  .weather {
+    background-color: $light-blue;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: $smoke-white;
+
+    .no-data {
+      font-size: 14px!important;
+    }
+
+    p {
+      color: $smoke-white;
+      font-size: 24px!important;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 16px!important;
+    }
   }
 
   .join-button {
@@ -150,7 +193,7 @@
     background-color: $hard-blue;
     border: none;
     border-radius: 40px;
-    color: #FFFFFF;
+    color: $anti-flash-white;
     padding: 10px 35px;
     text-decoration: none;
     transition: background 0.3s ease;
@@ -158,9 +201,9 @@
 
   .attendants h3 {
     font-size: 20px;
-    color: $light-blue;
-    margin-bottom: 20px;
-    text-align: center;
+    color: #03205C;
+    padding-left: 14px;
+    text-align: left;
   }
 
   .attendant p {
@@ -171,8 +214,8 @@
     margin-bottom: 10px;
     border-radius: 20px;
     padding: 10px 10px;
-    border-color: $light-blue;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #F6F7FB;
+    box-shadow: 0 0 8px #0840bf33;
   }
 
   .attendant-info {
@@ -183,15 +226,16 @@
   .attendant img {
     border-radius: 50%;
     width: 50px;
-    border: black;
     height: 100%;
   }
 
-  .attendant h4 {
+  .attendant p {
     font-size: 15px;
     margin-bottom: 5px;
-    color: $light-blue;
+    color: #03205C;
+    font-weight: bold;
   }
+
 
   .mapboxgl-canvas {
     border-radius: 10px;
@@ -201,5 +245,13 @@
     margin-bottom: 20px;
   }
 
+
+}
+
+
+// Edits buttons
+.btn-edits {
+  text-decoration: none;
+  color: #6c6c76;
 
 }

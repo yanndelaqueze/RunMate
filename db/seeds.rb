@@ -313,7 +313,7 @@ run1 = Run.new(
   distance: 12,
   max_person: 4,
   meeting_point: "5 Place Armand Carrel, 75019 Paris",
-  date: DateTime.now.next_week(:saturday).change(hour: 9),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 9),
   user: user1
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/Parc-des-Buttes-Chaumont-Temple-de-la-sybille-au-sommet-de-li%CC%82le_zal8tt.jpg")
@@ -329,7 +329,7 @@ run2 = Run.new(
   distance: 8,
   max_person: 5,
   meeting_point: "52 Rue de Rivoli, 75004 Paris",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user2
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/rue-marais-paris-france_lrcq9q.jpg")
@@ -345,7 +345,7 @@ run3 = Run.new(
   distance: 10,
   max_person: 3,
   meeting_point: "293 Av. Daumesnil, 75012 Paris",
-  date: DateTime.now.next_week(:saturday).change(hour: 10),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 10),
   user: user3
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/boisdevincennes_bm6qib.jpg")
@@ -361,7 +361,7 @@ run3bis = Run.new(
   distance: 10,
   max_person: 4,
   meeting_point: "4 Rue Auguste Comte, 75006 Paris",
-  date: DateTime.now.next_week(:saturday).change(hour: 10),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 10),
   user: user3
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447562/places/luxembourg_n9ylw5.jpg")
@@ -377,7 +377,7 @@ run4 = Run.new(
   distance: 15,
   max_person: 4,
   meeting_point: "35 Rue du Chevalier de la Barre, 75018 Paris",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user4
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/montmartre_mnpj1x.jpg")
@@ -393,7 +393,7 @@ run5 = Run.new(
   distance: 7,
   max_person: 3,
   meeting_point: "35 Bd de Courcelles, 75008 Paris",
-  date: DateTime.now.next_week(:saturday).change(hour: 17),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 17),
   user: user5
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/monceau_zbn2nx.jpg")
@@ -409,7 +409,7 @@ run6 = Run.new(
   distance: 5,
   max_person: 5,
   meeting_point: "14 Rue des Récollets, 75010 Paris",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user6
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/canal_d356gt.jpg")
@@ -425,7 +425,7 @@ run7 = Run.new(
   distance: 10,
   max_person: 6,
   meeting_point: "Quai Anatole France, 75007 Paris",
-  date: DateTime.now.next_week(:saturday).change(hour: 16),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 16),
   user: user7
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/quais-de-seine-2_3_120831-159179224480832_osre3x.jpg")
@@ -441,7 +441,7 @@ run8 = Run.new(
   distance: 15,
   max_person: 5,
   meeting_point: "4 Av. Adolphe Max, 69005 Lyon",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 9),
   user: user8
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/fourviere-5-1024x597_vpvjsk.png")
@@ -457,7 +457,7 @@ run9 = Run.new(
   distance: 12,
   max_person: 4,
   meeting_point: "55 Boulevard des Belges, 69006 Lyon",
-  date: DateTime.now.next_week(:saturday).change(hour: 8),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 8),
   user: user9
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/parc-tete-or-lyon_bqdbxj.jpg")
@@ -473,7 +473,7 @@ run10 = Run.new(
   distance: 8,
   max_person: 3,
   meeting_point: "15 Quai Claude Bernard, 69007 Lyon",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user10
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/rhone_pn23cx.jpg")
@@ -489,7 +489,7 @@ run11 = Run.new(
   distance: 10,
   max_person: 4,
   meeting_point: "Place Bellecour, 69002 Lyon",
-  date: DateTime.now.next_week(:saturday).change(hour: 10),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 10),
   user: user11
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/lyon-place-bellecour_wrt5hd.jpg")
@@ -505,7 +505,7 @@ run12 = Run.new(
   distance: 12,
   max_person: 4,
   meeting_point: "12 Bd Alexandre Delabre, 13008 Marseille",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user12
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
@@ -521,7 +521,7 @@ run13 = Run.new(
   distance: 7,
   max_person: 6,
   meeting_point: "174 Quai du Port, 13002 Marseille",
-  date: DateTime.now.next_week(:saturday).change(hour: 14),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 14),
   user: user13
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
@@ -537,7 +537,7 @@ run14 = Run.new(
   distance: 14,
   max_person: 5,
   meeting_point: "58 Boulevard Charles Livon, 13007 Marseille",
-  date: DateTime.now.next_week(:sunday).change(hour: 9),
+  date: (DateTime.now + (7 - DateTime.now.wday) % 7).change(hour: 9),
   user: user14
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/corniche-kennedy-marseille_zgiy29.jpg")
@@ -553,7 +553,7 @@ run15 = Run.new(
   distance: 8,
   max_person: 5,
   meeting_point: "Avenue du Parc Borély, 13008 Marseille",
-  date: DateTime.now.next_week(:saturday).change(hour: 18),
+  date: (DateTime.now + (6 - DateTime.now.wday) % 7).change(hour: 18),
   user: user15
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/Marseille-Cha%CC%82teau_Bore%CC%81ly_2_ngkrrz.jpg")

@@ -1,7 +1,7 @@
-<div class="container p3">
+<div class="container p3 my-3">
   <%= simple_form_for [@attendance, @review] do |f| %>
-    <%= f.input :comment, placeholder: "Leave your comment for the run", label: "How was the Run ?" %>
+    <%= f.input :comment, placeholder: "Leave your comment for the run", label: "How was the Run ?", input_html: { style: "border-radius: 5px;" }%>
     <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
-    <%= f.submit class: "btn btn-outline-primary" %>
+    <%= f.submit class: "btn btn-primary " %>
   <% end %>
 </div>

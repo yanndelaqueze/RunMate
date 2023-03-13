@@ -14,7 +14,7 @@
   .card-run-link {
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 70px;
     left: 0;
     right: 0;
     z-index: 90;
@@ -32,6 +32,18 @@
     height: 60px;
   }
 
+  .message {
+    margin-bottom: 20px;
+  }
+
+  .message > p {
+    margin: 0px;
+  }
+
+  .add-a-review {
+    text-align: right;
+  }
+
 }
 
 .card-attendance-title {
@@ -39,4 +51,5 @@
   font-weight: 600;
   font-size: 20px;
   color: #476BC7;
+  margin-left: 10px;
 }
