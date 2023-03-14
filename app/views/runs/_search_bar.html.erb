@@ -1,26 +1,25 @@
-<div id="searchBar" class="my-4">
-  <%= form_with url: runs_path, method: :get do |f| %>
-    <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"]%>">
-
-      <%= f.text_field :address, { data: { address_autocomplete_target: "address" }, class:"d-none", placeholder: "Search Address"}
-      %>
-    </div>
-
-    <div class="secondline d-flex py-2 m-1 mb-4 justify-content-between" data-controller="flatpickr">
-
-      <div>
-
-        <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'},class:"searchinput", placeholder: "Add dates" } %>
-
-        <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add dates"} %>
-
-      </div>
-      <div>
-        <%= f.time_field :hour , class: "searchinput" %>
+<button class="btn btn-primary mt-4 btn-filter" data-bs-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
+  <i class="fa-solid fa-magnifying-glass me-1"></i> Filter
+</button>
+<div class="collapse" id="collapseSearch">
+  <div id="searchBar" class="my-4" >
+    <%= form_with url: runs_path, method: :get do |f| %>
+      <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"]%>">
+        <%= f.text_field :address,
+          { data: { address_autocomplete_target: "address", action: "click->address_autocomplete#show" },
+          class:"d-none", placeholder: "Search Address" } %>
       </div>
 
-      <%= submit_tag "Find a run", class:"btn-search-index" %>
-
-    </div>
-  <% end %>
+      <div class="secondline d-flex py-2 justify-content-between" data-controller="flatpickr" data-address-autocomplete-target="dates">
+        <div class="w-100">
+          <%= f.text_field :start_date, {data: {flatpickr_target: 'startDateInput'}, class:"searchinput", placeholder: "Add dates" } %>
+          <%= f.text_field :end_date, {data: {flatpickr_target: 'endDateInput'} , class: "d-none", placeholder: "Add dates"} %>
+        </div>
+        <div class="w-100">
+          <%= f.time_field :hour , class: "searchinput" %>
+        </div>
+        <%= submit_tag "Find a run", class:"btn btn-primary btn-filter" %>
+      </div>
+    <% end %>
+  </div>
 </div>

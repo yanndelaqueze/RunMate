@@ -29,14 +29,21 @@
       <div class="tab-pane fade show active" id="runs">
 
         <%# Cards of runs created %>
-          <div class="runs-created">
-            <% @runs.each do |run| %>
+        <div class="runs-created">
+          <% @runs.each do |run| %>
+            <% if run.user == current_user %>
+              <%= render "runs/card_run", run: run %>
+            <% end %>
+          <% end %>
+          <% if @past_runs.count != 0 %>
+            <h2 class="title-dashboard mt-3 mb-4 text-center">Past Runs</h2>
+            <% @past_runs.each do |run| %>
               <% if run.user == current_user %>
                 <%= render "runs/card_run", run: run %>
               <% end %>
             <% end %>
-          </div>
-
+          <% end %>
+        </div>
       </div>
 
       <div class="tab-pane fade" id="requests">

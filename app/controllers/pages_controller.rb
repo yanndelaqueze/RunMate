@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
-  # after_action :mark_as_read, only: [ :notifications ]
 
   def home
     @disable_nav = true
@@ -9,9 +8,10 @@ class PagesController < ApplicationController
 
   def dashboard
     # Runs I created :
-    @runs = Run.where(user: current_user)
+    @runs = Run.where(user: current_user).where('date > ?', DateTime.now).order(date: :desc)
     # Attendance requests I received :
     @pending_attendances = Attendance.joins(:run).where(runs: { user_id: current_user })
+    @past_runs = Run.where(user: current_user).where('date < ?', DateTime.now).order(date: :desc)
   end
 
   def chatrooms
@@ -19,12 +19,7 @@ class PagesController < ApplicationController
   end
 
   def notifications
-    @notifications = Notification.where(user: current_user)
+    @notifications = current_user.notifications
+    @notifications.update_all(read: true)
   end
-
-  # private
-
-  # def mark_as_read
-  #  @notifications.update_all(read: true)
-  # end
 end

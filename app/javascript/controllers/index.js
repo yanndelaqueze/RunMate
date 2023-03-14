@@ -22,8 +22,14 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import NotificationsSubscriptionController from "./notifications_subscription_controller"
+application.register("notifications-subscription", NotificationsSubscriptionController)
+
 import RunSubscriptionController from "./run_subscription_controller"
 application.register("run-subscription", RunSubscriptionController)
+
+import SearchDisplayController from "./search_display_controller"
+application.register("search-display", SearchDisplayController)
 
 import SmallmapController from "./smallmap_controller"
 application.register("smallmap", SmallmapController)
