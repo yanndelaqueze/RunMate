@@ -1,8 +1,12 @@
 <div class="chatroom-card mb-3">
   <%= link_to "", chatroom_run_path(attendance.run), class:"chatroom-card-link" %>
-  <%= cl_image_tag attendance.run.photo.key, class: "card-run-image"%>
+  <% if attendance.run.photo.attached? %>
+    <%= cl_image_tag attendance.run.photo.key, class: ""%>
+  <% else %>
+    <%= image_tag "cover.png", alt:"Runmate", class: ""%>
+  <% end %>
   <div class="chatroom-card-info">
     <h5>#<%= attendance.run.name %></h5>
-    <p><%= attendance.run.messages.count %> Messages</p>
+    <p><%= pluralize(attendance.run.messages.count, 'Message') %></p>
   </div>
 </div>

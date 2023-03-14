@@ -16,6 +16,8 @@ class PagesController < ApplicationController
 
   def chatrooms
     @attendances = Attendance.where(user: current_user)
+    @notifications_for_messages = current_user.notifications.for_messages
+    @notifications_for_messages.update_all(read: true)
   end
 
   def notifications
