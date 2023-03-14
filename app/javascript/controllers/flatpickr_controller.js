@@ -14,13 +14,6 @@ export default class extends Controller {
       mode: 'range',
       "plugins": [new rangePlugin({ input: this.endDateInputTarget})]
     })
-    // flatpickr(this.hourInputTarget, {
-    //   enableTime: true,
-    //   noCalendar: true,
-    //   dateFormat: "H:i",
-    //   time_24hr: true,
-    //   disableMobile: "true"
-    // })
 
   }
 }
