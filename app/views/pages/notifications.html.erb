@@ -8,22 +8,6 @@
         <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
         <%= render "notification_card", notification: notification %>
       <% end %>
-
-      <%# test to multiply notificaitons %>
-      <% @notifications.each do |notification| %>
-        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
-        <%= render "notification_card", notification: notification %>
-      <% end %>
-      <% @notifications.each do |notification| %>
-        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
-        <%= render "notification_card", notification: notification %>
-      <% end %>
-      <% @notifications.each do |notification| %>
-        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
-        <%= render "notification_card", notification: notification %>
-      <% end %>
-      <%# end %>
-
     <% end %>
   </div>
 </div>
