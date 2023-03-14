@@ -6,9 +6,9 @@
     <%# **** %>
 
   <% if params[:query].present? || params[:start_date].present? || params[:hour].present? %>
-    <h1 class="black-title-index mb-3 text-left"><%= pluralize(@runs.count, 'Run') %> found :</h1>
+    <h1 class="black-title-index mt-3 text-left"><%= pluralize(@runs.count, 'Run') %> found :</h1>
     <% else %>
-    <h1 class="black-title-index mb-3 text-left">Find your next run:</h1>
+    <h1 class="black-title-index mt-3 text-left">Find your next run:</h1>
   <% end %>
   <a id="map-button" class="btn-sign-up d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
     <p class="m-0">Show map</p>
