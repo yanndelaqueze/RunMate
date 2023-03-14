@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def unread_notifications_count
     notifications.for_attendances.unread.count
   end
+
+  def unread_messages_count
+    notifications.for_messages.unread.count
+  end
 end
