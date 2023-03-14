@@ -12,6 +12,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def unread_notifications
-    notifications.where(read: false).where.not(attendance: [nil, ""])
+    @unread_notifications = notifications.where(read: false).where.not(attendance: [nil, ""])
   end
 end

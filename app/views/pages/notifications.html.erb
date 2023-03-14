@@ -1,4 +1,9 @@
-<% @notifications.each do |notification| %>
-  <p> You have been accepted to : <%= notification.attendance.run.name %></p>
-  <%= notification.created_at %>
+
+<% if @notifications.count == 0 %>
+  <p>0 notifications</p>
+<% else %>
+  <% @notifications.each do |notification| %>
+    <p> You have been accepted to : <%= notification.attendance.run.name %></p>
+    <%= notification.created_at %>
+  <% end %>
 <% end %>
