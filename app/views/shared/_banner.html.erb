@@ -6,17 +6,13 @@
     <% end %>
     <%= link_to notifications_path, class:"notification-link ms-auto p-2 d-flex" do %>
       <i class="notification-bell fa-regular fa-bell"></i>
-      <% if current_user.unread_notifications_count > 0 %>
-        <div class="pastille">
-          <span class="notification-count">
+        <div class="pastille <%= "d-none" if current_user.unread_notifications_count == 0 %>" data-notifications-subscription-target="pastille">
           <% if current_user.unread_notifications_count > 9 %>
             <%= "9+" %>
           <% else %>
             <%= current_user.unread_notifications_count %>
           <% end %>
-          </span>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>

@@ -36,7 +36,10 @@ class AttendancesController < ApplicationController
     authorize @attendance
     @attendance.save
     Notification.create(user: @attendance.user, attendance: @attendance)
-    redirect_to dashboard_path
+    NotificationsChannel.broadcast_to(
+      @attendance.user, @attendance.user.unread_notifications_count)
+    # redirect_to dashboard_path
+    head :ok
   end
 
   def decline

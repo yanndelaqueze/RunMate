@@ -12,6 +12,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def unread_notifications_count
-    @unread_notifications_count = notifications.where(read: false, message: [nil, ""]).count
+    notifications.for_attendances.unread.count
   end
 end
