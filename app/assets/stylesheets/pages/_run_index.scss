@@ -24,8 +24,9 @@
 .offcanvas {
   z-index: 90;
   background-color: $anti-flash-white;
-  height: 83vh;
-  margin-top: 60px;
+  // height: 83vh;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
 }
 
 .black-title-index {
