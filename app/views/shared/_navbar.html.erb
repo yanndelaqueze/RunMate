@@ -23,7 +23,16 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col chatroom">
+      <% if user_signed_in? %>
+        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-notifications-subscription-target="pastille">
+          <% if current_user.unread_messages_count > 9 %>
+            <%= "9+" %>
+          <% else %>
+            <%= current_user.unread_messages_count %>
+          <% end %>
+        </div>
+      <% end %>
       <% if current_page?(chatrooms_path) %>
         <%= link_to chatrooms_path, class:"link-bottom active" do %>
           <i class="fa-solid fa-message"></i>
