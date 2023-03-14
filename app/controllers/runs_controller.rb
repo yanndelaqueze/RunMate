@@ -111,8 +111,8 @@ class RunsController < ApplicationController
 
   def weather
     payload = URI.open("https://api.openweathermap.org/data/2.5/forecast?lat=#{@run.latitude}&lon=#{@run.longitude}&appid=#{ENV['OPENWEATHER_KEY']}&units=metric").read
-    data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 }).to_i }
-    # data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 + 1 }) }
+    # data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == @run.date.change({hour: (@run.date.hour / 3.0).ceil * 3 }).to_i }
+    data = JSON.parse(payload)["list"].find { |hash| hash["dt"] == ((@run.date).to_i / 10800.0).ceil * 10800 }
     if data.nil?
       "no data available"
     else
