@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import ActiveNavbarController from "./active_navbar_controller"
-application.register("active-navbar", ActiveNavbarController)
-
 import AddressAutocompleteController from "./address_autocomplete_controller"
 application.register("address-autocomplete", AddressAutocompleteController)
 
