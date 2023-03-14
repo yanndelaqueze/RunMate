@@ -28,6 +28,9 @@ application.register("notifications-subscription", NotificationsSubscriptionCont
 import RunSubscriptionController from "./run_subscription_controller"
 application.register("run-subscription", RunSubscriptionController)
 
+import SearchDisplayController from "./search_display_controller"
+application.register("search-display", SearchDisplayController)
+
 import SmallmapController from "./smallmap_controller"
 application.register("smallmap", SmallmapController)
 

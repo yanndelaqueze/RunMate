@@ -12,11 +12,12 @@ $font-size-base:         1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $light-blue;
+$primary:    $hard-blue;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
+
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -26,3 +27,4 @@ $border-radius-sm: 2px;
 // Override other variables below!
 
 $navbar-height: 10vh;
+$transition-collapse: height .5s ease;

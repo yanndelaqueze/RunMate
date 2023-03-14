@@ -5,7 +5,7 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 export default class extends Controller {
   static values = { apiKey: String }
 
-  static targets = ["address"]
+  static targets = ["address", "dates"]
 
   connect() {
     this.geocoder = new MapboxGeocoder({
@@ -21,6 +21,14 @@ export default class extends Controller {
     search[0].placeholder = 'Search address'
 
     this.#setInputName();
+
+    // document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('click', function() {
+    //   const expand = document.getElementById('expand-search');
+    //   if (expand.classList.contains('d-none'))  {
+    //     expand.classList.remove('d-none')
+    //     expand.classList.add('d-flex')
+    //   }
+    // })
   }
 
   #setInputValue(event) {
