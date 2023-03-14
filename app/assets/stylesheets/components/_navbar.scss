@@ -1,3 +1,4 @@
+// Side window
 #offcanvasRight {
   background-color: $anti-flash-white;
   width: 280px;
@@ -25,7 +26,7 @@
   }
 }
 
-
+// Bottom navigation
 #navbar-list {
   overflow: hidden;
   background-color: #FFFFFF;
@@ -35,11 +36,7 @@
   height: $navbar-height;
   z-index: 100;
 
-  i {
-    color: $light-blue;
-    opacity: 0.9;
-    font-size: 26px;
-  }
+
 
   .row {
     height: 100%;
@@ -50,5 +47,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .link-bottom {
+    i {
+      color: #9EBBE7;
+      opacity: 0.9;
+      font-size: 26px;
+    }
+  }
+
+  .link-bottom.active {
+    i {
+      color: #0036AB;
+    }
   }
 }

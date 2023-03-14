@@ -1,29 +1,48 @@
-<div id="navbar-list">
+<%# Bottom navigation %>
+<div id="navbar-list" data-controller="active-navbar">
   <div class="row">
     <div class="col">
-      <%= link_to runs_path do %>
-        <i class="fa-solid fa-house"></i>
+      <% if current_page?(runs_path) %>
+        <%= link_to runs_path, class:"link-bottom active" do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+      <% else %>
+        <%= link_to runs_path, class:"link-bottom" do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="col">
-      <%= link_to new_run_path do %>
-        <i class="fa-solid fa-circle-plus"></i>
+      <% if current_page?(new_run_path) %>
+        <%= link_to new_run_path, class:"link-bottom active" do %>
+          <i class="fa-solid fa-circle-plus"></i>
+        <% end %>
+      <% else %>
+        <%= link_to new_run_path, class:"link-bottom" do %>
+          <i class="fa-solid fa-circle-plus"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="col">
-      <%= link_to chatrooms_path do %>
-        <i class="fa-solid fa-message"></i>
+      <% if current_page?(chatrooms_path) %>
+        <%= link_to chatrooms_path, class:"link-bottom active" do %>
+          <i class="fa-solid fa-message"></i>
+        <% end %>
+        <% else %>
+        <%= link_to chatrooms_path, class:"link-bottom" do %>
+          <i class="fa-solid fa-message"></i>
+        <% end %>
       <% end %>
     </div>
      <div class="col">
-      <button class="bg-transparent border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <button class="bg-transparent border-0 p-0 link-bottom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
         <i class="fa-solid fa-ellipsis"></i>
       </button>
     </div>
   </div>
 </div>
 
-
+<%# Side navigation %>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-backdrop="false">
   <div class="offcanvas-header">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
