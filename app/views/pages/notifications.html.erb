@@ -1,0 +1,4 @@
+<% @notifications.each do |notification| %>
+  <p> You have been accepted to : <%= notification.attendance.run.name %></p>
+  <%= notification.created_at %>
+<% end %>

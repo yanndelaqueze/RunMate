@@ -35,6 +35,7 @@ class AttendancesController < ApplicationController
     @attendance.status = "confirmed"
     authorize @attendance
     @attendance.save
+    Notification.create(user: @attendance.user, attendance: @attendance)
     redirect_to dashboard_path
   end
 

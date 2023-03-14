@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/chatrooms', to: 'pages#chatrooms'
 
+  get '/notifications', to: 'pages#notifications'
+
   devise_scope :user do
     get '/users/profile', to: 'users/sessions#show', as: 'user_profile'
     get '/users/:id/edit', to: 'users/sessions#edit', as: 'edit_user'
