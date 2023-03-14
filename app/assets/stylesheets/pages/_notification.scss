@@ -12,34 +12,6 @@
 
 }
 
-.notification-confirmed {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
-  background-color: #F4FFE8;
-  position: relative;
-
-
-  .notification-icone {
-    font-size: 18px;
-    margin-right: 9px;
-    color: #739C3D;
-  }
-
-  &.notification-new {
-    font-weight: bold;
-  }
-
-  .notification-confirmed-link {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
 .notification-declined {
   border-radius: 20px;
   padding: 10px;
@@ -86,3 +58,4 @@
     right: 0;
   }
 }
+

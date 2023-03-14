@@ -10,7 +10,7 @@
   color: white;
   background: #0036AB;
   text-decoration: none;
-  box-shadow: 7px 8px 20px rgba(255, 255, 255, 0.7);
+  box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.3);
 
   p {
   color:white;
@@ -34,7 +34,9 @@
   width: 100%;
 }
 
-.black-title-index {
-  color: #2C2C3F;
-  font-size: 26px;
+.title-index {
+  color: #476BC7;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 19px;
 }

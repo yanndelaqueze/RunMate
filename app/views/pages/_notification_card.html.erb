@@ -1,4 +1,3 @@
-
 <% case %>
   <% when notification.attendance.status == "pending" %>
     <div class="notification-pending <%= "notification-new" unless notification.read %> d-flex align-items-center">
@@ -18,7 +17,3 @@
       <span class="notification-info" > Sorry! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been declined.</span>
   </div>
 <% end %>
-
-<%# # Add link_to : pending = dashboard / declined = nothing / confirmed = run
-Position relative/absolute on top of each div
-%>
