@@ -9,9 +9,10 @@ class PagesController < ApplicationController
 
   def dashboard
     # Runs I created :
-    @runs = Run.where(user: current_user)
+    @runs = Run.where(user: current_user).where('date > ?', DateTime.now).order(date: :desc)
     # Attendance requests I received :
     @pending_attendances = Attendance.joins(:run).where(runs: { user_id: current_user })
+    @past_runs = Run.where(user: current_user).where('date < ?', DateTime.now).order(date: :desc)
   end
 
   def chatrooms
