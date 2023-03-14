@@ -4,12 +4,13 @@
       <h3 class="notifications-number">0 notifications</h3>
     <% else %>
       <h3 class="notifications-number"><%= pluralize(@current_user.unread_notifications_count, 'new notification')%></h3>
-      <% @notifications.each do |notification| %>
+      <% @notifications.order(created_at: :desc).each do |notification| %>
         <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
         <%= render "notification_card", notification: notification %>
       <% end %>
 
       <%# test to multiply notificaitons %>
+
       <% @notifications.each do |notification| %>
         <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
         <%= render "notification_card", notification: notification %>
