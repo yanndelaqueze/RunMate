@@ -24,8 +24,25 @@
     color:#0E0000;
   }
 
-  .fa-bell {
-    font-size: 20px;
+  .notification-bell {
+    font-size: 30px;
     color:#476BC7;
   }
+
+  .pastille {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border: red;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    left: -10px;
+    bottom: -6px;
+  }
+
+  .notification-count {
+    color: $anti-flash-white;
+  }
+
 }
