@@ -1,9 +1,29 @@
+<div class="container">
+  <div class="notifications">
+    <% if @notifications.count == 0 %>
+      <h3 class="notifications-number">0 notifications</h3>
+    <% else %>
+      <h3 class="notifications-number"><%= pluralize(@current_user.unread_notifications_count, 'new notification')%></h3>
+      <% @notifications.each do |notification| %>
+        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
+        <%= render "notification_card", notification: notification %>
+      <% end %>
 
-<% if @notifications.count == 0 %>
-  <p>0 notifications</p>
-<% else %>
-  <% @notifications.each do |notification| %>
-    <p> You have been accepted to : <%= notification.attendance.run.name %></p>
-    <%= notification.created_at %>
-  <% end %>
-<% end %>
+      <%# test to multiply notificaitons %>
+      <% @notifications.each do |notification| %>
+        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
+        <%= render "notification_card", notification: notification %>
+      <% end %>
+      <% @notifications.each do |notification| %>
+        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
+        <%= render "notification_card", notification: notification %>
+      <% end %>
+      <% @notifications.each do |notification| %>
+        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M:%S %p")%></span>
+        <%= render "notification_card", notification: notification %>
+      <% end %>
+      <%# end %>
+
+    <% end %>
+  </div>
+</div>
