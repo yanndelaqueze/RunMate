@@ -1,6 +1,6 @@
 .show {
   .container {
-    height: 190vh;
+    height: calc(100vh - 147px)
     // position:relative;
   }
   // "bricolage container"
@@ -161,7 +161,7 @@
   }
 
   .weather {
-    background-color: $light-blue;
+    background-color: #638FFF;
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 5px;
