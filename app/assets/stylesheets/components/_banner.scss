@@ -24,10 +24,9 @@
     color:#0E0000;
   }
 
-  .fa-bell {
+  .notification-bell {
     font-size: 30px;
     color:#476BC7;
-    position: absolute;
   }
 
   .pastille {
@@ -38,8 +37,8 @@
     border-radius: 50%;
     text-align: center;
     position: relative;
-    left: 17px;
-    bottom: -3px;
+    left: -10px;
+    bottom: -6px;
   }
 
   .notification-count {
