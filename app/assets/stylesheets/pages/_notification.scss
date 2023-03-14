@@ -12,40 +12,43 @@
 
 }
 
-.notification-confirmed {
+.notification {
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 5px;
-  background-color: #F4FFE8;
-
+  background-color:  white;
 
   .notification-icone {
-    font-size: 18px;
+    font-size: 30px;
     margin-right: 9px;
-    color: #739C3D;
-  }
-
-  &.notification-new {
-    font-weight: bold;
   }
 }
 
-.notification-declined {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
-  background-color: #ffefef;
+.notification-new {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: $light-violet;
+    border-radius: 100%;
+    left: 10px;
+    top: 16px;
+  }
+}
 
-
+.notification-confirmed {
   .notification-icone {
-    font-size: 18px;
-    margin-right: 9px;
-    color: #ffa5a5;
+    color: #06dfac;
   }
 
-  &.notification-new {
-    font-weight: bold;
+}
+
+.notification-declined {
+  .notification-icone {
+    color: #df066e;
   }
+
 }
