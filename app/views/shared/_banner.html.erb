@@ -4,5 +4,17 @@
     <%= link_to root_path do %>
       <h5>RunMate</h5>
     <% end %>
+    <%= link_to notifications_path, class:"notification-link ms-auto p-2 d-flex" do %>
+      <i class="notification-bell fa-regular fa-bell"></i>
+        <div class="pastille <%= "d-none" if current_user.unread_notifications_count == 0 %>" data-notifications-subscription-target="pastille">
+          <% if current_user.unread_notifications_count > 9 %>
+            <%= "9+" %>
+          <% else %>
+            <%= current_user.unread_notifications_count %>
+          <% end %>
+        </div>
+    <% end %>
   </div>
 </div>
+
+<%# <%= current_user.unread_notifications_count %>

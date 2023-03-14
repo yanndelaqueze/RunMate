@@ -10,9 +10,12 @@
     <% end %>
   </div>
   <p class="category"><i class="fa-regular fa-calendar"></i>  | <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
-
   <div class="message">
-    <p><i class="fa-regular fa-envelope-open"></i>  | You sent this message :</p>
+    <p><i class="fa-solid fa-user"></i>  | Requester :</p>
+    <p><%= attendance.user.username %></p>
+  </div>
+  <div class="message">
+    <p><i class="fa-regular fa-envelope-open"></i>  | Message :</p>
     <p>"<em><%= attendance.content %></em>"</p>
   </div>
   <p>Status : <strong><%= attendance.status.capitalize %></strong></p>

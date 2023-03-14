@@ -22,6 +22,9 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import NotificationsSubscriptionController from "./notifications_subscription_controller"
+application.register("notifications-subscription", NotificationsSubscriptionController)
+
 import RunSubscriptionController from "./run_subscription_controller"
 application.register("run-subscription", RunSubscriptionController)
 

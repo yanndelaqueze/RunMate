@@ -36,7 +36,7 @@
 
 
 
-  <body id="<%= controller.controller_name  %>-<%= controller.action_name  %>">
+  <body id="<%= controller.controller_name  %>-<%= controller.action_name  %>" data-controller="notifications-subscription" data-notications-subscription-user-id-value="<%= current_user.id if user_signed_in? %>">
     <%= render "shared/banner" unless @disable_banner %>
     <%= render "shared/flashes" %>
 
