@@ -12,12 +12,41 @@
 
 }
 
+
+.notification-confirmed {
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  background-color: #9dea90;
+
+
+  .notification-icone {
+    font-size: 18px;
+    margin-right: 9px;
+    color: #367505;
+  }
+
+  &.notification-new {
+    font-weight: bold;
+  }
+
+  .notification-confirmed-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+
 .notification-declined {
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 5px;
-  background-color: #ffefef;
+  background-color: #f29b9b;
 
 
   .notification-icone {
@@ -58,4 +87,3 @@
     right: 0;
   }
 }
-
