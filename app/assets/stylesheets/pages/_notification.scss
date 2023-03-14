@@ -18,6 +18,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 5px;
   background-color: #F4FFE8;
+  position: relative;
 
 
   .notification-icone {
@@ -28,6 +29,14 @@
 
   &.notification-new {
     font-weight: bold;
+  }
+
+  .notification-confirmed-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -47,5 +56,33 @@
 
   &.notification-new {
     font-weight: bold;
+  }
+}
+
+.notification-pending {
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  background-color: lightblue;
+  position: relative;
+
+
+  .notification-icone {
+    font-size: 18px;
+    margin-right: 9px;
+    color: black;
+  }
+
+  &.notification-new {
+    font-weight: bold;
+  }
+
+  .notification-pending-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
