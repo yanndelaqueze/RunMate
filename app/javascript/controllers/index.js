@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ActiveNavbarController from "./active_navbar_controller"
+application.register("active-navbar", ActiveNavbarController)
+
 import AddressAutocompleteController from "./address_autocomplete_controller"
 application.register("address-autocomplete", AddressAutocompleteController)
 
@@ -27,9 +30,6 @@ application.register("notifications-subscription", NotificationsSubscriptionCont
 
 import RunSubscriptionController from "./run_subscription_controller"
 application.register("run-subscription", RunSubscriptionController)
-
-import SearchDisplayController from "./search_display_controller"
-application.register("search-display", SearchDisplayController)
 
 import SmallmapController from "./smallmap_controller"
 application.register("smallmap", SmallmapController)
