@@ -17,7 +17,7 @@
   <% if run.photo.attached? %>
     <%= cl_image_tag run.photo.key, class: "card-run-map-image"%>
   <% else %>
-    <%= image_tag("https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80", alt: "sport", class:"card-run-map-image") %>
+    <%= image_tag "cover.png", alt:"Runmate", class: "card-run-image"%>
   <% end %>
   <div class="card-run-map-content d-flex flex-column p-3">
       <h4 class="card-run-map-title"><%= run.name %></h4>
