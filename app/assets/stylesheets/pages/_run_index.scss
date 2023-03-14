@@ -7,9 +7,14 @@
   top: 82%;
   left: 35%;
   z-index: 3;
-  color: $hard-blue;
-  background: white;
+  color: white;
+  background: #0036AB;
   text-decoration: none;
+  box-shadow: 7px 8px 20px rgba(255, 255, 255, 0.7);
+
+  p {
+  color:white;
+  }
 }
 
 
