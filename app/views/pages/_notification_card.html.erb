@@ -1,0 +1,12 @@
+ <% if notification.attendance.status == "confirmed" %>
+  <div class="notification-confirmed <%= "notification-new" unless notification.read %> d-flex align-items-center">
+      <i class="notification-icone fa-solid fa-circle-check"></i>
+      <span class="notification-info" > Yeah! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been acceped.</span>
+  </div>
+<% end %>
+ <% if notification.attendance.status == "declined" %>
+  <div class="notification-declined <%= "notification-new" unless notification.read %> d-flex align-items-center">
+      <i class="notification-icone fa-regular fa-circle-xmark"></i>
+      <span class="notification-info" > Sorry! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been declined.</span>
+  </div>
+<% end %>
