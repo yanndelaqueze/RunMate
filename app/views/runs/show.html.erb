@@ -1,15 +1,16 @@
-
-<div class="show">
-  <div class="container", style="padding-top: 60px">
-    <div class="d-flex my-4">
+<div class="show container", style="padding-top: 60px">
+  <%# Back button %>
+  <div class="d-flex my-4">
       <div class="btn-back">
         <%= link_to :back, class:"d-flex me-4 mt-2 text-decoration-none" do%>
           <i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue"></i>
         <% end %>
       </div>
       <h1 class="blue-title-show"><%= @run.name %></h1>
-    </div>
-    <div class="run-leader d-flex align-items-center mb-2">
+  </div>
+
+  <%# Leader avatar and rating %>
+  <div class="run-leader d-flex align-items-center mb-2">
       <%= link_to profile_path(@run.user), class:"text-decoration-none" do %>
         <%= cl_image_tag @run.user.photo.key %>
       <% end %>
@@ -32,10 +33,10 @@
           <p><%= (@run.user.reviews.average(:rating)*10).round / 10.0 %>/5</p>
         <% end %>
       </div>
-    </div>
+  </div>
 
-    <%# Buttons edit and delete %>
-    <div class="d-flex justify-content-between px-3 mb-2">
+  <%# Buttons edit and delete %>
+  <div class="d-flex justify-content-between px-3 mb-2">
       <% if user_signed_in? %>
         <% if @run.user == current_user %>
           <%= link_to edit_run_path, class: 'text-decoration-none' do %>
@@ -46,22 +47,22 @@
           <% end %>
         <% end %>
       <% end %>
-    </div>
+  </div>
 
-    <%# Image of the run %>
-    <% if @run.photo.attached? %>
+  <%# Image of the run %>
+  <% if @run.photo.attached? %>
     <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
-    <% else %>
-         <div class="run-image mb-4" style="background-image: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80')">
-      <% end %>
-      <div class="run-image-info mb-4">
+  <% else %>
+    <div class="run-image mb-4" style="background-image: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3028&q=80')">
+  <% end %>
+    <div class="run-image-info mb-4">
         <p><%= @run.category %></p>
         <p><%= @run.city %></p>
-      </div>
+    </div>
     </div>
 
-
-    <div class="run-specs mb-4">
+  <%# Stats %>
+  <div class="run-specs mb-4">
       <div class="violet-square">
         <p>RunMates</p>
         <p><i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %></p>
@@ -74,9 +75,10 @@
         <p>Level</p>
         <p><i class="fa-solid fa-gauge-high"></i><%= @run.level %>/5</p>
       </div>
-    </div>
+  </div>
 
-    <div class="run-infos mb-4">
+  <%# Infos of the run %>
+  <div class="run-infos mb-4">
       <div class="run-date mb-4">
         <p class="me-1"><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
         <p><i class="fa-solid fa-clock"></i><%= @run.date.strftime("%I:%M %p") %></p>
@@ -90,11 +92,15 @@
       data-smallmap-markers-value="<%= @marker.to_json %>"
       data-smallmap-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>
-    <% unless @confirmed_users.include?(current_user) %>
-      <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
-    <% end %>
-    <div class="weather mb-4 py-2">
+  </div>
+
+  <%# Join the run button %>
+  <% unless @confirmed_users.include?(current_user) %>
+    <%= link_to "Join the run", new_run_attendance_path(@run), class:"join-button"%>
+  <% end %>
+
+  <%# Weather forecast %>
+  <div class="weather mb-4 py-2">
       <h3>Weather Forecast</h3>
       <div class="run-weather d-flex justify-content-around align-items-center">
         <% if @temp.nil? %>
@@ -105,25 +111,28 @@
           <%= image_tag("https://openweathermap.org/img/w/#{@icon}.png") %>
         <% end %>
       </div>
-    </div>
-    <div class="attendants mt-5">
-      <h3>They already joined the run:</h3>
-      <% @confirmed_users.each do |user| %>
-        <%= link_to profile_path(user), class:"text-decoration-none" do %>
-          <div class="attendant d-flex align-items-end">
+  </div>
+
+  <%# List of attendants %>
+  <div class="attendants mt-5">
+    <h3>They already joined the run:</h3>
+    <% @confirmed_users.each do |user| %>
+      <%= link_to profile_path(user), class:"text-decoration-none" do %>
+      <div class="attendant d-flex align-items-end">
             <%= cl_image_tag user.photo.key %>
             <div class="attendant-info">
               <p><%= user.username.capitalize %></p>
               <p>RunMate since <%= user.created_at.strftime("%B %Y") %></p>
             </div>
-          </div>
+      </div>
         <% end %>
       <% end %>
-      <div class="chatroom-link">
+
+    <%# Link to the chatroom %>
+    <div class="chatroom-link">
         <% if @confirmed_users.include?(current_user) %>
           <%= link_to "Chat with your Mates", chatroom_run_path(@run), class:"btn btn-outline-primary mt-1" %>
         <% end %>
-    </div>
     </div>
   </div>
 </div>
