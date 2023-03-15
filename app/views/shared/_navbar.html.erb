@@ -25,7 +25,7 @@
     </div>
     <div class="col chatroom">
       <% if user_signed_in? %>
-        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-notifications-subscription-target="pastille">
+        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-notifications-subscription-target="pastille-messages">
           <% if current_user.unread_messages_count > 9 %>
             <%= "9+" %>
           <% else %>

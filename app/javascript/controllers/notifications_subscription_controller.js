@@ -4,10 +4,11 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="notifications-subcription"
 export default class extends Controller {
   static values = { userId: Number }
-  static targets = ["pastille"]
+  static targets = ["pastille", "pastille-messages"]
+
 
   connect() {
-    console.log("hello")
+    console.log("notifications controller is live !")
     this.channel = createConsumer().subscriptions.create(
       { channel: "NotificationsChannel", id: this.userIdValue },
       { received: (data) => {
