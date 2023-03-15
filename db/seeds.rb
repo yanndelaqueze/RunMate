@@ -306,7 +306,7 @@ print "1 user / "
 puts ""
 puts "[CREATING UPCOMING RUNS]"
 
-run1 = Run.create(
+run1 = Run.new(
   name: "Running Loops in Buttes Chaumont",
   description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required !",
   category: "Trail Running",
@@ -317,9 +317,12 @@ run1 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user1
 )
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
+run1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run1.save!
 print "1 run / "
 
-run2 = Run.create(
+run2 = Run.new(
   name: "Running Guided Tour in Le Marais",
   description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
   category: "City Tour",
@@ -330,9 +333,12 @@ run2 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user2
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run2.save!
 print "1 run / "
 
-run3 = Run.create(
+run3 = Run.new(
   name: "Soft Jogging in Bois de Vincennes",
   description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
   category: "Casual",
@@ -343,9 +349,12 @@ run3 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run3.save!
 print "1 run / "
 
-run3bis = Run.create(
+run3bis = Run.new(
   name: "Fast & Slow running loops in Jardin du Luxembourg",
   description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me !",
   category: "Running",
@@ -356,9 +365,12 @@ run3bis = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
+file = File.open("app/assets/images/run_images/Running.jpg")
+run3bis.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run3bis.save!
 print "1 run / "
 
-run4 = Run.create(
+run4 = Run.new(
   name: "Uphill & Downhill Run in Montmartre",
   description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough !",
   category: "Coaching",
@@ -369,9 +381,12 @@ run4 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user4
 )
+file = File.open("app/assets/images/run_images/Coaching.jpg")
+run4.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run4.save!
 print "1 run / "
 
-run5 = Run.create(
+run5 = Run.new(
   name: "Easy Running loops in Parc Monceau",
   description: "Simple run in Parc Monceau. Nothing really hard, all levels welcome. Let's go !!!",
   category: "Casual",
@@ -382,9 +397,12 @@ run5 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 17),
   user: user5
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run5.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run5.save!
 print "1 run / "
 
-run6 = Run.create(
+run6 = Run.new(
   name: "Super slow jogging along Canal Saint-Martin",
   description: "Super casual run along Canal Saint-Martin. We will go slow and chat.",
   category: "Casual",
@@ -395,9 +413,12 @@ run6 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user6
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run6.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run6.save!
 print "1 run / "
 
-run7 = Run.create(
+run7 = Run.new(
   name: "Run & enjoy the view of Quais de Seine !",
   description: "We will run along the Quais de Seine, go past Musée d'Orsay, Tour Eiffel, la Concorde, les Tuileries. Let's run slow and enjoy the view !",
   category: "City Tour",
@@ -408,9 +429,12 @@ run7 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 16),
   user: user7
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run7.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run7.save!
 print "1 run / "
 
-run8 = Run.create(
+run8 = Run.new(
   name: "Up & Down the stairs of Fourvières",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
   category: "Trail Running",
@@ -421,9 +445,12 @@ run8 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user8
 )
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
+run8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run8.save!
 print "1 run / "
 
-run9 = Run.create(
+run9 = Run.new(
   name: "Speedy running loops in Parc de la Tête d'Or",
   description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
   category: "Running",
@@ -434,9 +461,12 @@ run9 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 8),
   user: user9
 )
+file = File.open("app/assets/images/run_images/Running.jpg")
+run9.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run9.save!
 print "1 run / "
 
-run10 = Run.create(
+run10 = Run.new(
   name: "Casual & friendly run along Quais du Rhône",
   description: "Slow and cool run along Quais du Rhône up to Confluence. I run slow, don't worry. ",
   category: "Casual",
@@ -447,9 +477,12 @@ run10 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user10
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run10.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run10.save!
 print "1 run / "
 
-run11 = Run.create(
+run11 = Run.new(
   name: "Guided Running Tour in Lyon Centre",
   description: "Fast paced run around Place Bellecour and Vieux Lyon. Be prepared to sweat a little. ",
   category: "City Tour",
@@ -460,9 +493,12 @@ run11 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user11
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run11.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run11.save!
 print "1 run / "
 
-run12 = Run.create(
+run12 = Run.new(
   name: "Sporty hiking in Les Calanques",
   description: "Sporty hike in the Calanques of Marseille. Amazing scenery, breathtaking landscapes.",
   category: "Hiking",
@@ -473,9 +509,12 @@ run12 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user12
 )
+file = File.open("app/assets/images/run_images/Hiking.jpg")
+run12.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run12.save!
 print "1 run / "
 
-run13 = Run.create(
+run13 = Run.new(
   name: "Cool run around Le Vieux Port - Marseille",
   description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards ! ",
   category: "City Tour",
@@ -486,9 +525,12 @@ run13 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 14),
   user: user13
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run13.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run13.save!
 print "1 run / "
 
-run14 = Run.create(
+run14 = Run.new(
   name: "Easy run along La Corniche",
   description: "Chat and run on La Corniche in Marseille. Come join me for some beautiful views and a good time running",
   category: "Casual",
@@ -499,9 +541,12 @@ run14 = Run.create(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user14
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run14.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run14.save!
 print "1 run / "
 
-run15 = Run.create(
+run15 = Run.new(
   name: "Challenging loops in Parc Borely",
   description: "Fast paced run in Parc Borely. Some interval training if you're motivated, and a beer after that !",
   category: "Running",
@@ -512,6 +557,9 @@ run15 = Run.create(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 18),
   user: user15
 )
+file = File.open("app/assets/images/run_images/Running.jpg")
+run15.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run15.save!
 print "1 run / "
 puts ""
 puts "[CREATING ATTENDANCES]"
@@ -564,7 +612,7 @@ print "1 attendance / "
 puts ""
 puts "[CREATING PAST RUNS]"
 
-run16 = Run.create(
+run16 = Run.new(
   name: "Speedy run near Canal Saint-Martin",
   description: "Speedy run along Canal Saint-Martin. We will go fast and sweat !!! ",
   category: "Running",
@@ -575,9 +623,12 @@ run16 = Run.create(
   date: DateTime.now.last_week(:saturday).change(hour: 9),
   user: user1
 )
+file = File.open("app/assets/images/run_images/Running.jpg")
+run16.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run16.save!
 print "1 run / "
 
-run17 = Run.create(
+run17 = Run.new(
   name: "Guided Run in Le Marais",
   description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
   category: "City Tour",
@@ -588,9 +639,12 @@ run17 = Run.create(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user1
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run17.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run17.save!
 print "1 run / "
 
-run18 = Run.create(
+run18 = Run.new(
   name: "Easy run in Bois de Vincennes",
   description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
   category: "Casual",
@@ -601,9 +655,12 @@ run18 = Run.create(
   date: DateTime.now.last_week(:saturday).change(hour: 18),
   user: user1
 )
+file = File.open("app/assets/images/run_images/Casual.jpg")
+run18.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run18.save!
 print "1 run / "
 
-run19 = Run.create(
+run19 = Run.new(
   name: "Stairs of Fourvières 😈",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
   category: "Trail Running",
@@ -614,9 +671,12 @@ run19 = Run.create(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
+run19.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run19.save!
 print "1 run / "
 
-run20 = Run.create(
+run20 = Run.new(
   name: "Pretty Fast run in Parc de la Tête d'Or",
   description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
   category: "Running",
@@ -627,9 +687,12 @@ run20 = Run.create(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
+file = File.open("app/assets/images/run_images/Running.jpg")
+run20.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run20.save!
 print "1 run / "
 
-run21 = Run.create(
+run21 = Run.new(
   name: "Trail in Les Calanques",
   description: "Sporty Trail Run in the Calanques of Marseille. Amazing scenery, breathtaking landscapes.",
   category: "Trail Running",
@@ -640,9 +703,12 @@ run21 = Run.create(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user12
 )
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
+run21.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run21.save!
 print "1 run / "
 
-run22 = Run.create(
+run22 = Run.new(
   name: "Cool Guided Run around Le Vieux Port",
   description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards !",
   category: "City Tour",
@@ -653,6 +719,9 @@ run22 = Run.create(
   date: DateTime.now.last_week(:saturday).change(hour: 14),
   user: user12
 )
+file = File.open("app/assets/images/run_images/City_tour.jpg")
+run22.photo.attach(io: file, filename: "image.png", content_type: "image/png")
+run22.save!
 print "1 run / "
 
 puts "[CREATING PAST ATTENDANCES & REVIEWS]"
@@ -913,12 +982,6 @@ review21.save!
 print "1 attendance-1 review / "
 puts ""
 puts "[ALL DONE]"
-
-
-
-
-
-
 
 
 
