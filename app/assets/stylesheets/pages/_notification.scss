@@ -4,7 +4,7 @@
   .notifications-number {
     text-align: center;
     color: $light-blue;
-    margin-bottom: 20px;
+    margin: 20px 20px;
   }
   .notifications-date {
     margin-left: 10px;
@@ -12,71 +12,56 @@
 
 }
 
-
-.notification-confirmed {
+.notification {
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 5px;
-  background-color: #9dea90;
-
+  background-color:  white;
 
   .notification-icone {
-    font-size: 18px;
+    font-size: 30px;
     margin-right: 9px;
-    color: #367505;
   }
 
-  &.notification-new {
-    font-weight: bold;
+  .notification-link {
+    text-decoration: none;
   }
 
-  .notification-confirmed-link {
+}
+
+.notification-confirmed {
+  .notification-icone {
+    color: #06dfac;
+  }
+
+}
+
+.notification-new {
+  position: relative;
+  &:after {
+    content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #6891f2;
+    border-radius: 100%;
+    left: 332px;
+    top: -5px;
   }
 }
 
 
 .notification-declined {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
-  background-color: #f29b9b;
-
-
   .notification-icone {
-    font-size: 18px;
-    margin-right: 9px;
-    color: #ffa5a5;
+    color: #de056e;
   }
 
-  &.notification-new {
-    font-weight: bold;
-  }
 }
 
 .notification-pending {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
-  background-color: lightblue;
-  position: relative;
-
-
   .notification-icone {
-    font-size: 18px;
-    margin-right: 9px;
-    color: black;
-  }
-
-  &.notification-new {
-    font-weight: bold;
+    color: #0aa4ec;
   }
 
   .notification-pending-link {

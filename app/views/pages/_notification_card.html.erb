@@ -1,19 +1,31 @@
 <% case %>
-  <% when notification.attendance.status == "pending" %>
-    <div class="notification-pending <%= "notification-new" unless notification.read %> d-flex align-items-center">
-      <%= link_to "", dashboard_path, class:"notification-pending-link" %>
-      <i class="notification-icone fa-solid fa-user"></i>
-      <span class="notification-info" ><%= notification.attendance.user.username %> requested to join your run : <strong><%= notification.attendance.run.name %></strong></span>
-    </div>
-  <% when notification.attendance.status == "confirmed" %>
-    <div class="notification-confirmed <%= "notification-new" unless notification.read %> d-flex align-items-center">
-      <%= link_to "", run_path(notification.attendance.run), class:"notification-confirmed-link" %>
-      <i class="notification-icone fa-solid fa-circle-check"></i>
-      <span class="notification-info" > Yeah! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been accepted.</span>
-    </div>
-  <% when notification.attendance.status == "declined" %>
-    <div class="notification-declined <%= "notification-new" unless notification.read %> d-flex align-items-center">
-      <i class="notification-icone fa-regular fa-circle-xmark"></i>
-      <span class="notification-info" > Sorry! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been declined.</span>
+<% when notification.attendance.status == "confirmed" %>
+  <div class="notification notification-confirmed <%= "notification-new" unless notification.read %>">
+    <%= link_to run_path(notification.attendance.run),class:"notification-link" do %>
+      <div class="notification-information d-flex align-items-center">
+        <i class="notification-icone fa-solid fa-circle-check"></i>
+        <span class="notification-info" > Yeah! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been acceped.</span>
+      </div>
+    <% end %>
+  </div>
+
+<% when notification.attendance.status == "declined" %>
+  <div class="notification notification-declined <%= "notification-new" unless notification.read %>">
+    <%= link_to run_path(notification.attendance.run),class:"notification-link" do %>
+      <div class="notification-information d-flex align-items-center">
+        <i class="notification-icone fa-regular fa-circle-xmark"></i>
+        <span class="notification-info" > Sorry! Your request for <strong> <%= notification.attendance.run.name %> </strong> has been declined.</span>
+      </div>
+    <% end %>
+  </div>
+
+<% when notification.attendance.status == "pending" %>
+  <div class="notification notification-pending <%= "notification-new" unless notification.read %>">
+    <%= link_to dashboard_path, class:"notification-link" do %>
+      <div class="notification-information d-flex align-items-center">
+        <i class="notification-icone fa-solid fa-user"></i>
+        <span class="notification-info" ><%= notification.attendance.user.username %> requested to join your run : <strong><%= notification.attendance.run.name %></strong></span>
+      </div>
+    <% end %>
   </div>
 <% end %>

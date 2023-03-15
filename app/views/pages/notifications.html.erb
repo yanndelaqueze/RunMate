@@ -1,10 +1,13 @@
 <div class="container">
   <div class="notifications">
+    <%= link_to :back, class:"text-decoration-none" do %>
+      <span class="btn-back"><i class="fa-solid fa-circle-arrow-left fs-5 btn-back-blue me-1"></i>BACK</span>
+    <% end %>
     <% if @notifications_for_attendances.count == 0 %>
       <h3 class="notifications-number">0 notifications</h3>
     <% else %>
       <h3 class="notifications-number"><%= pluralize(@current_user.unread_notifications_count, 'new notification')%></h3>
-      <% @notifications_for_attendances.each do |notification| %>
+      <% @notifications_for_attendances.order(created_at: :desc).each do |notification| %>
         <span class="notifications-date"><%= notification.created_at.strftime("%I:%M %p")%></span>
         <%= render "notification_card", notification: notification %>
       <% end %>
