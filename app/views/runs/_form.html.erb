@@ -13,9 +13,7 @@
       <%= f.input :max_person, as: :range, label: "How many people can join?", input_html: { min: 1, max: 20, step: 1, class: "range-input", data: { form_range_target: "valuePeople", action: "input->form-range#changePeople" }} %>
       <span class="value" data-form-range-target="labelPeople">11</span>
     </div>
-    <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value="<%= ENV["MAPBOX_API_KEY"]%>">
-      <%= f.input :meeting_point, placeholder: "Where are you all meeting?", label: false %>
-    </div>
+    <%= f.input :meeting_point, placeholder: "Where are you all meeting?", label: false %>
     <%= f.submit class: "btn btn-outline-primary mt-2" %>
   <% end %>
 </div>
