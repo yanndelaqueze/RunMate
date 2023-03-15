@@ -17,16 +17,24 @@
     <%# <div id="tabContainer" class="container"> %>
       <ul class="nav nav-pills" id="dashboardTab">
         <li class="nav-item">
-          <button class="nav-link active" id="runs-tab" data-bs-toggle="tab" data-bs-target="#runs" type="button">My Runs</button>
+          <button class="nav-link active" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests" type="button">My Pending Requests</button>
         </li>
         <li class="nav-item">
-          <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests" type="button">My Pending Requests</button>
+          <button class="nav-link" id="runs-tab" data-bs-toggle="tab" data-bs-target="#runs" type="button">My Runs</button>
         </li>
       </ul>
     <%# </div> %>
 
     <div class="tab-content" id="dashboardTabContent">
-      <div class="tab-pane fade show active" id="runs">
+      <div class="tab-pane fade" id="runs">
+      <div class="tab-pane fade show active" id="requests">
+        <%# Cards with requests made from others %>
+        <% @pending_attendances.each do |attendance| %>
+          <% if attendance.status == "pending"%>
+            <%= render "attendances/card_attendance", attendance: attendance %>
+          <% end %>
+        <% end %>
+      </div>
 
         <%# Cards of runs created %>
         <div class="runs-created">
@@ -46,14 +54,6 @@
         </div>
       </div>
 
-      <div class="tab-pane fade" id="requests">
-        <%# Cards with requests made from others %>
-        <% @pending_attendances.each do |attendance| %>
-          <% if attendance.status == "pending"%>
-            <%= render "attendances/card_attendance", attendance: attendance %>
-          <% end %>
-        <% end %>
-      </div>
     </div>
 
      <%# attendance.run.user != current_user  %>
