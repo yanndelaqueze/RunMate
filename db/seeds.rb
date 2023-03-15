@@ -898,7 +898,7 @@ print "1 attendance-1 review / "
 
 attendance17 = Attendance.new(
   content: "Excited to join !",
-  user: user8,
+  user: user9,
   run: run20,
   status: "confirmed"
 )

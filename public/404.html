@@ -2,14 +2,48 @@
 <html>
   <head>
     <title>Error 404</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-      /* Add your style here */
+      .container {
+        padding: 2rem 4rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: 'Montserrat', 'sans-serif';
+        color: #476BC7;
+      }
+
+      p {
+        font-family: 'Source Sans Pro', 'sans-serif';
+      }
+
+      .before-image {
+        margin-bottom: 2rem;
+      }
+
+      img {
+        width: 150px;
+      }
+
+      a {
+        font-family: 'Source Sans Pro', 'sans-serif';
+        text-decoration: none;
+        color: #0036AB;
+        margin-left: 1rem;
+      }
+
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Oops ! We can't find the page you're looking (error404)</h1>
-      <img src="/images/error500.jpeg" alt="404">
+      <h1>Obstacle on the path!</h1>
+      <p>We can't find the page you're looking for...<br><small><em>error 404</em></small></p>
+      <p class="before-image">But don't worry. Our best runners are on it!</p>
+      <img src="/images/caution.png" alt="404">
+      <p>In the meantime:
+        <a href="/runs">Return to the index</a>
+      </p>
     </div>
   </body>
 </html>
