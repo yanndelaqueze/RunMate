@@ -306,7 +306,7 @@ print "1 user / "
 puts ""
 puts "[CREATING UPCOMING RUNS]"
 
-run1 = Run.new(
+run1 = Run.create(
   name: "Running Loops in Buttes Chaumont",
   description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required !",
   category: "Trail Running",
@@ -317,12 +317,9 @@ run1 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/Parc-des-Buttes-Chaumont-Temple-de-la-sybille-au-sommet-de-li%CC%82le_zal8tt.jpg")
-run1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run1.save!
 print "1 run / "
 
-run2 = Run.new(
+run2 = Run.create(
   name: "Running Guided Tour in Le Marais",
   description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
   category: "City Tour",
@@ -333,12 +330,9 @@ run2 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user2
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/rue-marais-paris-france_lrcq9q.jpg")
-run2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run2.save!
 print "1 run / "
 
-run3 = Run.new(
+run3 = Run.create(
   name: "Soft Jogging in Bois de Vincennes",
   description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
   category: "Casual",
@@ -349,12 +343,9 @@ run3 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/boisdevincennes_bm6qib.jpg")
-run3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run3.save!
 print "1 run / "
 
-run3bis = Run.new(
+run3bis = Run.create(
   name: "Fast & Slow running loops in Jardin du Luxembourg",
   description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me !",
   category: "Running",
@@ -365,12 +356,9 @@ run3bis = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447562/places/luxembourg_n9ylw5.jpg")
-run3bis.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run3bis.save!
 print "1 run / "
 
-run4 = Run.new(
+run4 = Run.create(
   name: "Uphill & Downhill Run in Montmartre",
   description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough !",
   category: "Coaching",
@@ -381,12 +369,9 @@ run4 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user4
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/montmartre_mnpj1x.jpg")
-run4.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run4.save!
 print "1 run / "
 
-run5 = Run.new(
+run5 = Run.create(
   name: "Easy Running loops in Parc Monceau",
   description: "Simple run in Parc Monceau. Nothing really hard, all levels welcome. Let's go !!!",
   category: "Casual",
@@ -397,12 +382,9 @@ run5 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 17),
   user: user5
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/monceau_zbn2nx.jpg")
-run5.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run5.save!
 print "1 run / "
 
-run6 = Run.new(
+run6 = Run.create(
   name: "Super slow jogging along Canal Saint-Martin",
   description: "Super casual run along Canal Saint-Martin. We will go slow and chat.",
   category: "Casual",
@@ -413,12 +395,9 @@ run6 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user6
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/canal_d356gt.jpg")
-run6.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run6.save!
 print "1 run / "
 
-run7 = Run.new(
+run7 = Run.create(
   name: "Run & enjoy the view of Quais de Seine !",
   description: "We will run along the Quais de Seine, go past Musée d'Orsay, Tour Eiffel, la Concorde, les Tuileries. Let's run slow and enjoy the view !",
   category: "City Tour",
@@ -429,12 +408,9 @@ run7 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 16),
   user: user7
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/quais-de-seine-2_3_120831-159179224480832_osre3x.jpg")
-run7.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run7.save!
 print "1 run / "
 
-run8 = Run.new(
+run8 = Run.create(
   name: "Up & Down the stairs of Fourvières",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
   category: "Trail Running",
@@ -445,12 +421,9 @@ run8 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/fourviere-5-1024x597_vpvjsk.png")
-run8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run8.save!
 print "1 run / "
 
-run9 = Run.new(
+run9 = Run.create(
   name: "Speedy running loops in Parc de la Tête d'Or",
   description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
   category: "Running",
@@ -461,12 +434,9 @@ run9 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 8),
   user: user9
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/parc-tete-or-lyon_bqdbxj.jpg")
-run9.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run9.save!
 print "1 run / "
 
-run10 = Run.new(
+run10 = Run.create(
   name: "Casual & friendly run along Quais du Rhône",
   description: "Slow and cool run along Quais du Rhône up to Confluence. I run slow, don't worry. ",
   category: "Casual",
@@ -477,12 +447,9 @@ run10 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user10
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/rhone_pn23cx.jpg")
-run10.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run10.save!
 print "1 run / "
 
-run11 = Run.new(
+run11 = Run.create(
   name: "Guided Running Tour in Lyon Centre",
   description: "Fast paced run around Place Bellecour and Vieux Lyon. Be prepared to sweat a little. ",
   category: "City Tour",
@@ -493,12 +460,9 @@ run11 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user11
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/lyon-place-bellecour_wrt5hd.jpg")
-run11.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run11.save!
 print "1 run / "
 
-run12 = Run.new(
+run12 = Run.create(
   name: "Sporty hiking in Les Calanques",
   description: "Sporty hike in the Calanques of Marseille. Amazing scenery, breathtaking landscapes.",
   category: "Hiking",
@@ -509,12 +473,9 @@ run12 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
-run12.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run12.save!
 print "1 run / "
 
-run13 = Run.new(
+run13 = Run.create(
   name: "Cool run around Le Vieux Port - Marseille",
   description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards ! ",
   category: "City Tour",
@@ -525,12 +486,9 @@ run13 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 14),
   user: user13
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
-run13.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run13.save!
 print "1 run / "
 
-run14 = Run.new(
+run14 = Run.create(
   name: "Easy run along La Corniche",
   description: "Chat and run on La Corniche in Marseille. Come join me for some beautiful views and a good time running",
   category: "Casual",
@@ -541,12 +499,9 @@ run14 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user14
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/corniche-kennedy-marseille_zgiy29.jpg")
-run14.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run14.save!
 print "1 run / "
 
-run15 = Run.new(
+run15 = Run.create(
   name: "Challenging loops in Parc Borely",
   description: "Fast paced run in Parc Borely. Some interval training if you're motivated, and a beer after that !",
   category: "Running",
@@ -557,9 +512,6 @@ run15 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 18),
   user: user15
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/Marseille-Cha%CC%82teau_Bore%CC%81ly_2_ngkrrz.jpg")
-run15.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run15.save!
 print "1 run / "
 puts ""
 puts "[CREATING ATTENDANCES]"
@@ -612,7 +564,7 @@ print "1 attendance / "
 puts ""
 puts "[CREATING PAST RUNS]"
 
-run16 = Run.new(
+run16 = Run.create(
   name: "Speedy run near Canal Saint-Martin",
   description: "Speedy run along Canal Saint-Martin. We will go fast and sweat !!! ",
   category: "Running",
@@ -623,12 +575,9 @@ run16 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/canal_d356gt.jpg")
-run16.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run16.save!
 print "1 run / "
 
-run17 = Run.new(
+run17 = Run.create(
   name: "Guided Run in Le Marais",
   description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
   category: "City Tour",
@@ -639,12 +588,9 @@ run17 = Run.new(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/rue-marais-paris-france_lrcq9q.jpg")
-run17.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run17.save!
 print "1 run / "
 
-run18 = Run.new(
+run18 = Run.create(
   name: "Easy run in Bois de Vincennes",
   description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
   category: "Casual",
@@ -655,12 +601,9 @@ run18 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 18),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/boisdevincennes_bm6qib.jpg")
-run18.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run18.save!
 print "1 run / "
 
-run19 = Run.new(
+run19 = Run.create(
   name: "Stairs of Fourvières 😈",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
   category: "Trail Running",
@@ -671,12 +614,9 @@ run19 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/fourviere-5-1024x597_vpvjsk.png")
-run19.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run19.save!
 print "1 run / "
 
-run20 = Run.new(
+run20 = Run.create(
   name: "Pretty Fast run in Parc de la Tête d'Or",
   description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
   category: "Running",
@@ -687,12 +627,9 @@ run20 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/parc-tete-or-lyon_bqdbxj.jpg")
-run20.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run20.save!
 print "1 run / "
 
-run21 = Run.new(
+run21 = Run.create(
   name: "Trail in Les Calanques",
   description: "Sporty Trail Run in the Calanques of Marseille. Amazing scenery, breathtaking landscapes.",
   category: "Trail Running",
@@ -703,12 +640,9 @@ run21 = Run.new(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
-run21.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run21.save!
 print "1 run / "
 
-run22 = Run.new(
+run22 = Run.create(
   name: "Cool Guided Run around Le Vieux Port",
   description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards !",
   category: "City Tour",
@@ -719,9 +653,6 @@ run22 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 14),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
-run22.photo.attach(io: file, filename: "image.png", content_type: "image/png")
-run22.save!
 print "1 run / "
 
 puts "[CREATING PAST ATTENDANCES & REVIEWS]"
