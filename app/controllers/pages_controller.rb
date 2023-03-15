@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
+  after_action :mark_as_read, only: [ :notifications ]
 
   def home
     @disable_nav = true
@@ -22,6 +23,11 @@ class PagesController < ApplicationController
 
   def notifications
     @notifications_for_attendances = current_user.notifications.for_attendances
-    @notifications_for_attendances.update_all(read: true)
+  end
+
+  private
+
+  def mark_as_read
+    current_user.notifications.for_attendances.update_all(read: true)
   end
 end
