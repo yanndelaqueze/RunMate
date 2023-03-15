@@ -79,6 +79,7 @@ class RunsController < ApplicationController
     @run = Run.new(run_params)
     @run.user = current_user
     @run.level = params[:run][:level].last.to_i
+    # attach_photo
     authorize @run
     if @run.save
       redirect_to dashboard_path
@@ -144,5 +145,23 @@ class RunsController < ApplicationController
 
   def run_params
     params.required(:run).permit(:name, :description, :category, :level, :distance, :max_person, :meeting_point, :date, :circuit)
+  end
+
+  def attach_photo
+    case
+    when @run.category == "Casual"
+      file = "Casual.jpg"
+    when @run.category == "Coaching"
+      file = "Coaching.jpg"
+    when @run.category == "City tour"
+      file = "City_tour.jpg"
+    when @run.category == "Hinking"
+      file = "Hiking.jpg"
+    when @run.category == "Running"
+      file = "Running.jpg"
+    when @run.category == "Trail running"
+      file = "Trail_running.jpg"
+    end
+    @run.photo.attach(io: file, filename: "image.png", content_type: "image/png")
   end
 end
