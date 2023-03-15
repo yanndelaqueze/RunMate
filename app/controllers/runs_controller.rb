@@ -150,17 +150,17 @@ class RunsController < ApplicationController
   def attach_photo
     case
     when @run.category == "Casual"
-      file = "Casual.jpg"
+      file = File.open("app/assets/images/run_images/Casual.jpg")
     when @run.category == "Coaching"
-      file = "Coaching.jpg"
+      file = File.open("Coaching.jpg")
     when @run.category == "City tour"
-      file = "City_tour.jpg"
+      file = File.open("City_tour.jpg")
     when @run.category == "Hinking"
-      file = "Hiking.jpg"
+      file = File.open("Hiking.jpg")
     when @run.category == "Running"
-      file = "Running.jpg"
+      file = File.open("Running.jpg")
     when @run.category == "Trail running"
-      file = "Trail_running.jpg"
+      file = File.open("Trail_running.jpg")
     end
     @run.photo.attach(io: file, filename: "image.png", content_type: "image/png")
   end
