@@ -576,7 +576,7 @@ print "1 attendance / "
 attendance2 = Attendance.new(
   content: "Can't wait to be there!",
   user: user17,
-  run: run1,
+  run: run8,
   status: "confirmed"
 )
 attendance2.save!
@@ -594,7 +594,7 @@ print "1 attendance / "
 attendance4 = Attendance.new(
   content: "Excited to join !",
   user: user19,
-  run: run4,
+  run: run8,
   status: "confirmed"
 )
 attendance4.save!
@@ -609,14 +609,6 @@ attendance5 = Attendance.new(
 attendance5.save!
 print "1 attendance / "
 
-attendance6 = Attendance.new(
-  content: "Excited to join !",
-  user: user21,
-  run: run3bis,
-  status: "confirmed"
-)
-attendance6.save!
-print "1 attendance / "
 puts ""
 puts "[CREATING PAST RUNS]"
 
