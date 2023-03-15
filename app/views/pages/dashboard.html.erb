@@ -27,6 +27,7 @@
 
 
         <%# Cards of runs created %>
+    <div class="tab-content" id="dashboardTabContent">
       <div class="tab-pane fade show active" id="runs">
         <div class="runs-created">
           <% @runs.each do |run| %>
@@ -45,7 +46,6 @@
         </div>
       </div>
 
-    <div class="tab-content" id="dashboardTabContent">
       <div class="tab-pane fade show active" id="requests">
         <%# Cards with requests made from others %>
         <% @pending_attendances.each do |attendance| %>

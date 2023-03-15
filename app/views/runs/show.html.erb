@@ -53,7 +53,7 @@
   <% if @run.photo.attached? %>
     <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
   <% else %>
-    <div class="run-image mb-4" style="background-image: url(../../images/cover.png)">
+    <div class="run-image mb-4" style="background-image: url(../../assets/images/cover.png)">
   <% end %>
     <div class="run-image-info mb-4">
         <p><%= @run.category %></p>
