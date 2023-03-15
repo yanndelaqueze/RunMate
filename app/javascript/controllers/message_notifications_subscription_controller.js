@@ -12,8 +12,7 @@ export default class extends Controller {
     this.channel = createConsumer().subscriptions.create(
       { channel: "MessageNotificationsChannel", id: this.userIdValue },
       { received: (data) => {
-        console.log(data)
-        this.pastillemessagesTarget.innerHTML = data;
+        this.pastillemessagesTarget.innerText = data;
         this.pastillemessagesTarget.classList.remove("d-none")
        }
       }

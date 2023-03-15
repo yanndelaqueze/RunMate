@@ -25,7 +25,7 @@
     </div>
     <div class="col chatroom" data-controller="message-notifications-subscription" data-message-notifications-subscription-user-id-value="<%= current_user.id if user_signed_in? %>">
       <% if user_signed_in? %>
-        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-notifications-subscription-target="pastillemessages">
+        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-message-notifications-subscription-target="pastillemessages">
           <% if current_user.unread_messages_count > 9 %>
             <%= "9+" %>
           <% else %>
