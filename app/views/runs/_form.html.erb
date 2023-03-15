@@ -8,7 +8,7 @@
       <%= f.input :distance, as: :range, label: "How many km will you run? (min: 5km)", wrapper_html: { class: 'm-0' }, input_html: { min: 5, max: 50, step: 1, class: "range-input", data: { form_range_target: "valueKm", action: "input->form-range#changeKm" }} %>
       <span class="value" data-form-range-target="labelKm">28</span>
     </div>
-    <%= f.input :date, label: "When is the run?", html5: true, input_html: {placeholder: Date.today.strftime('%Y-%m-%d')} %>
+    <%= f.input :date, label: "When is the run?", html5: true %>
     <div class="range-input-container">
       <%= f.input :max_person, as: :range, label: "How many people can join?", input_html: { min: 1, max: 20, step: 1, class: "range-input", data: { form_range_target: "valuePeople", action: "input->form-range#changePeople" }} %>
       <span class="value" data-form-range-target="labelPeople">11</span>
