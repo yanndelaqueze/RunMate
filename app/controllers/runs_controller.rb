@@ -9,7 +9,7 @@ class RunsController < ApplicationController
     if params[:query].present? || params[:start_date].present? || params[:hour].present?
       search
     else
-      @runs = Run.where('date > ?', DateTime.now)
+      @runs = Run.where('date > ?', DateTime.now).order(date: :desc)
     end
     markers
   end
