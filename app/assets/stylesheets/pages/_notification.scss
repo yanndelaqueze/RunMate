@@ -23,6 +23,18 @@
     font-size: 30px;
     margin-right: 9px;
   }
+
+  .notification-link {
+    text-decoration: none;
+  }
+
+}
+
+.notification-confirmed {
+  .notification-icone {
+    color: #06dfac;
+  }
+
 }
 
 .notification-new {
@@ -39,12 +51,6 @@
   }
 }
 
-.notification-confirmed {
-  .notification-icone {
-    color: #06dfac;
-  }
-
-}
 
 .notification-declined {
   .notification-icone {
