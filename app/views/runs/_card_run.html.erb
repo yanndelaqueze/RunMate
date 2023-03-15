@@ -2,17 +2,19 @@
   <%= link_to "", run_path(run), class:"card-run-link" %>
   <% case run.category %>
     <% when "Running" %>
-    <%= image_tag "picto/running.png", class:"card-run-picto" %>
+      <%= image_tag "picto/running.png", class:"card-run-picto" %>
     <% when "Casual" %>
-    <%= image_tag "picto/casual.png", class:"card-run-picto" %>
+      <%= image_tag "picto/casual.png", class:"card-run-picto" %>
     <% when "Trail Running" %>
-    <%= image_tag "picto/trail_running.png", class:"card-run-picto" %>
+      <%= image_tag "picto/trail_running.png", class:"card-run-picto" %>
+    <% when "Urban Trail" %>
+      <%= image_tag "picto/trail_running.png", class:"card-run-picto" %>
     <% when "City Tour" %>
-    <%= image_tag "picto/city_tour.png", class:"card-run-picto" %>
+      <%= image_tag "picto/city_tour.png", class:"card-run-picto" %>
     <% when "Hiking" %>
-    <%= image_tag "picto/hiking.png", class:"card-run-picto" %>
+      <%= image_tag "picto/hiking.png", class:"card-run-picto" %>
     <% when "Coaching" %>
-    <%= image_tag "picto/coaching.png", class:"card-run-picto" %>
+      <%= image_tag "picto/coaching.png", class:"card-run-picto" %>
   <% end %>
   <% if run.photo.attached? %>
     <%= cl_image_tag run.photo.key, class: "card-run-image"%>

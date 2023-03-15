@@ -1,5 +1,5 @@
 class Run < ApplicationRecord
-  CATEGORIES = ["Casual", "Coaching", "City Tour", "Hiking", "Running", "Trail Running"]
+  CATEGORIES = ["Casual", "Coaching", "City Tour", "Hiking", "Running", "Trail Running", "Urban Trail"]
   # LEVEL = [1, 2, 3, 4, 5]
   belongs_to :user
   has_many :attendances, dependent: :destroy
