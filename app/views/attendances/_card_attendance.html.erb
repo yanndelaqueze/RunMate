@@ -7,14 +7,19 @@
   </div>
   <p class="category"><i class="fa-regular fa-calendar"></i>  | <%= attendance.run.date.strftime("%b %e, %l:%M %p") %> </p>
   <div class="message d-flex justify-content-start">
+    <% if attendance.user != current_user %>
     <p><i class="fa-solid fa-user"></i>  | Request made by:</p>
     <p class="ms-2"><%= attendance.user.username %></p>
+    <% else %>
+    <p><i class="fa-solid fa-user"></i>  | Request sent to:</p>
+    <p class="ms-2"><%= attendance.run.user.username %></p>
+    <% end %>
   </div>
   <div class="message d-flex justify-content-start">
     <p><i class="fa-regular fa-envelope-open"></i>  | Message:</p>
-    <p>"<em><%= attendance.content %></em>"</p>
+    <p class="ms-2">"<em><%= attendance.content %></em>"</p>
   </div>
-  <p>Status : <strong><%= attendance.status.capitalize %></strong></p>
+  <p>Status: <strong><%= attendance.status.capitalize %></strong></p>
   <% if attendance.run.user == current_user %>
     <div class="d-flex flex-start align-items-center">
       <%= link_to decline_attendance_path(attendance), class: "btn-delete fs-3 p-2 action", data: { turbo_method: :patch } do %>
@@ -27,16 +32,16 @@
       <% end %>
     </div>
   <% end %>
-  <div class="d-flex justify-content-between">
-    <% if attendance.user == current_user && attendance.run.date > DateTime.now %>
-        <%= link_to attendance_path(attendance), class: "btn-delete fs-5 action text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+    <div class="d-flex justify-content-end">
+      <% if attendance.user == current_user && attendance.run.date > DateTime.now %>
+        <%= link_to attendance_path(attendance), class: "btn-delete fs-5 action text-danger", data: { turbo_method: :delete,turbo_confirm: "Are you sure?" } do %>
           <i class="fa-regular fa-trash-can"></i>
         <% end %>
       <% end %>
+    </div>
     <% if attendance.run.date < DateTime.now && attendance.status == "confirmed" %>
-      <%= link_to new_attendance_review_path(attendance) do %>
+      <%= link_to new_attendance_review_path(attendance), class: "action" do %>
       <p class="add-a-review"><i class="fa-solid fa-plus me-2"></i>Add a review</p>
       <% end %>
     <% end %>
-  </div>
 </div>
