@@ -1,5 +1,6 @@
 class Run < ApplicationRecord
   CATEGORIES = ["Casual", "Coaching", "City Tour", "Hiking", "Running", "Trail Running"]
+  # LEVEL = [1, 2, 3, 4, 5]
   belongs_to :user
   has_many :attendances, dependent: :destroy
   has_many :users, through: :attendances
@@ -11,6 +12,7 @@ class Run < ApplicationRecord
   has_one_attached :photo
 
   validates :category, inclusion: { in: CATEGORIES }
+  # validates :level, inclusion: { in: LEVEL }
 
   after_create :create_first_attendee
 
