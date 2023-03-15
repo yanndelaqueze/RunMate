@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="notifications-subcription"
 export default class extends Controller {
   static values = { userId: Number }
-  static targets = ["pastille", "pastille-messages"]
+  static targets = ["pastille"]
 
 
   connect() {

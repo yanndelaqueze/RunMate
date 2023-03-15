@@ -9,6 +9,8 @@ class MessagesController < ApplicationController
       @sender = @message.attendance.user
       @message.run.users.excluding(@sender).each do |recipient|
         Notification.create(user: recipient, message: @message)
+        MessageNotificationsChannel.broadcast_to(
+          recipient, recipient.unread_messages_count)
       end
       RunChannel.broadcast_to(
         @run,
