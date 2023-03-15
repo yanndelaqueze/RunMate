@@ -6,6 +6,10 @@ class MessagesController < ApplicationController
     @message.attendance = @run.attendances.find_by(user_id: current_user.id)
     authorize @message
     if @message.save
+      @sender = @message.attendance.user
+      @message.run.users.excluding(@sender).each do |recipient|
+        Notification.create(user: recipient, message: @message)
+      end
       RunChannel.broadcast_to(
         @run,
         render_to_string(partial: "messages/message", locals: { message: @message })

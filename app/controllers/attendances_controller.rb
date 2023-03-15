@@ -17,6 +17,9 @@ class AttendancesController < ApplicationController
     @attendance.run = @run
     authorize @attendance
     if @attendance.save
+      Notification.create(user: @attendance.run.user, attendance: @attendance)
+      NotificationsChannel.broadcast_to(
+        @attendance.run.user, @attendance.run.user.unread_notifications_count)
       redirect_to run_path(@run)
     else
       redirect_to run_path(@run), status: :unprocessable_entity

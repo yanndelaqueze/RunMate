@@ -1,6 +1,7 @@
 require 'yaml'
 require "open-uri"
 
+Notification.delete_all
 Review.delete_all
 Message.delete_all
 Attendance.delete_all
