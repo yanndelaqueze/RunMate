@@ -78,6 +78,7 @@ class RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     @run.user = current_user
+    @run.level = params[:run][:level].last.to_i
     authorize @run
     if @run.save
       redirect_to dashboard_path
