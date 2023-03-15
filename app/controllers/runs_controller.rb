@@ -161,6 +161,8 @@ class RunsController < ApplicationController
       file = File.open("app/assets/images/run_images/Running.jpg")
     when @run.category == "Trail Running"
       file = File.open("app/assets/images/run_images/Trail_running.jpg")
+    when @run.category == "Urban Trail"
+      file = File.open("app/assets/images/run_images/Urban_trail.jpg")
     end
     @run.photo.attach(io: file, filename: "image.png", content_type: "image/png")
   end

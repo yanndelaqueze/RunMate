@@ -309,7 +309,7 @@ puts "[CREATING UPCOMING RUNS]"
 run1 = Run.new(
   name: "Running Loops in Buttes Chaumont",
   description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required !",
-  category: "Trail Running",
+  category: "Urban Trail",
   level: 5,
   distance: 12,
   max_person: 4,
@@ -317,7 +317,7 @@ run1 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user1
 )
-file = File.open("app/assets/images/run_images/Trail_running.jpg")
+file = File.open("app/assets/images/run_images/Urban_trail.jpg")
 run1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run1.save!
 print "1 run / "
@@ -437,7 +437,7 @@ print "1 run / "
 run8 = Run.new(
   name: "Up & Down the stairs of Fourvières",
   description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
-  category: "Trail Running",
+  category: "Urban Trail",
   level: 5,
   distance: 15,
   max_person: 5,
@@ -445,7 +445,7 @@ run8 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user8
 )
-file = File.open("app/assets/images/run_images/Trail_running.jpg")
+file = File.open("app/assets/images/run_images/Urban_trail.jpg")
 run8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run8.save!
 print "1 run / "
