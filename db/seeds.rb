@@ -317,7 +317,7 @@ run1 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/Parc-des-Buttes-Chaumont-Temple-de-la-sybille-au-sommet-de-li%CC%82le_zal8tt.jpg")
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
 run1.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run1.save!
 print "1 run / "
@@ -333,7 +333,7 @@ run2 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user2
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/rue-marais-paris-france_lrcq9q.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run2.save!
 print "1 run / "
@@ -349,7 +349,7 @@ run3 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/boisdevincennes_bm6qib.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run3.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run3.save!
 print "1 run / "
@@ -365,7 +365,7 @@ run3bis = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user3
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678447562/places/luxembourg_n9ylw5.jpg")
+file = File.open("app/assets/images/run_images/Running.jpg")
 run3bis.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run3bis.save!
 print "1 run / "
@@ -381,7 +381,7 @@ run4 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user4
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/montmartre_mnpj1x.jpg")
+file = File.open("app/assets/images/run_images/Coaching.jpg")
 run4.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run4.save!
 print "1 run / "
@@ -397,7 +397,7 @@ run5 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 17),
   user: user5
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/monceau_zbn2nx.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run5.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run5.save!
 print "1 run / "
@@ -413,7 +413,7 @@ run6 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user6
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/canal_d356gt.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run6.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run6.save!
 print "1 run / "
@@ -429,7 +429,7 @@ run7 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 16),
   user: user7
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/quais-de-seine-2_3_120831-159179224480832_osre3x.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run7.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run7.save!
 print "1 run / "
@@ -445,7 +445,7 @@ run8 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/fourviere-5-1024x597_vpvjsk.png")
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
 run8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run8.save!
 print "1 run / "
@@ -461,7 +461,7 @@ run9 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 8),
   user: user9
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/parc-tete-or-lyon_bqdbxj.jpg")
+file = File.open("app/assets/images/run_images/Running.jpg")
 run9.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run9.save!
 print "1 run / "
@@ -477,7 +477,7 @@ run10 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user10
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/rhone_pn23cx.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run10.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run10.save!
 print "1 run / "
@@ -493,7 +493,7 @@ run11 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 10),
   user: user11
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/lyon-place-bellecour_wrt5hd.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run11.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run11.save!
 print "1 run / "
@@ -509,7 +509,7 @@ run12 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
+file = File.open("app/assets/images/run_images/Hiking.jpg")
 run12.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run12.save!
 print "1 run / "
@@ -525,7 +525,7 @@ run13 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 14),
   user: user13
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run13.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run13.save!
 print "1 run / "
@@ -541,7 +541,7 @@ run14 = Run.new(
   date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user14
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/corniche-kennedy-marseille_zgiy29.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run14.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run14.save!
 print "1 run / "
@@ -557,7 +557,7 @@ run15 = Run.new(
   date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 18),
   user: user15
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/Marseille-Cha%CC%82teau_Bore%CC%81ly_2_ngkrrz.jpg")
+file = File.open("app/assets/images/run_images/Running.jpg")
 run15.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run15.save!
 print "1 run / "
@@ -623,7 +623,7 @@ run16 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/canal_d356gt.jpg")
+file = File.open("app/assets/images/run_images/Running.jpg")
 run16.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run16.save!
 print "1 run / "
@@ -639,7 +639,7 @@ run17 = Run.new(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/rue-marais-paris-france_lrcq9q.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run17.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run17.save!
 print "1 run / "
@@ -655,7 +655,7 @@ run18 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 18),
   user: user1
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311467/places/boisdevincennes_bm6qib.jpg")
+file = File.open("app/assets/images/run_images/Casual.jpg")
 run18.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run18.save!
 print "1 run / "
@@ -671,7 +671,7 @@ run19 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/fourviere-5-1024x597_vpvjsk.png")
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
 run19.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run19.save!
 print "1 run / "
@@ -687,7 +687,7 @@ run20 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 17),
   user: user8
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/parc-tete-or-lyon_bqdbxj.jpg")
+file = File.open("app/assets/images/run_images/Running.jpg")
 run20.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run20.save!
 print "1 run / "
@@ -703,7 +703,7 @@ run21 = Run.new(
   date: DateTime.now.last_week(:sunday).change(hour: 9),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311465/places/800px-Calanque_de_Sormiou_dncmqb.jpg")
+file = File.open("app/assets/images/run_images/Trail_running.jpg")
 run21.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run21.save!
 print "1 run / "
@@ -719,7 +719,7 @@ run22 = Run.new(
   date: DateTime.now.last_week(:saturday).change(hour: 14),
   user: user12
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678311466/places/mucem-fort-saint-jean-vieux-porte-lamyomtcm-taille-reduite-1920x960_yi067i.jpg")
+file = File.open("app/assets/images/run_images/City_tour.jpg")
 run22.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 run22.save!
 print "1 run / "
@@ -982,12 +982,6 @@ review21.save!
 print "1 attendance-1 review / "
 puts ""
 puts "[ALL DONE]"
-
-
-
-
-
-
 
 
 
