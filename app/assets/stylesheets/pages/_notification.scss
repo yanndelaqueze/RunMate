@@ -9,15 +9,16 @@
   }
   .notifications-date {
     margin-left: 10px;
+    margin-bottom: 2px;
   }
 
 }
 
 .notification {
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 12px;
   background-color:  white;
 
   .notification-icone {
