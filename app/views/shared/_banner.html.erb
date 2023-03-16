@@ -4,7 +4,7 @@
       <%= image_tag "new_logo.png", alt:"Runmate", class: "img"%>
     <% end %>
     <%= link_to notifications_path, class:"notification-link ms-auto p-2 d-flex" do %>
-      <i class="notification-bell fa-regular fa-bell"></i>
+      <i class="notification-bell fa-regular fa-bell" data-notifications-subscription-target="bell"></i>
       <% if user_signed_in? %>
         <div class="pastille <%= "d-none" if current_user.unread_notifications_count == 0 %>" data-notifications-subscription-target="pastille">
           <% if current_user.unread_notifications_count > 9 %>
