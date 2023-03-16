@@ -1,8 +1,7 @@
 <div class="banner navbar fixed-top" data-controller="notifications-subscription" data-notifications-subscription-user-id-value="<%= current_user.id if user_signed_in? %>">
   <div class="container px-4 pt-2 d-flex align-items-center justify-content-start">
-    <%= image_tag "logo.png", alt:"Runmate", class: "img"%>
     <%= link_to root_path do %>
-      <h5>RunMate</h5>
+      <%= image_tag "new_logo.png", alt:"Runmate", class: "img"%>
     <% end %>
     <%= link_to notifications_path, class:"notification-link ms-auto p-2 d-flex" do %>
       <i class="notification-bell fa-regular fa-bell"></i>
