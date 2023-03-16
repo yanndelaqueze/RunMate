@@ -31,7 +31,7 @@ user2 = User.new(
   last_name: 'Martin',
   password: "topsecret",
   password_confirmation: "topsecret",
-  description: "Hi this is Carine ! Running is my passion and I hit the pavement every day. I push myself to the limit and participate in local races. I am disciplined with my training and enjoy the mental and physical benefits that come with it."
+  description: "Hi this is Carine! Running is my passion and I hit the pavement every day. I push myself to the limit and participate in local races. I am disciplined with my training and enjoy the mental and physical benefits that come with it."
 )
 file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2017102608090332_zirt49.jpg")
 user2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
@@ -308,7 +308,7 @@ puts "[CREATING UPCOMING RUNS]"
 
 run1 = Run.new(
   name: "Running Loops in Buttes Chaumont",
-  description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required !",
+  description: "This will be a hilly run in the Parc des Buttes Chaumont. Good level required!",
   category: "Urban Trail",
   level: 5,
   distance: 12,
@@ -324,7 +324,7 @@ print "1 run / "
 
 run2 = Run.new(
   name: "Running Guided Tour in Le Marais",
-  description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
+  description: "I will make you discover my city, in a - not so easy - run. Come and join us!",
   category: "City Tour",
   level: 3,
   distance: 8,
@@ -340,7 +340,7 @@ print "1 run / "
 
 run3 = Run.new(
   name: "Soft Jogging in Bois de Vincennes",
-  description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
+  description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together!",
   category: "Casual",
   level: 2,
   distance: 10,
@@ -356,7 +356,7 @@ print "1 run / "
 
 run3bis = Run.new(
   name: "Fast & Slow running loops in Jardin du Luxembourg",
-  description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me !",
+  description: "Challenging run in the Jardin du Luxembourg. Easy in the beginning with a few accelerations after. Come run with me!",
   category: "Running",
   level: 3,
   distance: 10,
@@ -372,7 +372,7 @@ print "1 run / "
 
 run4 = Run.new(
   name: "Uphill & Downhill Run in Montmartre",
-  description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough !",
+  description: "Coaching in the stairs of Montmarte : Ups & Downs, interval training. It'll be tough!",
   category: "Coaching",
   level: 5,
   distance: 15,
@@ -388,7 +388,7 @@ print "1 run / "
 
 run5 = Run.new(
   name: "Easy Running loops in Parc Monceau",
-  description: "Simple run in Parc Monceau. Nothing really hard, all levels welcome. Let's go !!!",
+  description: "Simple run in Parc Monceau. Nothing really hard, all levels welcome. Let's go!!!",
   category: "Casual",
   level: 2,
   distance: 7,
@@ -419,8 +419,8 @@ run6.save!
 print "1 run / "
 
 run7 = Run.new(
-  name: "Run & enjoy the view of Quais de Seine !",
-  description: "We will run along the Quais de Seine, go past Musée d'Orsay, Tour Eiffel, la Concorde, les Tuileries. Let's run slow and enjoy the view !",
+  name: "Run & enjoy the view of Quais de Seine!",
+  description: "We will run along the Quais de Seine, go past Musée d'Orsay, Tour Eiffel, la Concorde, les Tuileries. Let's run slow and enjoy the view!",
   category: "City Tour",
   level: 3,
   distance: 10,
@@ -436,7 +436,7 @@ print "1 run / "
 
 run8 = Run.new(
   name: "Up & Down the stairs of Fourvières",
-  description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
+  description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort!",
   category: "Urban Trail",
   level: 5,
   distance: 15,
@@ -452,7 +452,7 @@ print "1 run / "
 
 run9 = Run.new(
   name: "Speedy running loops in Parc de la Tête d'Or",
-  description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
+  description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy.",
   category: "Running",
   level: 4,
   distance: 12,
@@ -468,7 +468,7 @@ print "1 run / "
 
 run10 = Run.new(
   name: "Casual & friendly run along Quais du Rhône",
-  description: "Slow and cool run along Quais du Rhône up to Confluence. I run slow, don't worry. ",
+  description: "Slow and cool run along Quais du Rhône up to Confluence. I run slow, don't worry.",
   category: "Casual",
   level: 1,
   distance: 8,
@@ -484,7 +484,7 @@ print "1 run / "
 
 run11 = Run.new(
   name: "Guided Running Tour in Lyon Centre",
-  description: "Fast paced run around Place Bellecour and Vieux Lyon. Be prepared to sweat a little. ",
+  description: "Fast paced run around Place Bellecour and Vieux Lyon. Be prepared to sweat a little.",
   category: "City Tour",
   level: 4,
   distance: 10,
@@ -516,7 +516,7 @@ print "1 run / "
 
 run13 = Run.new(
   name: "Cool run around Le Vieux Port - Marseille",
-  description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards ! ",
+  description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards!",
   category: "City Tour",
   level: 3,
   distance: 7,
@@ -548,7 +548,7 @@ print "1 run / "
 
 run15 = Run.new(
   name: "Challenging loops in Parc Borely",
-  description: "Fast paced run in Parc Borely. Some interval training if you're motivated, and a beer after that !",
+  description: "Fast paced run in Parc Borely. Some interval training if you're motivated, and a beer after that!",
   category: "Running",
   level: 4,
   distance: 8,
@@ -583,7 +583,7 @@ attendance2.save!
 print "1 attendance / "
 
 attendance3 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user18,
   run: run12,
   status: "confirmed"
@@ -592,7 +592,7 @@ attendance3.save!
 print "1 attendance / "
 
 attendance4 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user19,
   run: run8,
   status: "confirmed"
@@ -601,7 +601,7 @@ attendance4.save!
 print "1 attendance / "
 
 attendance5 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user20,
   run: run4,
   status: "confirmed"
@@ -614,7 +614,7 @@ puts "[CREATING PAST RUNS]"
 
 run16 = Run.new(
   name: "Speedy run near Canal Saint-Martin",
-  description: "Speedy run along Canal Saint-Martin. We will go fast and sweat !!! ",
+  description: "Speedy run along Canal Saint-Martin. We will go fast and sweat!!!",
   category: "Running",
   level: 4,
   distance: 12,
@@ -630,7 +630,7 @@ print "1 run / "
 
 run17 = Run.new(
   name: "Guided Run in Le Marais",
-  description: "I will make you discover my city, in a - not so easy - run. Come and join us !",
+  description: "I will make you discover my city, in a - not so easy - run. Come and join us!",
   category: "City Tour",
   level: 2,
   distance: 8,
@@ -646,7 +646,7 @@ print "1 run / "
 
 run18 = Run.new(
   name: "Easy run in Bois de Vincennes",
-  description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together !",
+  description: "Super chill run in the Bois de Vincennes. All levels welcome, we will adapt. Let's run together!",
   category: "Casual",
   level: 2,
   distance: 10,
@@ -662,7 +662,7 @@ print "1 run / "
 
 run19 = Run.new(
   name: "Stairs of Fourvières 😈",
-  description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort !",
+  description: "Tough session in the hills and stairs of Fourvières. We will sweat, but the view up there is worth the effort!",
   category: "Trail Running",
   level: 5,
   distance: 15,
@@ -678,7 +678,7 @@ print "1 run / "
 
 run20 = Run.new(
   name: "Pretty Fast run in Parc de la Tête d'Or",
-  description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy. ",
+  description: "Fast run in the Parc de la Tête d'Or. Be prepared to run pretty fast, it will not be so easy.",
   category: "Running",
   level: 4,
   distance: 12,
@@ -710,7 +710,7 @@ print "1 run / "
 
 run22 = Run.new(
   name: "Cool Guided Run around Le Vieux Port",
-  description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards !",
+  description: "Cool run in the heart of Marseille, around Vieux Port, le Panier... let's grab a coffee afterwards!",
   category: "City Tour",
   level: 3,
   distance: 7,
@@ -744,7 +744,7 @@ review7.save!
 print "1 attendance-1 review / "
 
 attendance8 = Attendance.new(
-  content: "Wouhouhhhh !!",
+  content: "Wouhouhhhh!!",
   user: user4,
   run: run16,
   status: "confirmed"
@@ -753,7 +753,7 @@ attendance8.save!
 
 review8 = Review.new(
   rating: 4,
-  comment: "Great Run ! A bit difficult though !",
+  comment: "Great Run! A bit difficult though!",
   attendance: attendance8
 )
 review8.save!
@@ -761,7 +761,7 @@ review8.save!
 print "1 attendance-1 review / "
 
 attendance9 = Attendance.new(
-  content: "Go Go Go !!",
+  content: "Go Go Go!!",
   user: user5,
   run: run16,
   status: "confirmed"
@@ -770,7 +770,7 @@ attendance9.save!
 
 review9 = Review.new(
   rating: 5,
-  comment: "Super Run, great place, great organization ! Loved the 🍻 aferwards...",
+  comment: "Super Run, great place, great organization! Loved the 🍻 aferwards...",
   attendance: attendance9
 )
 review9.save!
@@ -778,7 +778,7 @@ review9.save!
 print "1 attendance-1 review / "
 
 attendance10 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user5,
   run: run17,
   status: "confirmed"
@@ -787,7 +787,7 @@ attendance10.save!
 
 review10 = Review.new(
   rating: 5,
-  comment: "Jules is super nice, I loved it !",
+  comment: "Jules is super nice, I loved it!",
   attendance: attendance10
 )
 review10.save!
@@ -795,7 +795,7 @@ review10.save!
 print "1 attendance-1 review / "
 
 attendance11 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user6,
   run: run17,
   status: "confirmed"
@@ -812,7 +812,7 @@ review11.save!
 print "1 attendance-1 review / "
 
 attendance12 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user7,
   run: run17,
   status: "confirmed"
@@ -829,7 +829,7 @@ review12.save!
 print "1 attendance-1 review / "
 
 attendance13 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user15,
   run: run18,
   status: "confirmed"
@@ -846,7 +846,7 @@ review13.save!
 print "1 attendance-1 review / "
 
 attendance14 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user2,
   run: run19,
   status: "confirmed"
@@ -863,7 +863,7 @@ review14.save!
 print "1 attendance-1 review / "
 
 attendance15 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user3,
   run: run19,
   status: "confirmed"
@@ -880,7 +880,7 @@ review15.save!
 print "1 attendance-1 review / "
 
 attendance16 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user4,
   run: run19,
   status: "confirmed"
@@ -897,7 +897,7 @@ review16.save!
 print "1 attendance-1 review / "
 
 attendance17 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user9,
   run: run20,
   status: "confirmed"
@@ -906,7 +906,7 @@ attendance17.save!
 
 review17 = Review.new(
   rating: 4,
-  comment: "I thought it would harder 🫠... Olympe was awesome though.",
+  comment: "I thought it would be harder 🫠... Olympe was awesome though.",
   attendance: attendance17
 )
 review17.save!
@@ -914,7 +914,7 @@ review17.save!
 print "1 attendance-1 review / "
 
 attendance18 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user10,
   run: run20,
   status: "confirmed"
@@ -923,7 +923,7 @@ attendance18.save!
 
 review18 = Review.new(
   rating: 5,
-  comment: "Just perfect. Great Run, great Time, great organizer !",
+  comment: "Just perfect. Great Run, great Time, great organizer!",
   attendance: attendance18
 )
 review18.save!
@@ -931,7 +931,7 @@ review18.save!
 print "1 attendance-1 review / "
 
 attendance19 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user11,
   run: run21,
   status: "confirmed"
@@ -948,7 +948,7 @@ review19.save!
 print "1 attendance-1 review / "
 
 attendance20 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user11,
   run: run22,
   status: "confirmed"
@@ -965,7 +965,7 @@ review20.save!
 print "1 attendance-1 review / "
 
 attendance21 = Attendance.new(
-  content: "Excited to join !",
+  content: "Excited to join!",
   user: user16,
   run: run22,
   status: "confirmed"
