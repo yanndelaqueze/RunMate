@@ -1,6 +1,6 @@
 <% case %>
 <% when notification.attendance.status == "confirmed" %>
-  <div class="notification notification-confirmed <%= "notification-new" unless notification.read %>">
+  <div class="notification notification-confirmed <%= "notification-old" if notification.read %>">
     <%= link_to run_path(notification.attendance.run),class:"notification-link" do %>
       <div class="notification-information d-flex align-items-center">
         <i class="notification-icone fa-solid fa-circle-check"></i>
@@ -10,7 +10,7 @@
   </div>
 
 <% when notification.attendance.status == "declined" %>
-  <div class="notification notification-declined <%= "notification-new" unless notification.read %>">
+  <div class="notification notification-declined <%= "notification-old" if notification.read %>">
     <%= link_to run_path(notification.attendance.run),class:"notification-link" do %>
       <div class="notification-information d-flex align-items-center">
         <i class="notification-icone fa-regular fa-circle-xmark"></i>
@@ -20,7 +20,7 @@
   </div>
 
 <% when notification.attendance.status == "pending" %>
-  <div class="notification notification-pending <%= "notification-new" unless notification.read %>">
+  <div class="notification notification-pending <%= "notification-old" if notification.read %>">
     <%= link_to dashboard_path, class:"notification-link" do %>
       <div class="notification-information d-flex align-items-center">
         <i class="notification-icone fa-solid fa-user"></i>
