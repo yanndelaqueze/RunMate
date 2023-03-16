@@ -184,20 +184,38 @@
   }
 
   .join-button {
+    // position: fixed;
+    // bottom: 100px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // z-index: 999;
+    // font-size: 22px;
+    // font-weight: 600;
+    // background-color: $hard-blue;
+    // border: none;
+    // border-radius: 25px;
+    // color: $anti-flash-white;
+    // // padding: 10px 35px;
+    // text-decoration: none;
+    // transition: background 0.3s ease;
+    // width: 120px;
+    // padding: 10px;
+    // justify-content: center;
+
+    width: 120px;
+    height: 40px;
+    padding: 8px 18px;;
+    justify-content: space-around;
+    border-radius: 25px;
     position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    font-size: 22px;
-    font-weight: 600;
-    background-color: $hard-blue;
-    border: none;
-    border-radius: 40px;
-    color: $anti-flash-white;
-    padding: 10px 35px;
+    top: 82%;
+    left: 35%;
+    z-index: 3;
+    color: white;
+    background: #0036AB;
     text-decoration: none;
-    transition: background 0.3s ease;
+    box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.3);
+
   }
 
   .attendants h3 {
