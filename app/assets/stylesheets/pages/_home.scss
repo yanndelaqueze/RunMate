@@ -2,6 +2,10 @@
   height: 100vh;
   padding: 10px;
   background-color: #F2F3F7;
+  background-image: url(https://images.pexels.com/photos/4422913/pexels-photo-4422913.jpeg);
+  background-position: center;
+  background-size: cover;
+
 
   .logo-box {
     padding: 30px 0 0 0;
@@ -9,9 +13,13 @@
 
   .logo-name {
     font-size: 35px;
-    color: #476BC7;
+    color: #f3ecec;
     text-align: center;
     margin-top: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
   }
 
   .container, a {
@@ -20,7 +28,7 @@
 
   .text-box {
     // height: 500px;
-    margin-top: 8em;
+    margin-top: 4em;
     justify-content: space-between;
   }
 
@@ -31,7 +39,7 @@
   }
 
   .home-text {
-    color: rgba(29, 28, 28, 0.821);
+    color: #f3ecec;
     text-align: center;
     font-size: 20px;
     font-weight: 400;
@@ -46,4 +54,6 @@
     height: 200px;
     margin-top: 4em;
   }
+
+
 }

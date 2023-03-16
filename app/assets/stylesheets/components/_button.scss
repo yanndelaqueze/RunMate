@@ -1,7 +1,7 @@
 .btn-home {
   font-size: 22px;
   font-weight: 600;
-  background-color: #476BC7;
+  background-color: $hard-blue;
   border: none;
   border-radius: 10px;
   color: #FFFFFF;
@@ -11,7 +11,9 @@
   transition: background 0.3s ease;
   text-align: center;
   position: fixed;
-  bottom: 30px;
+  bottom: 90px;
+  box-shadow: 0 0px 100px 0 rgba(208, 174, 174, 0.7);
+    // 0 0px 100px 0 rgb(234 212 212)
 }
 
 .btn-back-blue {
