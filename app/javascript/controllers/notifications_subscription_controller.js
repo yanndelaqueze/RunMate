@@ -17,9 +17,17 @@ export default class extends Controller {
         this.pastilleTarget.classList.remove("d-none")
         // this.bellTarget.classList.remove("notification-bell")
         this.bellTarget.classList.remove("notification-bell-shake")
+        this.bellTarget.classList.remove("fa-regular")
         setTimeout(() => {
           this.bellTarget.classList.add("notification-bell-shake")
-        }, 100);
+        }, 1);
+        setTimeout(() => {
+          this.bellTarget.classList.add("fa-solid")
+        }, 1);
+        setTimeout(() => {
+          this.bellTarget.classList.remove("fa-solid")
+          this.bellTarget.classList.add("fa-regular")
+        }, 2001);
        }
       }
     )
