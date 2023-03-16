@@ -33,7 +33,7 @@ user2 = User.new(
   password_confirmation: "topsecret",
   description: "Hi this is Carine! Running is my passion and I hit the pavement every day. I push myself to the limit and participate in local races. I am disciplined with my training and enjoy the mental and physical benefits that come with it."
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2017102608090332_zirt49.jpg")
+file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2008102329451484_uu44mq.jpg")
 user2.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 user2.save!
 print "1 user / "
@@ -117,7 +117,7 @@ user8 = User.new(
   password_confirmation: "topsecret",
   description: "I love the challenge and beauty of running on mountain trails. I go out early to enjoy the peace and quiet of nature. It's tough, but the views are worth it. I stay hydrated and enjoy healthy snacks on my breaks. Trail running is my passion!"
 )
-file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2008102329451484_uu44mq.jpg")
+file = URI.open("https://res.cloudinary.com/dqfgqm3cn/image/upload/v1678308871/avatars/female2017102608090332_zirt49.jpg")
 user8.photo.attach(io: file, filename: "image.png", content_type: "image/png")
 user8.save!
 print "1 user / "
