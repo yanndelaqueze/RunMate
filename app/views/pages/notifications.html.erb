@@ -8,7 +8,7 @@
     <% else %>
       <h3 class="notifications-number"><%= pluralize(@current_user.unread_notifications_count, 'new notification')%></h3>
       <% @notifications_for_attendances.order(created_at: :desc).each do |notification| %>
-        <span class="notifications-date"><%= notification.created_at.strftime("%I:%M %p")%></span>
+        <span class="notifications-date <%= "notification-old" if notification.read %>"><%= notification.created_at.strftime("%I:%M %p")%></span>
         <%= render "notification_card", notification: notification %>
       <% end %>
     <% end %>

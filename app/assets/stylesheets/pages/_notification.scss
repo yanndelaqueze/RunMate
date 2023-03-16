@@ -39,20 +39,24 @@
 
 }
 
-.notification-new {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #6891f2;
-    border-radius: 100%;
-    left: 332px;
-    top: -5px;
-  }
-}
+// .notification-new {
+//   position: relative;
+//   // &:after {
+//   //   content: "";
+//   //   position: absolute;
+//   //   width: 20px;
+//   //   height: 20px;
+//   //   background: #6891f2;
+//   //   border-radius: 100%;
+//   //   left: 332px;
+//   //   top: -5px;
+//   // }
+// }
 
+
+  .notification-old {
+    opacity: 0.5;
+  }
 
 .notification-declined {
   .notification-icone {
