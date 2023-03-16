@@ -23,25 +23,27 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col chatroom" data-controller="message-notifications-subscription" data-message-notifications-subscription-user-id-value="<%= current_user.id if user_signed_in? %>">
-      <% if user_signed_in? %>
-        <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-message-notifications-subscription-target="pastillemessages">
-          <% if current_user.unread_messages_count > 9 %>
-            <%= "9+" %>
-          <% else %>
-            <%= current_user.unread_messages_count %>
+    <div class="col" data-controller="message-notifications-subscription" data-message-notifications-subscription-user-id-value="<%= current_user.id if user_signed_in? %>">
+      <div class="chatroom">
+        <% if user_signed_in? %>
+          <div class="pastille <%= "d-none" if current_user.unread_messages_count == 0 %>" data-message-notifications-subscription-target="pastillemessages">
+            <% if current_user.unread_messages_count > 9 %>
+              <%= "9+" %>
+            <% else %>
+              <%= current_user.unread_messages_count %>
+            <% end %>
+          </div>
+        <% end %>
+        <% if current_page?(chatrooms_path) %>
+          <%= link_to chatrooms_path, class:"link-bottom active" do %>
+            <i class="fa-solid fa-message"></i>
           <% end %>
-        </div>
-      <% end %>
-      <% if current_page?(chatrooms_path) %>
-        <%= link_to chatrooms_path, class:"link-bottom active" do %>
-          <i class="fa-solid fa-message"></i>
+          <% else %>
+          <%= link_to chatrooms_path, class:"link-bottom" do %>
+            <i class="fa-solid fa-message"></i>
+          <% end %>
         <% end %>
-        <% else %>
-        <%= link_to chatrooms_path, class:"link-bottom" do %>
-          <i class="fa-solid fa-message"></i>
-        <% end %>
-      <% end %>
+      </div>
     </div>
      <div class="col">
       <button class="bg-transparent border-0 p-0 link-bottom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
