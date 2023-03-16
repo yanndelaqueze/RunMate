@@ -1,4 +1,7 @@
 .show {
+  padding-top: 60px;
+  padding-bottom: 70px;
+
   .container {
     height: calc(100vh - 147px)
     // position:relative;
@@ -79,7 +82,7 @@
   .run-infos {
     background-color: white;
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 0 8px #003cc124;
   }
 
@@ -136,8 +139,8 @@
     background-color: $smoke-white;
     border-radius: 20px;
     width: 32%;
-    height: 100px;
-    padding: 15px;
+    height: 92px;
+    padding: 10px;
     border: none;
     box-shadow: 0 0 8px #0840bf33;
     // rgba(8 64 191 / 0.2);
@@ -259,11 +262,6 @@
   .mapboxgl-canvas {
     border-radius: 10px;
   }
-
-  .mapboxgl-map {
-    margin-bottom: 20px;
-  }
-
 
 }
 
