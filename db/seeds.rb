@@ -110,7 +110,7 @@ print "1 user / "
 
 user8 = User.new(
   email: "olympe.gagnon@gmail.com",
-  username: "olympe-is-running",
+  username: "running-olympe",
   first_name: "Olympe",
   last_name: 'Gagnon',
   password: "topsecret",
