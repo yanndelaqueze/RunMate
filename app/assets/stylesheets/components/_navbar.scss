@@ -26,6 +26,15 @@
   }
 }
 
+// Left window
+#offcanvasLeft {
+  width: 110%;
+
+  .mapboxgl-canvas {
+    border-radius: 0px;
+  }
+}
+
 // Bottom navigation
 #navbar-list {
   overflow: hidden;
