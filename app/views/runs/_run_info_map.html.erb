@@ -1,37 +1,35 @@
-<div class="card-run-map">
-  <%= link_to "", run_path(run), class:"card-run-map-link" %>
-  <% case run.category %>
-    <% when "Running" %>
-    <%= image_tag "picto/running.png", class:"card-run-map-picto" %>
-    <% when "Casual" %>
-    <%= image_tag "picto/casual.png", class:"card-run-map-picto" %>
-    <% when "Trail Running" %>
-    <%= image_tag "picto/trail_running.png", class:"card-run-map-picto" %>
-    <% when "Urban Trail" %>
-    <%= image_tag "picto/trail_running.png", class:"card-run-map-picto" %>
-    <% when "City Tour" %>
-    <%= image_tag "picto/city_tour.png", class:"card-run-map-picto" %>
-    <% when "Hiking" %>
-    <%= image_tag "picto/hiking.png", class:"card-run-map-picto" %>
-    <% when "Coaching" %>
-    <%= image_tag "picto/coaching.png", class:"card-run-map-picto" %>
-  <% end %>
-  <% if run.photo.attached? %>
-    <%= cl_image_tag run.photo.key, class: "card-run-map-image"%>
-  <% else %>
-    <%= image_tag "cover.png", alt:"Runmate", class: "card-run-image"%>
-  <% end %>
-  <div class="card-run-map-content d-flex flex-column p-2">
-      <h4 class="card-run-map-title"><%= run.name %></h4>
-      <p class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></p>
-      <p><i class="fa-solid fa-location-dot"></i><em><%=run.meeting_point%></em></p>
+<%= link_to "", run_path(run), class:"card-run-map-link" %>
+<% case run.category %>
+  <% when "Running" %>
+  <%= image_tag "picto/running.png", class:"card-run-map-picto" %>
+  <% when "Casual" %>
+  <%= image_tag "picto/casual.png", class:"card-run-map-picto" %>
+  <% when "Trail Running" %>
+  <%= image_tag "picto/trail_running.png", class:"card-run-map-picto" %>
+  <% when "Urban Trail" %>
+  <%= image_tag "picto/trail_running.png", class:"card-run-map-picto" %>
+  <% when "City Tour" %>
+  <%= image_tag "picto/city_tour.png", class:"card-run-map-picto" %>
+  <% when "Hiking" %>
+  <%= image_tag "picto/hiking.png", class:"card-run-map-picto" %>
+  <% when "Coaching" %>
+  <%= image_tag "picto/coaching.png", class:"card-run-map-picto" %>
+<% end %>
+<% if run.photo.attached? %>
+  <%= cl_image_tag run.photo.key, class: "card-run-map-image"%>
+<% else %>
+  <%= image_tag "cover.png", alt:"Runmate", class: "card-run-image"%>
+<% end %>
+<div class="card-run-map-content d-flex flex-column p-2">
+    <h4 class="card-run-map-title"><%= run.name %></h4>
+    <p class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></p>
+    <p><i class="fa-solid fa-location-dot"></i><em><%=run.meeting_point%></em></p>
 
-    <div class="card-run-map-content-bottom d-flex justify-content-between align-items-center mt-3">
-      <span class="category"> <%=run.category%></span>
-      <div class="d-flex justify-content-between">
-        <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %>/5</p>
-        <p class="m-0 fs-6"><i class="fa-solid fa-user"></i><%= run.users.where(attendances: { status: "confirmed" }).count %>/<%= run.max_person %></p>
-      </div>
+  <div class="card-run-map-content-bottom d-flex justify-content-between align-items-center mt-3">
+    <span class="category"> <%=run.category%></span>
+    <div class="d-flex justify-content-between">
+      <p class="m-0 fs-6 pe-3"><i class="fa-solid fa-gauge-high"></i> <%= run.level %>/5</p>
+      <p class="m-0 fs-6"><i class="fa-solid fa-user"></i><%= run.users.where(attendances: { status: "confirmed" }).count %>/<%= run.max_person %></p>
     </div>
   </div>
 </div>
