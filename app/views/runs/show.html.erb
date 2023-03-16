@@ -51,18 +51,18 @@
 
   <%# Image of the run %>
   <% if @run.photo.attached? %>
-    <div class="run-image mb-4" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
+    <div class="run-image mb-3" style="background-image: url('<%= cl_image_path @run.photo.key %>')">
   <% else %>
-    <div class="run-image mb-4" style="background-image: url(<%= asset_path "cover.png" %>)">
+    <div class="run-image mb-3" style="background-image: url(<%= asset_path "cover.png" %>)">
   <% end %>
-    <div class="run-image-info mb-4">
+    <div class="run-image-info mb-3">
         <span class="category-run"><%= @run.category %></span>
         <span><%= @run.city %></span>
     </div>
     </div>
 
   <%# Stats %>
-  <div class="run-specs mb-4">
+  <div class="run-specs mb-3">
       <div class="violet-square">
         <p>RunMates</p>
         <p><i class="fa-solid fa-user"></i><%= @confirmed_users.count %>/<%= @run.max_person %></p>
@@ -78,8 +78,8 @@
   </div>
 
   <%# Infos of the run %>
-  <div class="run-infos mb-4">
-      <div class="run-date mb-4">
+  <div class="run-infos mb-3">
+      <div class="run-date mb-3">
         <p class="me-1"><i class="fa-solid fa-calendar-days"></i><%= @run.date.strftime("%A, %b %d") %></p>
         <p><i class="fa-solid fa-clock"></i><%= @run.date.strftime("%I:%M %p") %></p>
       </div>
@@ -100,7 +100,7 @@
   <% end %>
 
   <%# Weather forecast %>
-  <div class="weather mb-4 py-2">
+  <div class="weather mb-3 py-2">
       <h3>Weather Forecast</h3>
       <div class="run-weather d-flex justify-content-around align-items-center">
         <% if @temp.nil? %>
