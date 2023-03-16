@@ -442,7 +442,7 @@ run8 = Run.new(
   distance: 15,
   max_person: 5,
   meeting_point: "4 Av. Adolphe Max, 69005 Lyon",
-  date: (DateTime.now + ((6 - DateTime.now.wday) % 7)).change(hour: 9),
+  date: (DateTime.now + ((7 - DateTime.now.wday) % 7)).change(hour: 9),
   user: user8
 )
 file = File.open("app/assets/images/run_images/Urban_trail.jpg")

@@ -21,7 +21,7 @@
   <% else %>
     <%= image_tag "cover.png", alt:"Runmate", class: "card-run-image"%>
   <% end %>
-  <div class="card-run-map-content d-flex flex-column p-3">
+  <div class="card-run-map-content d-flex flex-column p-2">
       <h4 class="card-run-map-title"><%= run.name %></h4>
       <p class="calendar"><i class="fa-regular fa-calendar"></i><%=run.date.strftime("%b %e, %l:%M %p")%></p>
       <p><i class="fa-solid fa-location-dot"></i><em><%=run.meeting_point%></em></p>
