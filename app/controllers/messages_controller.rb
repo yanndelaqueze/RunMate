@@ -14,7 +14,10 @@ class MessagesController < ApplicationController
       end
       RunChannel.broadcast_to(
         @run,
-        render_to_string(partial: "messages/message", locals: { message: @message })
+        {
+          html: render_to_string(partial: "messages/message", locals: { message: @message }),
+          author_id: current_user.id
+        }
       )
       head :ok
     else

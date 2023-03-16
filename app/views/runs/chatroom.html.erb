@@ -5,7 +5,8 @@
 </div>
 <div class="container-chatroom"
   data-controller="run-subscription"
-  data-run-subscription-run-id-value="<%= @run.id %>">
+  data-run-subscription-run-id-value="<%= @run.id %>"
+  data-run-subscription-user-id-value=" <%= current_user.id %> ">
     <h1 class="title-chatroom">#<%= @run.name %></h1>
     <div class="messages" data-run-subscription-target="messages">
       <% @run.messages.each do |message| %>

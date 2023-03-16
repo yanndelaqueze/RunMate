@@ -1,14 +1,14 @@
 <% if message.attendance.user == current_user %>
-  <div class="chat-box-right">
+  <div class="chat-box-right" data-run-subscription-target="message">
     <small><span><%= message.created_at.strftime("%b %e, %l:%M %p") %></span></small>
-    <div id="message-<%= message.id %>" class="chat-right">
+    <div id="message-<%= message.id %>" class="chat-bubble">
       @<strong><%= message.user.username %></strong>: <%= message.content %>
     </div>
   </div>
 <% else %>
-  <div class="chat-box-left">
+  <div class="chat-box-left" data-run-subscription-target="message">
     <small><span><%= message.created_at.strftime("%b %e, %l:%M %p") %></span></small>
-    <div id="message-<%= message.id %>" class="chat-left">
+    <div id="message-<%= message.id %>" class="chat-bubble">
       @<strong><%= message.user.username %></strong>: <%= message.content %>
     </div>
   </div>
