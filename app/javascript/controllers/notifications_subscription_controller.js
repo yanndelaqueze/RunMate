@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="notifications-subcription"
 export default class extends Controller {
   static values = { userId: Number }
-  static targets = ["pastille"]
+  static targets = ["pastille", "bell"]
 
 
   connect() {
@@ -15,6 +15,11 @@ export default class extends Controller {
         console.log(data)
         this.pastilleTarget.innerHTML = data;
         this.pastilleTarget.classList.remove("d-none")
+        // this.bellTarget.classList.remove("notification-bell")
+        this.bellTarget.classList.remove("notification-bell-shake")
+        setTimeout(() => {
+          this.bellTarget.classList.add("notification-bell-shake")
+        }, 100);
        }
       }
     )
